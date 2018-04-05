@@ -1,6 +1,6 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -44,10 +44,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,6 +71,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -66,7 +98,451 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accceso.aspx" />
+    <Content Include="Content\web-fonts-with-css\less\fa-brands.less" />
+    <Content Include="Content\web-fonts-with-css\less\fa-regular.less" />
+    <Content Include="Content\web-fonts-with-css\less\fa-solid.less" />
+    <Content Include="Content\web-fonts-with-css\less\fontawesome.less" />
+    <Content Include="Content\web-fonts-with-css\less\_animated.less" />
+    <Content Include="Content\web-fonts-with-css\less\_bordered-pulled.less" />
+    <Content Include="Content\web-fonts-with-css\less\_core.less" />
+    <Content Include="Content\web-fonts-with-css\less\_fixed-width.less" />
+    <Content Include="Content\web-fonts-with-css\less\_icons.less" />
+    <Content Include="Content\web-fonts-with-css\less\_larger.less" />
+    <Content Include="Content\web-fonts-with-css\less\_list.less" />
+    <Content Include="Content\web-fonts-with-css\less\_mixins.less" />
+    <Content Include="Content\web-fonts-with-css\less\_rotated-flipped.less" />
+    <Content Include="Content\web-fonts-with-css\less\_screen-reader.less" />
+    <Content Include="Content\web-fonts-with-css\less\_stacked.less" />
+    <Content Include="Content\web-fonts-with-css\less\_variables.less" />
+    <Content Include="Content\web-fonts-with-css\scss\fa-brands.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\fa-regular.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\fa-solid.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\fontawesome.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_animated.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_bordered-pulled.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_core.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_fixed-width.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_icons.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_larger.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_list.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_mixins.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_rotated-flipped.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_screen-reader.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_stacked.scss" />
+    <Content Include="Content\web-fonts-with-css\scss\_variables.scss" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.woff2" />
     <None Include="packages.config" />
+    <Content Include="Content\web-fonts-with-css\css\fa-brands.css" />
+    <Content Include="Content\web-fonts-with-css\css\fa-brands.min.css" />
+    <Content Include="Content\web-fonts-with-css\css\fa-regular.css" />
+    <Content Include="Content\web-fonts-with-css\css\fa-regular.min.css" />
+    <Content Include="Content\web-fonts-with-css\css\fa-solid.css" />
+    <Content Include="Content\web-fonts-with-css\css\fa-solid.min.css" />
+    <Content Include="Content\web-fonts-with-css\css\fontawesome-all.css" />
+    <Content Include="Content\web-fonts-with-css\css\fontawesome-all.min.css" />
+    <Content Include="Content\web-fonts-with-css\css\fontawesome.css" />
+    <Content Include="Content\web-fonts-with-css\css\fontawesome.min.css" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.svg" />
+    <Content Include="img\148705-essential-collection\png\add-1.png" />
+    <Content Include="img\148705-essential-collection\png\add-2.png" />
+    <Content Include="img\148705-essential-collection\png\add-3.png" />
+    <Content Include="img\148705-essential-collection\png\add.png" />
+    <Content Include="img\148705-essential-collection\png\agenda.png" />
+    <Content Include="img\148705-essential-collection\png\alarm-1.png" />
+    <Content Include="img\148705-essential-collection\png\alarm-clock-1.png" />
+    <Content Include="img\148705-essential-collection\png\alarm-clock.png" />
+    <Content Include="img\148705-essential-collection\png\alarm.png" />
+    <Content Include="img\148705-essential-collection\png\albums.png" />
+    <Content Include="img\148705-essential-collection\png\app.png" />
+    <Content Include="img\148705-essential-collection\png\archive-1.png" />
+    <Content Include="img\148705-essential-collection\png\archive-2.png" />
+    <Content Include="img\148705-essential-collection\png\archive-3.png" />
+    <Content Include="img\148705-essential-collection\png\archive.png" />
+    <Content Include="img\148705-essential-collection\png\attachment.png" />
+    <Content Include="img\148705-essential-collection\png\back.png" />
+    <Content Include="img\148705-essential-collection\png\battery-1.png" />
+    <Content Include="img\148705-essential-collection\png\battery-2.png" />
+    <Content Include="img\148705-essential-collection\png\battery-3.png" />
+    <Content Include="img\148705-essential-collection\png\battery-4.png" />
+    <Content Include="img\148705-essential-collection\png\battery-5.png" />
+    <Content Include="img\148705-essential-collection\png\battery-6.png" />
+    <Content Include="img\148705-essential-collection\png\battery-7.png" />
+    <Content Include="img\148705-essential-collection\png\battery-8.png" />
+    <Content Include="img\148705-essential-collection\png\battery-9.png" />
+    <Content Include="img\148705-essential-collection\png\battery.png" />
+    <Content Include="img\148705-essential-collection\png\binoculars.png" />
+    <Content Include="img\148705-essential-collection\png\blueprint.png" />
+    <Content Include="img\148705-essential-collection\png\bluetooth-1.png" />
+    <Content Include="img\148705-essential-collection\png\bluetooth.png" />
+    <Content Include="img\148705-essential-collection\png\bookmark-1.png" />
+    <Content Include="img\148705-essential-collection\png\bookmark.png" />
+    <Content Include="img\148705-essential-collection\png\briefcase.png" />
+    <Content Include="img\148705-essential-collection\png\broken-link.png" />
+    <Content Include="img\148705-essential-collection\png\calculator-1.png" />
+    <Content Include="img\148705-essential-collection\png\calculator.png" />
+    <Content Include="img\148705-essential-collection\png\calendar-1.png" />
+    <Content Include="img\148705-essential-collection\png\calendar-2.png" />
+    <Content Include="img\148705-essential-collection\png\calendar-3.png" />
+    <Content Include="img\148705-essential-collection\png\calendar-4.png" />
+    <Content Include="img\148705-essential-collection\png\calendar-5.png" />
+    <Content Include="img\148705-essential-collection\png\calendar-6.png" />
+    <Content Include="img\148705-essential-collection\png\calendar-7.png" />
+    <Content Include="img\148705-essential-collection\png\calendar.png" />
+    <Content Include="img\148705-essential-collection\png\checked-1.png" />
+    <Content Include="img\148705-essential-collection\png\checked.png" />
+    <Content Include="img\148705-essential-collection\png\clock-1.png" />
+    <Content Include="img\148705-essential-collection\png\clock.png" />
+    <Content Include="img\148705-essential-collection\png\close.png" />
+    <Content Include="img\148705-essential-collection\png\cloud-computing-1.png" />
+    <Content Include="img\148705-essential-collection\png\cloud-computing-2.png" />
+    <Content Include="img\148705-essential-collection\png\cloud-computing-3.png" />
+    <Content Include="img\148705-essential-collection\png\cloud-computing-4.png" />
+    <Content Include="img\148705-essential-collection\png\cloud-computing-5.png" />
+    <Content Include="img\148705-essential-collection\png\cloud-computing.png" />
+    <Content Include="img\148705-essential-collection\png\cloud.png" />
+    <Content Include="img\148705-essential-collection\png\command.png" />
+    <Content Include="img\148705-essential-collection\png\compact-disc-1.png" />
+    <Content Include="img\148705-essential-collection\png\compact-disc-2.png" />
+    <Content Include="img\148705-essential-collection\png\compact-disc.png" />
+    <Content Include="img\148705-essential-collection\png\compass.png" />
+    <Content Include="img\148705-essential-collection\png\compose.png" />
+    <Content Include="img\148705-essential-collection\png\controls-1.png" />
+    <Content Include="img\148705-essential-collection\png\controls-2.png" />
+    <Content Include="img\148705-essential-collection\png\controls-3.png" />
+    <Content Include="img\148705-essential-collection\png\controls-4.png" />
+    <Content Include="img\148705-essential-collection\png\controls-5.png" />
+    <Content Include="img\148705-essential-collection\png\controls-6.png" />
+    <Content Include="img\148705-essential-collection\png\controls-7.png" />
+    <Content Include="img\148705-essential-collection\png\controls-8.png" />
+    <Content Include="img\148705-essential-collection\png\controls-9.png" />
+    <Content Include="img\148705-essential-collection\png\controls.png" />
+    <Content Include="img\148705-essential-collection\png\database-1.png" />
+    <Content Include="img\148705-essential-collection\png\database-2.png" />
+    <Content Include="img\148705-essential-collection\png\database-3.png" />
+    <Content Include="img\148705-essential-collection\png\database.png" />
+    <Content Include="img\148705-essential-collection\png\diamond.png" />
+    <Content Include="img\148705-essential-collection\png\diploma.png" />
+    <Content Include="img\148705-essential-collection\png\dislike-1.png" />
+    <Content Include="img\148705-essential-collection\png\dislike.png" />
+    <Content Include="img\148705-essential-collection\png\divide-1.png" />
+    <Content Include="img\148705-essential-collection\png\divide.png" />
+    <Content Include="img\148705-essential-collection\png\division.png" />
+    <Content Include="img\148705-essential-collection\png\document.png" />
+    <Content Include="img\148705-essential-collection\png\download.png" />
+    <Content Include="img\148705-essential-collection\png\edit-1.png" />
+    <Content Include="img\148705-essential-collection\png\edit.png" />
+    <Content Include="img\148705-essential-collection\png\eject-1.png" />
+    <Content Include="img\148705-essential-collection\png\eject.png" />
+    <Content Include="img\148705-essential-collection\png\equal-1.png" />
+    <Content Include="img\148705-essential-collection\png\equal-2.png" />
+    <Content Include="img\148705-essential-collection\png\equal.png" />
+    <Content Include="img\148705-essential-collection\png\error.png" />
+    <Content Include="img\148705-essential-collection\png\exit-1.png" />
+    <Content Include="img\148705-essential-collection\png\exit-2.png" />
+    <Content Include="img\148705-essential-collection\png\exit.png" />
+    <Content Include="img\148705-essential-collection\png\eyeglasses.png" />
+    <Content Include="img\148705-essential-collection\png\fast-forward-1.png" />
+    <Content Include="img\148705-essential-collection\png\fast-forward.png" />
+    <Content Include="img\148705-essential-collection\png\fax.png" />
+    <Content Include="img\148705-essential-collection\png\file-1.png" />
+    <Content Include="img\148705-essential-collection\png\file-2.png" />
+    <Content Include="img\148705-essential-collection\png\file.png" />
+    <Content Include="img\148705-essential-collection\png\film.png" />
+    <Content Include="img\148705-essential-collection\png\fingerprint.png" />
+    <Content Include="img\148705-essential-collection\png\flag-1.png" />
+    <Content Include="img\148705-essential-collection\png\flag-2.png" />
+    <Content Include="img\148705-essential-collection\png\flag-3.png" />
+    <Content Include="img\148705-essential-collection\png\flag-4.png" />
+    <Content Include="img\148705-essential-collection\png\flag.png" />
+    <Content Include="img\148705-essential-collection\png\focus.png" />
+    <Content Include="img\148705-essential-collection\png\folder-1.png" />
+    <Content Include="img\148705-essential-collection\png\folder-10.png" />
+    <Content Include="img\148705-essential-collection\png\folder-11.png" />
+    <Content Include="img\148705-essential-collection\png\folder-12.png" />
+    <Content Include="img\148705-essential-collection\png\folder-13.png" />
+    <Content Include="img\148705-essential-collection\png\folder-14.png" />
+    <Content Include="img\148705-essential-collection\png\folder-15.png" />
+    <Content Include="img\148705-essential-collection\png\folder-16.png" />
+    <Content Include="img\148705-essential-collection\png\folder-17.png" />
+    <Content Include="img\148705-essential-collection\png\folder-18.png" />
+    <Content Include="img\148705-essential-collection\png\folder-19.png" />
+    <Content Include="img\148705-essential-collection\png\folder-2.png" />
+    <Content Include="img\148705-essential-collection\png\folder-3.png" />
+    <Content Include="img\148705-essential-collection\png\folder-4.png" />
+    <Content Include="img\148705-essential-collection\png\folder-5.png" />
+    <Content Include="img\148705-essential-collection\png\folder-6.png" />
+    <Content Include="img\148705-essential-collection\png\folder-7.png" />
+    <Content Include="img\148705-essential-collection\png\folder-8.png" />
+    <Content Include="img\148705-essential-collection\png\folder-9.png" />
+    <Content Include="img\148705-essential-collection\png\folder.png" />
+    <Content Include="img\148705-essential-collection\png\forbidden.png" />
+    <Content Include="img\148705-essential-collection\png\funnel.png" />
+    <Content Include="img\148705-essential-collection\png\garbage-1.png" />
+    <Content Include="img\148705-essential-collection\png\garbage-2.png" />
+    <Content Include="img\148705-essential-collection\png\garbage.png" />
+    <Content Include="img\148705-essential-collection\png\gift.png" />
+    <Content Include="img\148705-essential-collection\png\help.png" />
+    <Content Include="img\148705-essential-collection\png\hide.png" />
+    <Content Include="img\148705-essential-collection\png\hold.png" />
+    <Content Include="img\148705-essential-collection\png\home-1.png" />
+    <Content Include="img\148705-essential-collection\png\home-2.png" />
+    <Content Include="img\148705-essential-collection\png\home.png" />
+    <Content Include="img\148705-essential-collection\png\hourglass-1.png" />
+    <Content Include="img\148705-essential-collection\png\hourglass-2.png" />
+    <Content Include="img\148705-essential-collection\png\hourglass-3.png" />
+    <Content Include="img\148705-essential-collection\png\hourglass.png" />
+    <Content Include="img\148705-essential-collection\png\house.png" />
+    <Content Include="img\148705-essential-collection\png\id-card-1.png" />
+    <Content Include="img\148705-essential-collection\png\id-card-2.png" />
+    <Content Include="img\148705-essential-collection\png\id-card-3.png" />
+    <Content Include="img\148705-essential-collection\png\id-card-4.png" />
+    <Content Include="img\148705-essential-collection\png\id-card-5.png" />
+    <Content Include="img\148705-essential-collection\png\id-card.png" />
+    <Content Include="img\148705-essential-collection\png\idea.png" />
+    <Content Include="img\148705-essential-collection\png\incoming.png" />
+    <Content Include="img\148705-essential-collection\png\infinity.png" />
+    <Content Include="img\148705-essential-collection\png\info.png" />
+    <Content Include="img\148705-essential-collection\png\internet.png" />
+    <Content Include="img\148705-essential-collection\png\key.png" />
+    <Content Include="img\148705-essential-collection\png\lamp.png" />
+    <Content Include="img\148705-essential-collection\png\layers-1.png" />
+    <Content Include="img\148705-essential-collection\png\layers.png" />
+    <Content Include="img\148705-essential-collection\png\like-1.png" />
+    <Content Include="img\148705-essential-collection\png\like-2.png" />
+    <Content Include="img\148705-essential-collection\png\like.png" />
+    <Content Include="img\148705-essential-collection\png\link.png" />
+    <Content Include="img\148705-essential-collection\png\list-1.png" />
+    <Content Include="img\148705-essential-collection\png\list.png" />
+    <Content Include="img\148705-essential-collection\png\lock-1.png" />
+    <Content Include="img\148705-essential-collection\png\lock.png" />
+    <Content Include="img\148705-essential-collection\png\locked-1.png" />
+    <Content Include="img\148705-essential-collection\png\locked-2.png" />
+    <Content Include="img\148705-essential-collection\png\locked-3.png" />
+    <Content Include="img\148705-essential-collection\png\locked-4.png" />
+    <Content Include="img\148705-essential-collection\png\locked-5.png" />
+    <Content Include="img\148705-essential-collection\png\locked-6.png" />
+    <Content Include="img\148705-essential-collection\png\locked.png" />
+    <Content Include="img\148705-essential-collection\png\login.png" />
+    <Content Include="img\148705-essential-collection\png\magic-wand.png" />
+    <Content Include="img\148705-essential-collection\png\magnet-1.png" />
+    <Content Include="img\148705-essential-collection\png\magnet-2.png" />
+    <Content Include="img\148705-essential-collection\png\magnet.png" />
+    <Content Include="img\148705-essential-collection\png\map-1.png" />
+    <Content Include="img\148705-essential-collection\png\map-2.png" />
+    <Content Include="img\148705-essential-collection\png\map-location.png" />
+    <Content Include="img\148705-essential-collection\png\map.png" />
+    <Content Include="img\148705-essential-collection\png\megaphone-1.png" />
+    <Content Include="img\148705-essential-collection\png\megaphone.png" />
+    <Content Include="img\148705-essential-collection\png\menu-1.png" />
+    <Content Include="img\148705-essential-collection\png\menu-2.png" />
+    <Content Include="img\148705-essential-collection\png\menu-3.png" />
+    <Content Include="img\148705-essential-collection\png\menu-4.png" />
+    <Content Include="img\148705-essential-collection\png\menu.png" />
+    <Content Include="img\148705-essential-collection\png\microphone-1.png" />
+    <Content Include="img\148705-essential-collection\png\microphone.png" />
+    <Content Include="img\148705-essential-collection\png\minus-1.png" />
+    <Content Include="img\148705-essential-collection\png\minus.png" />
+    <Content Include="img\148705-essential-collection\png\more-1.png" />
+    <Content Include="img\148705-essential-collection\png\more-2.png" />
+    <Content Include="img\148705-essential-collection\png\more.png" />
+    <Content Include="img\148705-essential-collection\png\multiply-1.png" />
+    <Content Include="img\148705-essential-collection\png\multiply.png" />
+    <Content Include="img\148705-essential-collection\png\music-player-1.png" />
+    <Content Include="img\148705-essential-collection\png\music-player-2.png" />
+    <Content Include="img\148705-essential-collection\png\music-player-3.png" />
+    <Content Include="img\148705-essential-collection\png\music-player.png" />
+    <Content Include="img\148705-essential-collection\png\mute.png" />
+    <Content Include="img\148705-essential-collection\png\muted.png" />
+    <Content Include="img\148705-essential-collection\png\navigation-1.png" />
+    <Content Include="img\148705-essential-collection\png\navigation.png" />
+    <Content Include="img\148705-essential-collection\png\network.png" />
+    <Content Include="img\148705-essential-collection\png\newspaper.png" />
+    <Content Include="img\148705-essential-collection\png\next.png" />
+    <Content Include="img\148705-essential-collection\png\note.png" />
+    <Content Include="img\148705-essential-collection\png\notebook-1.png" />
+    <Content Include="img\148705-essential-collection\png\notebook-2.png" />
+    <Content Include="img\148705-essential-collection\png\notebook-3.png" />
+    <Content Include="img\148705-essential-collection\png\notebook-4.png" />
+    <Content Include="img\148705-essential-collection\png\notebook-5.png" />
+    <Content Include="img\148705-essential-collection\png\notebook.png" />
+    <Content Include="img\148705-essential-collection\png\notepad-1.png" />
+    <Content Include="img\148705-essential-collection\png\notepad-2.png" />
+    <Content Include="img\148705-essential-collection\png\notepad.png" />
+    <Content Include="img\148705-essential-collection\png\notification.png" />
+    <Content Include="img\148705-essential-collection\png\paper-plane-1.png" />
+    <Content Include="img\148705-essential-collection\png\paper-plane.png" />
+    <Content Include="img\148705-essential-collection\png\pause-1.png" />
+    <Content Include="img\148705-essential-collection\png\pause.png" />
+    <Content Include="img\148705-essential-collection\png\percent-1.png" />
+    <Content Include="img\148705-essential-collection\png\percent.png" />
+    <Content Include="img\148705-essential-collection\png\perspective.png" />
+    <Content Include="img\148705-essential-collection\png\photo-camera-1.png" />
+    <Content Include="img\148705-essential-collection\png\photo-camera.png" />
+    <Content Include="img\148705-essential-collection\png\photos.png" />
+    <Content Include="img\148705-essential-collection\png\picture-1.png" />
+    <Content Include="img\148705-essential-collection\png\picture-2.png" />
+    <Content Include="img\148705-essential-collection\png\picture.png" />
+    <Content Include="img\148705-essential-collection\png\pin.png" />
+    <Content Include="img\148705-essential-collection\png\placeholder-1.png" />
+    <Content Include="img\148705-essential-collection\png\placeholder-2.png" />
+    <Content Include="img\148705-essential-collection\png\placeholder-3.png" />
+    <Content Include="img\148705-essential-collection\png\placeholder.png" />
+    <Content Include="img\148705-essential-collection\png\placeholders.png" />
+    <Content Include="img\148705-essential-collection\png\play-button-1.png" />
+    <Content Include="img\148705-essential-collection\png\play-button.png" />
+    <Content Include="img\148705-essential-collection\png\plus.png" />
+    <Content Include="img\148705-essential-collection\png\power.png" />
+    <Content Include="img\148705-essential-collection\png\previous.png" />
+    <Content Include="img\148705-essential-collection\png\price-tag.png" />
+    <Content Include="img\148705-essential-collection\png\print.png" />
+    <Content Include="img\148705-essential-collection\png\push-pin.png" />
+    <Content Include="img\148705-essential-collection\png\radar.png" />
+    <Content Include="img\148705-essential-collection\png\reading.png" />
+    <Content Include="img\148705-essential-collection\png\record.png" />
+    <Content Include="img\148705-essential-collection\png\repeat-1.png" />
+    <Content Include="img\148705-essential-collection\png\repeat.png" />
+    <Content Include="img\148705-essential-collection\png\restart.png" />
+    <Content Include="img\148705-essential-collection\png\resume.png" />
+    <Content Include="img\148705-essential-collection\png\rewind-1.png" />
+    <Content Include="img\148705-essential-collection\png\rewind.png" />
+    <Content Include="img\148705-essential-collection\png\route.png" />
+    <Content Include="img\148705-essential-collection\png\save.png" />
+    <Content Include="img\148705-essential-collection\png\search-1.png" />
+    <Content Include="img\148705-essential-collection\png\search.png" />
+    <Content Include="img\148705-essential-collection\png\send.png" />
+    <Content Include="img\148705-essential-collection\png\server-1.png" />
+    <Content Include="img\148705-essential-collection\png\server-2.png" />
+    <Content Include="img\148705-essential-collection\png\server-3.png" />
+    <Content Include="img\148705-essential-collection\png\server.png" />
+    <Content Include="img\148705-essential-collection\png\settings-1.png" />
+    <Content Include="img\148705-essential-collection\png\settings-2.png" />
+    <Content Include="img\148705-essential-collection\png\settings-3.png" />
+    <Content Include="img\148705-essential-collection\png\settings-4.png" />
+    <Content Include="img\148705-essential-collection\png\settings-5.png" />
+    <Content Include="img\148705-essential-collection\png\settings-6.png" />
+    <Content Include="img\148705-essential-collection\png\settings-7.png" />
+    <Content Include="img\148705-essential-collection\png\settings-8.png" />
+    <Content Include="img\148705-essential-collection\png\settings-9.png" />
+    <Content Include="img\148705-essential-collection\png\settings.png" />
+    <Content Include="img\148705-essential-collection\png\share-1.png" />
+    <Content Include="img\148705-essential-collection\png\share-2.png" />
+    <Content Include="img\148705-essential-collection\png\share.png" />
+    <Content Include="img\148705-essential-collection\png\shuffle-1.png" />
+    <Content Include="img\148705-essential-collection\png\shuffle.png" />
+    <Content Include="img\148705-essential-collection\png\shutdown.png" />
+    <Content Include="img\148705-essential-collection\png\sign-1.png" />
+    <Content Include="img\148705-essential-collection\png\sign.png" />
+    <Content Include="img\148705-essential-collection\png\skip.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-1.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-10.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-11.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-2.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-3.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-4.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-5.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-6.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-7.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-8.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone-9.png" />
+    <Content Include="img\148705-essential-collection\png\smartphone.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-1.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-2.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-3.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-4.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-5.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-6.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-7.png" />
+    <Content Include="img\148705-essential-collection\png\speaker-8.png" />
+    <Content Include="img\148705-essential-collection\png\speaker.png" />
+    <Content Include="img\148705-essential-collection\png\spotlight.png" />
+    <Content Include="img\148705-essential-collection\png\star-1.png" />
+    <Content Include="img\148705-essential-collection\png\star.png" />
+    <Content Include="img\148705-essential-collection\png\stop-1.png" />
+    <Content Include="img\148705-essential-collection\png\stop.png" />
+    <Content Include="img\148705-essential-collection\png\stopwatch-1.png" />
+    <Content Include="img\148705-essential-collection\png\stopwatch-2.png" />
+    <Content Include="img\148705-essential-collection\png\stopwatch-3.png" />
+    <Content Include="img\148705-essential-collection\png\stopwatch-4.png" />
+    <Content Include="img\148705-essential-collection\png\stopwatch.png" />
+    <Content Include="img\148705-essential-collection\png\street-1.png" />
+    <Content Include="img\148705-essential-collection\png\street.png" />
+    <Content Include="img\148705-essential-collection\png\substract-1.png" />
+    <Content Include="img\148705-essential-collection\png\substract.png" />
+    <Content Include="img\148705-essential-collection\png\success.png" />
+    <Content Include="img\148705-essential-collection\png\switch-1.png" />
+    <Content Include="img\148705-essential-collection\png\switch-2.png" />
+    <Content Include="img\148705-essential-collection\png\switch-3.png" />
+    <Content Include="img\148705-essential-collection\png\switch-4.png" />
+    <Content Include="img\148705-essential-collection\png\switch-5.png" />
+    <Content Include="img\148705-essential-collection\png\switch-6.png" />
+    <Content Include="img\148705-essential-collection\png\switch-7.png" />
+    <Content Include="img\148705-essential-collection\png\switch.png" />
+    <Content Include="img\148705-essential-collection\png\tabs-1.png" />
+    <Content Include="img\148705-essential-collection\png\tabs.png" />
+    <Content Include="img\148705-essential-collection\png\target.png" />
+    <Content Include="img\148705-essential-collection\png\television-1.png" />
+    <Content Include="img\148705-essential-collection\png\television.png" />
+    <Content Include="img\148705-essential-collection\png\time.png" />
+    <Content Include="img\148705-essential-collection\png\trash.png" />
+    <Content Include="img\148705-essential-collection\png\umbrella.png" />
+    <Content Include="img\148705-essential-collection\png\unlink.png" />
+    <Content Include="img\148705-essential-collection\png\unlocked-1.png" />
+    <Content Include="img\148705-essential-collection\png\unlocked-2.png" />
+    <Content Include="img\148705-essential-collection\png\unlocked.png" />
+    <Content Include="img\148705-essential-collection\png\upload.png" />
+    <Content Include="img\148705-essential-collection\png\user-1.png" />
+    <Content Include="img\148705-essential-collection\png\user-2.png" />
+    <Content Include="img\148705-essential-collection\png\user-3.png" />
+    <Content Include="img\148705-essential-collection\png\user-4.png" />
+    <Content Include="img\148705-essential-collection\png\user-5.png" />
+    <Content Include="img\148705-essential-collection\png\user-6.png" />
+    <Content Include="img\148705-essential-collection\png\user-7.png" />
+    <Content Include="img\148705-essential-collection\png\user.png" />
+    <Content Include="img\148705-essential-collection\png\users-1.png" />
+    <Content Include="img\148705-essential-collection\png\users.png" />
+    <Content Include="img\148705-essential-collection\png\video-camera-1.png" />
+    <Content Include="img\148705-essential-collection\png\video-camera.png" />
+    <Content Include="img\148705-essential-collection\png\video-player-1.png" />
+    <Content Include="img\148705-essential-collection\png\video-player-2.png" />
+    <Content Include="img\148705-essential-collection\png\video-player.png" />
+    <Content Include="img\148705-essential-collection\png\view-1.png" />
+    <Content Include="img\148705-essential-collection\png\view-2.png" />
+    <Content Include="img\148705-essential-collection\png\view.png" />
+    <Content Include="img\148705-essential-collection\png\volume-control-1.png" />
+    <Content Include="img\148705-essential-collection\png\volume-control.png" />
+    <Content Include="img\148705-essential-collection\png\warning.png" />
+    <Content Include="img\148705-essential-collection\png\wifi-1.png" />
+    <Content Include="img\148705-essential-collection\png\wifi.png" />
+    <Content Include="img\148705-essential-collection\png\windows-1.png" />
+    <Content Include="img\148705-essential-collection\png\windows-2.png" />
+    <Content Include="img\148705-essential-collection\png\windows-3.png" />
+    <Content Include="img\148705-essential-collection\png\windows-4.png" />
+    <Content Include="img\148705-essential-collection\png\windows.png" />
+    <Content Include="img\148705-essential-collection\png\wireless-internet.png" />
+    <Content Include="img\148705-essential-collection\png\worldwide-1.png" />
+    <Content Include="img\148705-essential-collection\png\worldwide.png" />
+    <Content Include="img\148705-essential-collection\png\zoom-in.png" />
+    <Content Include="img\148705-essential-collection\png\zoom-out.png" />
+    <Content Include="img\im.png" />
+    <Content Include="panel.aspx" />
+    <Content Include="registro_inicial.aspx" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,18 +551,199 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="edm_im.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_im.edmx</DependentUpon>
+      <LastGenOutput>edm_im.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="edm_im.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_im.edmx</DependentUpon>
+      <LastGenOutput>edm_im.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="intelimundo.Master" />
+    <EntityDeploy Include="edm_im.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>edm_im.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="edm_im.edmx.diagram">
+      <DependentUpon>edm_im.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="style.css\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accceso.aspx.cs">
+      <DependentUpon>accceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="accceso.aspx.designer.cs">
+      <DependentUpon>accceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edm_im.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_im.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_im.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_im.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_im.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_genero.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_grado_escolar.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_licencias.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_materia_exam.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_nivel_escolar.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_nivel_exam.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_centro.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_fiscal.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_rfc.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_usuario.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="inf_alumnos.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_centro.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_centro_dep.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_contacto_fiscal.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_empresa.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_examenes.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_examenes_dep.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_fiscal.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_gastos.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_inventario.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_preguntas_exam.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_preguntas_test.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_respuestas_exam.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_respuestas_test.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_sepomex.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_test_unam.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_test_unam_dep.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usuarios.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_ventas.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_ventas_dep.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="intelimundo.Master.cs">
+      <DependentUpon>intelimundo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intelimundo.Master.designer.cs">
+      <DependentUpon>intelimundo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LeftRightMid.cs" />
+    <Compile Include="mdl_encrypta.cs" />
+    <Compile Include="mdl_user.cs" />
+    <Compile Include="panel.aspx.cs">
+      <DependentUpon>panel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel.aspx.designer.cs">
+      <DependentUpon>panel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registro_inicial.aspx.cs">
+      <DependentUpon>registro_inicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registro_inicial.aspx.designer.cs">
+      <DependentUpon>registro_inicial.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -117,8 +774,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

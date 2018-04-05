@@ -1,0 +1,1179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_imModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="fact_estatus">
+          <Key>
+            <PropertyRef Name="id_estatus" />
+          </Key>
+          <Property Name="id_estatus" Type="int" Nullable="false" />
+          <Property Name="desc_estatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_genero">
+          <Key>
+            <PropertyRef Name="id_genero" />
+          </Key>
+          <Property Name="id_genero" Type="int" Nullable="false" />
+          <Property Name="desc_genero" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_grado_escolar">
+          <Key>
+            <PropertyRef Name="id_grado_escolar" />
+          </Key>
+          <Property Name="id_grado_escolar" Type="int" Nullable="false" />
+          <Property Name="desc_grado_escolar" Type="varchar" MaxLength="50" />
+          <Property Name="id_nivel_escolar" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fact_licencias">
+          <Key>
+            <PropertyRef Name="id_licencia" />
+          </Key>
+          <Property Name="id_licencia" Type="int" Nullable="false" />
+          <Property Name="desc_licencia" Type="varchar" MaxLength="50" />
+          <Property Name="caracteristica_licecia" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="fact_materia_exam">
+          <Key>
+            <PropertyRef Name="id_materia_exam" />
+          </Key>
+          <Property Name="id_materia_exam" Type="int" Nullable="false" />
+          <Property Name="desc_materia_exam" Type="varchar" MaxLength="50" />
+          <Property Name="id_nivel_exam" Type="int" />
+        </EntityType>
+        <EntityType Name="fact_nivel_escolar">
+          <Key>
+            <PropertyRef Name="id_nivel_escolar" />
+          </Key>
+          <Property Name="id_nivel_escolar" Type="int" Nullable="false" />
+          <Property Name="desc_nivel_escolar" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_nivel_exam">
+          <Key>
+            <PropertyRef Name="id_nivel_exam" />
+          </Key>
+          <Property Name="id_nivel_exam" Type="int" Nullable="false" />
+          <Property Name="desc_nivel_exam" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_tipo_centro">
+          <Key>
+            <PropertyRef Name="id_tipo_centro" />
+          </Key>
+          <Property Name="id_tipo_centro" Type="int" Nullable="false" />
+          <Property Name="desc_tipo_centro" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_tipo_fiscal">
+          <Key>
+            <PropertyRef Name="id_tipo_fiscal" />
+          </Key>
+          <Property Name="id_tipo_fiscal" Type="int" Nullable="false" />
+          <Property Name="desc_tipo_fiscal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_tipo_rfc">
+          <Key>
+            <PropertyRef Name="id_tipo_rfc" />
+          </Key>
+          <Property Name="id_tipo_rfc" Type="int" Nullable="false" />
+          <Property Name="desc_tipo_rfc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_tipo_usuario">
+          <Key>
+            <PropertyRef Name="id_tipo_usuario" />
+          </Key>
+          <Property Name="id_tipo_usuario" Type="int" Nullable="false" />
+          <Property Name="desc_tipo_usuario" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="inf_alumnos">
+          <Key>
+            <PropertyRef Name="id_alumno" />
+          </Key>
+          <Property Name="id_alumno" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_codigo_alumno" Type="varchar" MaxLength="50" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="id_genero" Type="int" />
+          <Property Name="id_tipo_usuario" Type="int" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="a_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="a_materno" Type="varchar" MaxLength="50" />
+          <Property Name="codigo_alumno" Type="varchar" MaxLength="50" />
+          <Property Name="clave" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
+          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_centro">
+          <Key>
+            <PropertyRef Name="id_centro" />
+          </Key>
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_codigo_centro" Type="varchar" MaxLength="50" />
+          <Property Name="id_tipo_centro" Type="int" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="id_licencia" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
+          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="fecha_corte" Type="date" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="dia_corte" Type="int" />
+        </EntityType>
+        <EntityType Name="inf_centro_dep">
+          <Key>
+            <PropertyRef Name="id_sucursal_dep" />
+          </Key>
+          <Property Name="id_sucursal_dep" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_usuario" Type="uniqueidentifier" />
+          <Property Name="id_centro" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="inf_contacto_fiscal">
+          <Key>
+            <PropertyRef Name="id_contacto_fiscal" />
+          </Key>
+          <Property Name="id_contacto_fiscal" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="a_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="a_materno" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_fiscal" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="inf_empresa">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Name="id_empresa" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="id_tipo_rfc" Type="int" />
+          <Property Name="rfc" Type="varchar" MaxLength="15" />
+          <Property Name="razon_social" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
+          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+        </EntityType>
+        <EntityType Name="inf_examenes">
+          <Key>
+            <PropertyRef Name="id_examenes" />
+          </Key>
+          <Property Name="id_examenes" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_nivel_exam" Type="int" Nullable="false" />
+          <Property Name="id_materia_exam" Type="int" Nullable="false" />
+          <Property Name="hora_inicio" Type="datetime" />
+          <Property Name="hora_fin" Type="datetime" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_usuario" Type="uniqueidentifier" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_examenes_dep">
+          <Key>
+            <PropertyRef Name="id_examenes_desp" />
+          </Key>
+          <Property Name="id_examenes_desp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_pregunta_exam" Type="int" Nullable="false" />
+          <Property Name="id_respuestas_exam" Type="int" Nullable="false" />
+          <Property Name="id_examenes" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_fiscal">
+          <Key>
+            <PropertyRef Name="id_fiscal" />
+          </Key>
+          <Property Name="id_fiscal" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_codigo_fiscal" Type="varchar" MaxLength="50" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="id_tipo_fiscal" Type="int" />
+          <Property Name="id_tipo_rfc" Type="int" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="razon_social" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
+          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_gastos">
+          <Key>
+            <PropertyRef Name="id_gasto" />
+          </Key>
+          <Property Name="id_gasto" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_codigo_gasto" Type="varchar" MaxLength="50" />
+          <Property Name="categoria" Type="varchar" MaxLength="50" />
+          <Property Name="desc_gasto" Type="varchar" MaxLength="50" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="costo" Type="money" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_inventario">
+          <Key>
+            <PropertyRef Name="id_inventario" />
+          </Key>
+          <Property Name="id_inventario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_codigo_inventario" Type="varchar" MaxLength="50" />
+          <Property Name="id_grado_escolar" Type="int" />
+          <Property Name="categoria" Type="varchar" MaxLength="150" />
+          <Property Name="desc_inventario" Type="varchar" MaxLength="350" />
+          <Property Name="caracteristica" Type="varchar" MaxLength="350" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="cantidad_minima" Type="int" />
+          <Property Name="costo" Type="money" />
+          <Property Name="margen" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_preguntas_exam">
+          <Key>
+            <PropertyRef Name="id_pregunta_exam" />
+          </Key>
+          <Property Name="id_pregunta_exam" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="desc_pregunta_exam" Type="varchar" MaxLength="350" />
+          <Property Name="id_materia_exam" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_preguntas_test">
+          <Key>
+            <PropertyRef Name="id_pregunta" />
+          </Key>
+          <Property Name="id_pregunta" Type="int" Nullable="false" />
+          <Property Name="desc_pregunta" Type="varchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="inf_respuestas_exam">
+          <Key>
+            <PropertyRef Name="id_respuestas_exam" />
+          </Key>
+          <Property Name="id_respuestas_exam" Type="int" Nullable="false" />
+          <Property Name="desc_respuestas_exam" Type="varchar" MaxLength="350" />
+          <Property Name="valor_respuesta_exam" Type="bit" />
+          <Property Name="id_pregunta_exam" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_respuestas_test">
+          <Key>
+            <PropertyRef Name="id_respuestas_test" />
+          </Key>
+          <Property Name="id_respuestas_test" Type="int" Nullable="false" />
+          <Property Name="desc_respuestas_test" Type="varchar" MaxLength="350" />
+          <Property Name="valor_respuesta_test" Type="bit" />
+          <Property Name="id_pregunta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_sepomex">
+          <Key>
+            <PropertyRef Name="id_codigo" />
+          </Key>
+          <Property Name="id_codigo" Type="int" Nullable="false" />
+          <Property Name="d_codigo" Type="varchar" MaxLength="50" />
+          <Property Name="d_asenta" Type="varchar" MaxLength="150" />
+          <Property Name="d_tipo_asenta" Type="varchar" MaxLength="50" />
+          <Property Name="D_mnpio" Type="varchar" MaxLength="50" />
+          <Property Name="d_estado" Type="varchar" MaxLength="50" />
+          <Property Name="d_ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="d_CP" Type="varchar" MaxLength="50" />
+          <Property Name="c_estado" Type="varchar" MaxLength="50" />
+          <Property Name="c_oficina" Type="varchar" MaxLength="50" />
+          <Property Name="c_CP" Type="varchar" MaxLength="50" />
+          <Property Name="c_tipo_asenta" Type="varchar" MaxLength="50" />
+          <Property Name="c_mnpio" Type="varchar" MaxLength="50" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="d_zona" Type="varchar" MaxLength="50" />
+          <Property Name="c_cve_ciudad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="inf_test_unam">
+          <Key>
+            <PropertyRef Name="id_test_unam" />
+          </Key>
+          <Property Name="id_test_unam" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_usuario" Type="uniqueidentifier" />
+          <Property Name="nombre_completo" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="hora_inicio" Type="datetime" />
+          <Property Name="hora_fin" Type="datetime" />
+          <Property Name="fecha_registro" Type="date" />
+        </EntityType>
+        <EntityType Name="inf_test_unam_dep">
+          <Key>
+            <PropertyRef Name="id_test_unam_dep" />
+          </Key>
+          <Property Name="id_test_unam_dep" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_pregunta" Type="int" Nullable="false" />
+          <Property Name="id_respuestas_test" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="inf_usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_codigo_usuario" Type="varchar" MaxLength="50" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="id_genero" Type="int" />
+          <Property Name="id_tipo_usuario" Type="int" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="a_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="a_materno" Type="varchar" MaxLength="50" />
+          <Property Name="codigo_usuario" Type="varchar" MaxLength="50" />
+          <Property Name="clave" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_centro" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="inf_ventas">
+          <Key>
+            <PropertyRef Name="id_ventas" />
+          </Key>
+          <Property Name="id_ventas" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="codigo_venta" Type="varchar" MaxLength="50" />
+          <Property Name="tipo_venta" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_usuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_alumno" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_ventas_dep">
+          <Key>
+            <PropertyRef Name="id_ventas_dep" />
+          </Key>
+          <Property Name="id_ventas_dep" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_inventario" Type="uniqueidentifier" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="costo" Type="money" />
+          <Property Name="id_ventas" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityContainer Name="db_imModelStoreContainer">
+          <EntitySet Name="fact_estatus" EntityType="Self.fact_estatus" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_genero" EntityType="Self.fact_genero" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_grado_escolar" EntityType="Self.fact_grado_escolar" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_licencias" EntityType="Self.fact_licencias" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_materia_exam" EntityType="Self.fact_materia_exam" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_nivel_escolar" EntityType="Self.fact_nivel_escolar" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_nivel_exam" EntityType="Self.fact_nivel_exam" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_centro" EntityType="Self.fact_tipo_centro" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_fiscal" EntityType="Self.fact_tipo_fiscal" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_rfc" EntityType="Self.fact_tipo_rfc" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_usuario" EntityType="Self.fact_tipo_usuario" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_alumnos" EntityType="Self.inf_alumnos" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_centro" EntityType="Self.inf_centro" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_centro_dep" EntityType="Self.inf_centro_dep" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_contacto_fiscal" EntityType="Self.inf_contacto_fiscal" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_empresa" EntityType="Self.inf_empresa" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_examenes" EntityType="Self.inf_examenes" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_examenes_dep" EntityType="Self.inf_examenes_dep" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_fiscal" EntityType="Self.inf_fiscal" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_gastos" EntityType="Self.inf_gastos" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_inventario" EntityType="Self.inf_inventario" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_preguntas_exam" EntityType="Self.inf_preguntas_exam" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_preguntas_test" EntityType="Self.inf_preguntas_test" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_respuestas_exam" EntityType="Self.inf_respuestas_exam" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_respuestas_test" EntityType="Self.inf_respuestas_test" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_sepomex" EntityType="Self.inf_sepomex" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_test_unam" EntityType="Self.inf_test_unam" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_test_unam_dep" EntityType="Self.inf_test_unam_dep" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_usuarios" EntityType="Self.inf_usuarios" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_ventas" EntityType="Self.inf_ventas" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="inf_ventas_dep" EntityType="Self.inf_ventas_dep" Schema="u_im" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_imModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="db_imEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="fact_estatus" EntityType="db_imModel.fact_estatus" />
+          <EntitySet Name="fact_genero" EntityType="db_imModel.fact_genero" />
+          <EntitySet Name="fact_grado_escolar" EntityType="db_imModel.fact_grado_escolar" />
+          <EntitySet Name="fact_licencias" EntityType="db_imModel.fact_licencias" />
+          <EntitySet Name="fact_materia_exam" EntityType="db_imModel.fact_materia_exam" />
+          <EntitySet Name="fact_nivel_escolar" EntityType="db_imModel.fact_nivel_escolar" />
+          <EntitySet Name="fact_nivel_exam" EntityType="db_imModel.fact_nivel_exam" />
+          <EntitySet Name="fact_tipo_centro" EntityType="db_imModel.fact_tipo_centro" />
+          <EntitySet Name="fact_tipo_fiscal" EntityType="db_imModel.fact_tipo_fiscal" />
+          <EntitySet Name="fact_tipo_rfc" EntityType="db_imModel.fact_tipo_rfc" />
+          <EntitySet Name="fact_tipo_usuario" EntityType="db_imModel.fact_tipo_usuario" />
+          <EntitySet Name="inf_alumnos" EntityType="db_imModel.inf_alumnos" />
+          <EntitySet Name="inf_centro" EntityType="db_imModel.inf_centro" />
+          <EntitySet Name="inf_centro_dep" EntityType="db_imModel.inf_centro_dep" />
+          <EntitySet Name="inf_contacto_fiscal" EntityType="db_imModel.inf_contacto_fiscal" />
+          <EntitySet Name="inf_empresa" EntityType="db_imModel.inf_empresa" />
+          <EntitySet Name="inf_examenes" EntityType="db_imModel.inf_examenes" />
+          <EntitySet Name="inf_examenes_dep" EntityType="db_imModel.inf_examenes_dep" />
+          <EntitySet Name="inf_fiscal" EntityType="db_imModel.inf_fiscal" />
+          <EntitySet Name="inf_gastos" EntityType="db_imModel.inf_gastos" />
+          <EntitySet Name="inf_inventario" EntityType="db_imModel.inf_inventario" />
+          <EntitySet Name="inf_preguntas_exam" EntityType="db_imModel.inf_preguntas_exam" />
+          <EntitySet Name="inf_preguntas_test" EntityType="db_imModel.inf_preguntas_test" />
+          <EntitySet Name="inf_respuestas_exam" EntityType="db_imModel.inf_respuestas_exam" />
+          <EntitySet Name="inf_respuestas_test" EntityType="db_imModel.inf_respuestas_test" />
+          <EntitySet Name="inf_sepomex" EntityType="db_imModel.inf_sepomex" />
+          <EntitySet Name="inf_test_unam" EntityType="db_imModel.inf_test_unam" />
+          <EntitySet Name="inf_test_unam_dep" EntityType="db_imModel.inf_test_unam_dep" />
+          <EntitySet Name="inf_usuarios" EntityType="db_imModel.inf_usuarios" />
+          <EntitySet Name="inf_ventas" EntityType="db_imModel.inf_ventas" />
+          <EntitySet Name="inf_ventas_dep" EntityType="db_imModel.inf_ventas_dep" />
+        </EntityContainer>
+        <EntityType Name="fact_estatus">
+          <Key>
+            <PropertyRef Name="id_estatus" />
+          </Key>
+          <Property Name="id_estatus" Type="Int32" Nullable="false" />
+          <Property Name="desc_estatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_genero">
+          <Key>
+            <PropertyRef Name="id_genero" />
+          </Key>
+          <Property Name="id_genero" Type="Int32" Nullable="false" />
+          <Property Name="desc_genero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_grado_escolar">
+          <Key>
+            <PropertyRef Name="id_grado_escolar" />
+          </Key>
+          <Property Name="id_grado_escolar" Type="Int32" Nullable="false" />
+          <Property Name="desc_grado_escolar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_nivel_escolar" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fact_licencias">
+          <Key>
+            <PropertyRef Name="id_licencia" />
+          </Key>
+          <Property Name="id_licencia" Type="Int32" Nullable="false" />
+          <Property Name="desc_licencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="caracteristica_licecia" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_materia_exam">
+          <Key>
+            <PropertyRef Name="id_materia_exam" />
+          </Key>
+          <Property Name="id_materia_exam" Type="Int32" Nullable="false" />
+          <Property Name="desc_materia_exam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_nivel_exam" Type="Int32" />
+        </EntityType>
+        <EntityType Name="fact_nivel_escolar">
+          <Key>
+            <PropertyRef Name="id_nivel_escolar" />
+          </Key>
+          <Property Name="id_nivel_escolar" Type="Int32" Nullable="false" />
+          <Property Name="desc_nivel_escolar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_nivel_exam">
+          <Key>
+            <PropertyRef Name="id_nivel_exam" />
+          </Key>
+          <Property Name="id_nivel_exam" Type="Int32" Nullable="false" />
+          <Property Name="desc_nivel_exam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_tipo_centro">
+          <Key>
+            <PropertyRef Name="id_tipo_centro" />
+          </Key>
+          <Property Name="id_tipo_centro" Type="Int32" Nullable="false" />
+          <Property Name="desc_tipo_centro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_tipo_fiscal">
+          <Key>
+            <PropertyRef Name="id_tipo_fiscal" />
+          </Key>
+          <Property Name="id_tipo_fiscal" Type="Int32" Nullable="false" />
+          <Property Name="desc_tipo_fiscal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_tipo_rfc">
+          <Key>
+            <PropertyRef Name="id_tipo_rfc" />
+          </Key>
+          <Property Name="id_tipo_rfc" Type="Int32" Nullable="false" />
+          <Property Name="desc_tipo_rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fact_tipo_usuario">
+          <Key>
+            <PropertyRef Name="id_tipo_usuario" />
+          </Key>
+          <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
+          <Property Name="desc_tipo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="inf_alumnos">
+          <Key>
+            <PropertyRef Name="id_alumno" />
+          </Key>
+          <Property Name="id_alumno" Type="Guid" Nullable="false" />
+          <Property Name="id_codigo_alumno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="id_genero" Type="Int32" />
+          <Property Name="id_tipo_usuario" Type="Int32" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codigo_alumno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_centro">
+          <Key>
+            <PropertyRef Name="id_centro" />
+          </Key>
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <Property Name="id_codigo_centro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_tipo_centro" Type="Int32" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="id_licencia" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="fecha_corte" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="dia_corte" Type="Int32" />
+        </EntityType>
+        <EntityType Name="inf_centro_dep">
+          <Key>
+            <PropertyRef Name="id_sucursal_dep" />
+          </Key>
+          <Property Name="id_sucursal_dep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="Guid" />
+          <Property Name="id_centro" Type="Guid" />
+        </EntityType>
+        <EntityType Name="inf_contacto_fiscal">
+          <Key>
+            <PropertyRef Name="id_contacto_fiscal" />
+          </Key>
+          <Property Name="id_contacto_fiscal" Type="Guid" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_fiscal" Type="Guid" />
+        </EntityType>
+        <EntityType Name="inf_empresa">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Name="id_empresa" Type="Guid" Nullable="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="id_tipo_rfc" Type="Int32" />
+          <Property Name="rfc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="razon_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="inf_examenes">
+          <Key>
+            <PropertyRef Name="id_examenes" />
+          </Key>
+          <Property Name="id_examenes" Type="Guid" Nullable="false" />
+          <Property Name="id_nivel_exam" Type="Int32" Nullable="false" />
+          <Property Name="id_materia_exam" Type="Int32" Nullable="false" />
+          <Property Name="hora_inicio" Type="DateTime" Precision="3" />
+          <Property Name="hora_fin" Type="DateTime" Precision="3" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_usuario" Type="Guid" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_examenes_dep">
+          <Key>
+            <PropertyRef Name="id_examenes_desp" />
+          </Key>
+          <Property Name="id_examenes_desp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_pregunta_exam" Type="Int32" Nullable="false" />
+          <Property Name="id_respuestas_exam" Type="Int32" Nullable="false" />
+          <Property Name="id_examenes" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_fiscal">
+          <Key>
+            <PropertyRef Name="id_fiscal" />
+          </Key>
+          <Property Name="id_fiscal" Type="Guid" Nullable="false" />
+          <Property Name="id_codigo_fiscal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="id_tipo_fiscal" Type="Int32" />
+          <Property Name="id_tipo_rfc" Type="Int32" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="razon_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_gastos">
+          <Key>
+            <PropertyRef Name="id_gasto" />
+          </Key>
+          <Property Name="id_gasto" Type="Guid" Nullable="false" />
+          <Property Name="id_codigo_gasto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="desc_gasto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="costo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_inventario">
+          <Key>
+            <PropertyRef Name="id_inventario" />
+          </Key>
+          <Property Name="id_inventario" Type="Guid" Nullable="false" />
+          <Property Name="id_codigo_inventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_grado_escolar" Type="Int32" />
+          <Property Name="categoria" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="desc_inventario" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="caracteristica" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="cantidad_minima" Type="Int32" />
+          <Property Name="costo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="margen" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_preguntas_exam">
+          <Key>
+            <PropertyRef Name="id_pregunta_exam" />
+          </Key>
+          <Property Name="id_pregunta_exam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="desc_pregunta_exam" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="id_materia_exam" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_preguntas_test">
+          <Key>
+            <PropertyRef Name="id_pregunta" />
+          </Key>
+          <Property Name="id_pregunta" Type="Int32" Nullable="false" />
+          <Property Name="desc_pregunta" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="inf_respuestas_exam">
+          <Key>
+            <PropertyRef Name="id_respuestas_exam" />
+          </Key>
+          <Property Name="id_respuestas_exam" Type="Int32" Nullable="false" />
+          <Property Name="desc_respuestas_exam" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="valor_respuesta_exam" Type="Boolean" />
+          <Property Name="id_pregunta_exam" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_respuestas_test">
+          <Key>
+            <PropertyRef Name="id_respuestas_test" />
+          </Key>
+          <Property Name="id_respuestas_test" Type="Int32" Nullable="false" />
+          <Property Name="desc_respuestas_test" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="valor_respuesta_test" Type="Boolean" />
+          <Property Name="id_pregunta" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_sepomex">
+          <Key>
+            <PropertyRef Name="id_codigo" />
+          </Key>
+          <Property Name="id_codigo" Type="Int32" Nullable="false" />
+          <Property Name="d_codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_asenta" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="d_tipo_asenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="D_mnpio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_CP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_oficina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_CP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_tipo_asenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_mnpio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="d_zona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_cve_ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="inf_test_unam">
+          <Key>
+            <PropertyRef Name="id_test_unam" />
+          </Key>
+          <Property Name="id_test_unam" Type="Guid" Nullable="false" />
+          <Property Name="id_usuario" Type="Guid" />
+          <Property Name="nombre_completo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hora_inicio" Type="DateTime" Precision="3" />
+          <Property Name="hora_fin" Type="DateTime" Precision="3" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="inf_test_unam_dep">
+          <Key>
+            <PropertyRef Name="id_test_unam_dep" />
+          </Key>
+          <Property Name="id_test_unam_dep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_pregunta" Type="Int32" Nullable="false" />
+          <Property Name="id_respuestas_test" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Guid" />
+        </EntityType>
+        <EntityType Name="inf_usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Guid" Nullable="false" />
+          <Property Name="id_codigo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="id_genero" Type="Int32" />
+          <Property Name="id_tipo_usuario" Type="Int32" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codigo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_centro" Type="Guid" />
+        </EntityType>
+        <EntityType Name="inf_ventas">
+          <Key>
+            <PropertyRef Name="id_ventas" />
+          </Key>
+          <Property Name="id_ventas" Type="Guid" Nullable="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="codigo_venta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_venta" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_usuario" Type="Guid" Nullable="false" />
+          <Property Name="id_alumno" Type="Guid" Nullable="false" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_ventas_dep">
+          <Key>
+            <PropertyRef Name="id_ventas_dep" />
+          </Key>
+          <Property Name="id_ventas_dep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_inventario" Type="Guid" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="costo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="id_ventas" Type="Guid" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_imModelStoreContainer" CdmEntityContainer="db_imEntities">
+          <EntitySetMapping Name="fact_estatus">
+            <EntityTypeMapping TypeName="db_imModel.fact_estatus">
+              <MappingFragment StoreEntitySet="fact_estatus">
+                <ScalarProperty Name="desc_estatus" ColumnName="desc_estatus" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_genero">
+            <EntityTypeMapping TypeName="db_imModel.fact_genero">
+              <MappingFragment StoreEntitySet="fact_genero">
+                <ScalarProperty Name="desc_genero" ColumnName="desc_genero" />
+                <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_grado_escolar">
+            <EntityTypeMapping TypeName="db_imModel.fact_grado_escolar">
+              <MappingFragment StoreEntitySet="fact_grado_escolar">
+                <ScalarProperty Name="id_nivel_escolar" ColumnName="id_nivel_escolar" />
+                <ScalarProperty Name="desc_grado_escolar" ColumnName="desc_grado_escolar" />
+                <ScalarProperty Name="id_grado_escolar" ColumnName="id_grado_escolar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_licencias">
+            <EntityTypeMapping TypeName="db_imModel.fact_licencias">
+              <MappingFragment StoreEntitySet="fact_licencias">
+                <ScalarProperty Name="caracteristica_licecia" ColumnName="caracteristica_licecia" />
+                <ScalarProperty Name="desc_licencia" ColumnName="desc_licencia" />
+                <ScalarProperty Name="id_licencia" ColumnName="id_licencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_materia_exam">
+            <EntityTypeMapping TypeName="db_imModel.fact_materia_exam">
+              <MappingFragment StoreEntitySet="fact_materia_exam">
+                <ScalarProperty Name="id_nivel_exam" ColumnName="id_nivel_exam" />
+                <ScalarProperty Name="desc_materia_exam" ColumnName="desc_materia_exam" />
+                <ScalarProperty Name="id_materia_exam" ColumnName="id_materia_exam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_nivel_escolar">
+            <EntityTypeMapping TypeName="db_imModel.fact_nivel_escolar">
+              <MappingFragment StoreEntitySet="fact_nivel_escolar">
+                <ScalarProperty Name="desc_nivel_escolar" ColumnName="desc_nivel_escolar" />
+                <ScalarProperty Name="id_nivel_escolar" ColumnName="id_nivel_escolar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_nivel_exam">
+            <EntityTypeMapping TypeName="db_imModel.fact_nivel_exam">
+              <MappingFragment StoreEntitySet="fact_nivel_exam">
+                <ScalarProperty Name="desc_nivel_exam" ColumnName="desc_nivel_exam" />
+                <ScalarProperty Name="id_nivel_exam" ColumnName="id_nivel_exam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_tipo_centro">
+            <EntityTypeMapping TypeName="db_imModel.fact_tipo_centro">
+              <MappingFragment StoreEntitySet="fact_tipo_centro">
+                <ScalarProperty Name="desc_tipo_centro" ColumnName="desc_tipo_centro" />
+                <ScalarProperty Name="id_tipo_centro" ColumnName="id_tipo_centro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_tipo_fiscal">
+            <EntityTypeMapping TypeName="db_imModel.fact_tipo_fiscal">
+              <MappingFragment StoreEntitySet="fact_tipo_fiscal">
+                <ScalarProperty Name="desc_tipo_fiscal" ColumnName="desc_tipo_fiscal" />
+                <ScalarProperty Name="id_tipo_fiscal" ColumnName="id_tipo_fiscal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_tipo_rfc">
+            <EntityTypeMapping TypeName="db_imModel.fact_tipo_rfc">
+              <MappingFragment StoreEntitySet="fact_tipo_rfc">
+                <ScalarProperty Name="desc_tipo_rfc" ColumnName="desc_tipo_rfc" />
+                <ScalarProperty Name="id_tipo_rfc" ColumnName="id_tipo_rfc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_tipo_usuario">
+            <EntityTypeMapping TypeName="db_imModel.fact_tipo_usuario">
+              <MappingFragment StoreEntitySet="fact_tipo_usuario">
+                <ScalarProperty Name="desc_tipo_usuario" ColumnName="desc_tipo_usuario" />
+                <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_alumnos">
+            <EntityTypeMapping TypeName="db_imModel.inf_alumnos">
+              <MappingFragment StoreEntitySet="inf_alumnos">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="codigo_alumno" ColumnName="codigo_alumno" />
+                <ScalarProperty Name="a_materno" ColumnName="a_materno" />
+                <ScalarProperty Name="a_paterno" ColumnName="a_paterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
+                <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_codigo_alumno" ColumnName="id_codigo_alumno" />
+                <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_centro">
+            <EntityTypeMapping TypeName="db_imModel.inf_centro">
+              <MappingFragment StoreEntitySet="inf_centro">
+                <ScalarProperty Name="dia_corte" ColumnName="dia_corte" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_licencia" ColumnName="id_licencia" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_tipo_centro" ColumnName="id_tipo_centro" />
+                <ScalarProperty Name="id_codigo_centro" ColumnName="id_codigo_centro" />
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_centro_dep">
+            <EntityTypeMapping TypeName="db_imModel.inf_centro_dep">
+              <MappingFragment StoreEntitySet="inf_centro_dep">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_sucursal_dep" ColumnName="id_sucursal_dep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_contacto_fiscal">
+            <EntityTypeMapping TypeName="db_imModel.inf_contacto_fiscal">
+              <MappingFragment StoreEntitySet="inf_contacto_fiscal">
+                <ScalarProperty Name="id_fiscal" ColumnName="id_fiscal" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="a_materno" ColumnName="a_materno" />
+                <ScalarProperty Name="a_paterno" ColumnName="a_paterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="id_contacto_fiscal" ColumnName="id_contacto_fiscal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_empresa">
+            <EntityTypeMapping TypeName="db_imModel.inf_empresa">
+              <MappingFragment StoreEntitySet="inf_empresa">
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="id_tipo_rfc" ColumnName="id_tipo_rfc" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_examenes">
+            <EntityTypeMapping TypeName="db_imModel.inf_examenes">
+              <MappingFragment StoreEntitySet="inf_examenes">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
+                <ScalarProperty Name="id_materia_exam" ColumnName="id_materia_exam" />
+                <ScalarProperty Name="id_nivel_exam" ColumnName="id_nivel_exam" />
+                <ScalarProperty Name="id_examenes" ColumnName="id_examenes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_examenes_dep">
+            <EntityTypeMapping TypeName="db_imModel.inf_examenes_dep">
+              <MappingFragment StoreEntitySet="inf_examenes_dep">
+                <ScalarProperty Name="id_examenes" ColumnName="id_examenes" />
+                <ScalarProperty Name="id_respuestas_exam" ColumnName="id_respuestas_exam" />
+                <ScalarProperty Name="id_pregunta_exam" ColumnName="id_pregunta_exam" />
+                <ScalarProperty Name="id_examenes_desp" ColumnName="id_examenes_desp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_fiscal">
+            <EntityTypeMapping TypeName="db_imModel.inf_fiscal">
+              <MappingFragment StoreEntitySet="inf_fiscal">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="id_tipo_rfc" ColumnName="id_tipo_rfc" />
+                <ScalarProperty Name="id_tipo_fiscal" ColumnName="id_tipo_fiscal" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_codigo_fiscal" ColumnName="id_codigo_fiscal" />
+                <ScalarProperty Name="id_fiscal" ColumnName="id_fiscal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_gastos">
+            <EntityTypeMapping TypeName="db_imModel.inf_gastos">
+              <MappingFragment StoreEntitySet="inf_gastos">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="costo" ColumnName="costo" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="desc_gasto" ColumnName="desc_gasto" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="id_codigo_gasto" ColumnName="id_codigo_gasto" />
+                <ScalarProperty Name="id_gasto" ColumnName="id_gasto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_inventario">
+            <EntityTypeMapping TypeName="db_imModel.inf_inventario">
+              <MappingFragment StoreEntitySet="inf_inventario">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="margen" ColumnName="margen" />
+                <ScalarProperty Name="costo" ColumnName="costo" />
+                <ScalarProperty Name="cantidad_minima" ColumnName="cantidad_minima" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="caracteristica" ColumnName="caracteristica" />
+                <ScalarProperty Name="desc_inventario" ColumnName="desc_inventario" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="id_grado_escolar" ColumnName="id_grado_escolar" />
+                <ScalarProperty Name="id_codigo_inventario" ColumnName="id_codigo_inventario" />
+                <ScalarProperty Name="id_inventario" ColumnName="id_inventario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_preguntas_exam">
+            <EntityTypeMapping TypeName="db_imModel.inf_preguntas_exam">
+              <MappingFragment StoreEntitySet="inf_preguntas_exam">
+                <ScalarProperty Name="id_materia_exam" ColumnName="id_materia_exam" />
+                <ScalarProperty Name="desc_pregunta_exam" ColumnName="desc_pregunta_exam" />
+                <ScalarProperty Name="id_pregunta_exam" ColumnName="id_pregunta_exam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_preguntas_test">
+            <EntityTypeMapping TypeName="db_imModel.inf_preguntas_test">
+              <MappingFragment StoreEntitySet="inf_preguntas_test">
+                <ScalarProperty Name="desc_pregunta" ColumnName="desc_pregunta" />
+                <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_respuestas_exam">
+            <EntityTypeMapping TypeName="db_imModel.inf_respuestas_exam">
+              <MappingFragment StoreEntitySet="inf_respuestas_exam">
+                <ScalarProperty Name="id_pregunta_exam" ColumnName="id_pregunta_exam" />
+                <ScalarProperty Name="valor_respuesta_exam" ColumnName="valor_respuesta_exam" />
+                <ScalarProperty Name="desc_respuestas_exam" ColumnName="desc_respuestas_exam" />
+                <ScalarProperty Name="id_respuestas_exam" ColumnName="id_respuestas_exam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_respuestas_test">
+            <EntityTypeMapping TypeName="db_imModel.inf_respuestas_test">
+              <MappingFragment StoreEntitySet="inf_respuestas_test">
+                <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+                <ScalarProperty Name="valor_respuesta_test" ColumnName="valor_respuesta_test" />
+                <ScalarProperty Name="desc_respuestas_test" ColumnName="desc_respuestas_test" />
+                <ScalarProperty Name="id_respuestas_test" ColumnName="id_respuestas_test" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_sepomex">
+            <EntityTypeMapping TypeName="db_imModel.inf_sepomex">
+              <MappingFragment StoreEntitySet="inf_sepomex">
+                <ScalarProperty Name="c_cve_ciudad" ColumnName="c_cve_ciudad" />
+                <ScalarProperty Name="d_zona" ColumnName="d_zona" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="c_mnpio" ColumnName="c_mnpio" />
+                <ScalarProperty Name="c_tipo_asenta" ColumnName="c_tipo_asenta" />
+                <ScalarProperty Name="c_CP" ColumnName="c_CP" />
+                <ScalarProperty Name="c_oficina" ColumnName="c_oficina" />
+                <ScalarProperty Name="c_estado" ColumnName="c_estado" />
+                <ScalarProperty Name="d_CP" ColumnName="d_CP" />
+                <ScalarProperty Name="d_ciudad" ColumnName="d_ciudad" />
+                <ScalarProperty Name="d_estado" ColumnName="d_estado" />
+                <ScalarProperty Name="D_mnpio" ColumnName="D_mnpio" />
+                <ScalarProperty Name="d_tipo_asenta" ColumnName="d_tipo_asenta" />
+                <ScalarProperty Name="d_asenta" ColumnName="d_asenta" />
+                <ScalarProperty Name="d_codigo" ColumnName="d_codigo" />
+                <ScalarProperty Name="id_codigo" ColumnName="id_codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_test_unam">
+            <EntityTypeMapping TypeName="db_imModel.inf_test_unam">
+              <MappingFragment StoreEntitySet="inf_test_unam">
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="nombre_completo" ColumnName="nombre_completo" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_test_unam" ColumnName="id_test_unam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_test_unam_dep">
+            <EntityTypeMapping TypeName="db_imModel.inf_test_unam_dep">
+              <MappingFragment StoreEntitySet="inf_test_unam_dep">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_respuestas_test" ColumnName="id_respuestas_test" />
+                <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+                <ScalarProperty Name="id_test_unam_dep" ColumnName="id_test_unam_dep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_usuarios">
+            <EntityTypeMapping TypeName="db_imModel.inf_usuarios">
+              <MappingFragment StoreEntitySet="inf_usuarios">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="codigo_usuario" ColumnName="codigo_usuario" />
+                <ScalarProperty Name="a_materno" ColumnName="a_materno" />
+                <ScalarProperty Name="a_paterno" ColumnName="a_paterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
+                <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_codigo_usuario" ColumnName="id_codigo_usuario" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_ventas">
+            <EntityTypeMapping TypeName="db_imModel.inf_ventas">
+              <MappingFragment StoreEntitySet="inf_ventas">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="tipo_venta" ColumnName="tipo_venta" />
+                <ScalarProperty Name="codigo_venta" ColumnName="codigo_venta" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_ventas" ColumnName="id_ventas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_ventas_dep">
+            <EntityTypeMapping TypeName="db_imModel.inf_ventas_dep">
+              <MappingFragment StoreEntitySet="inf_ventas_dep">
+                <ScalarProperty Name="id_ventas" ColumnName="id_ventas" />
+                <ScalarProperty Name="costo" ColumnName="costo" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_inventario" ColumnName="id_inventario" />
+                <ScalarProperty Name="id_ventas_dep" ColumnName="id_ventas_dep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

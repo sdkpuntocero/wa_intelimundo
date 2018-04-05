@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10b9ca3043b046a6ba1bf7a5e67bccdf" Name="Diagram1">
+        <EntityTypeShape EntityType="db_imModel.fact_estatus" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_genero" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_grado_escolar" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_licencias" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_materia_exam" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_nivel_escolar" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_nivel_exam" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_centro" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_fiscal" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_rfc" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_usuario" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_alumnos" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_centro" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_centro_dep" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_contacto_fiscal" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_empresa" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_examenes" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_examenes_dep" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_fiscal" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_gastos" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_inventario" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_preguntas_exam" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_preguntas_test" Width="1.5" PointX="12.75" PointY="5.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_respuestas_exam" Width="1.5" PointX="6.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_respuestas_test" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_sepomex" Width="1.5" PointX="8.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_test_unam" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_test_unam_dep" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_usuarios" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_ventas" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_ventas_dep" Width="1.5" PointX="14.75" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
