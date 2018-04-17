@@ -540,6 +540,8 @@
     <Content Include="img\148705-essential-collection\png\zoom-out.png" />
     <Content Include="img\im.png" />
     <Content Include="panel.aspx" />
+    <Content Include="panel_alumno.aspx" />
+    <Content Include="panel_conta.aspx" />
     <Content Include="registro_inicial.aspx" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
@@ -729,6 +731,20 @@
     </Compile>
     <Compile Include="panel.aspx.designer.cs">
       <DependentUpon>panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel_alumno.aspx.cs">
+      <DependentUpon>panel_alumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel_alumno.aspx.designer.cs">
+      <DependentUpon>panel_alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel_conta.aspx.cs">
+      <DependentUpon>panel_conta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel_conta.aspx.designer.cs">
+      <DependentUpon>panel_conta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registro_inicial.aspx.cs">
