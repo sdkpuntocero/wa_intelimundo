@@ -143,6 +143,7 @@
     <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.woff" />
     <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.woff2" />
+    <Content Include="panel_facilitador.aspx" />
     <None Include="packages.config" />
     <Content Include="Content\web-fonts-with-css\css\fa-brands.css" />
     <Content Include="Content\web-fonts-with-css\css\fa-brands.min.css" />
@@ -736,6 +737,13 @@
     </Compile>
     <Compile Include="registro_inicial.aspx.designer.cs">
       <DependentUpon>registro_inicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel_facilitador.aspx.cs">
+      <DependentUpon>panel_facilitador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel_facilitador.aspx.designer.cs">
+      <DependentUpon>panel_facilitador.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
