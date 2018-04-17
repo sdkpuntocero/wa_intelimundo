@@ -11,8 +11,8 @@ namespace wa_intelimundo
 {
     public partial class panel : System.Web.UI.Page
     {
-        static Guid guid_centro, guid_fuser,guid_idalumno,guid_idproveedor;
-        static int int_idtipousuario, int_accion_usuario, int_tipousuario, int_accion_alumno, int_accion_proveedor;
+        static Guid guid_centro, guid_fuser, guid_idalumno, guid_idproveedor, guid_idadmin, guid_idcentro;
+        static int int_idtipousuario, int_accion_usuario, int_tipousuario, int_accion_alumno, int_accion_proveedor, int_accion_sucursal, int_accion_inventario;
         static string str_idcodigousuario;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace wa_intelimundo
                 guid_centro = i_usuario.id_centro;
             }
 
-          
+
         }
 
         #region panel
@@ -76,6 +76,8 @@ namespace wa_intelimundo
         {
             pnl_fusuario.Visible = true;
             pnl_centro.Visible = false;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = false;
             pnl_proveedores.Visible = false;
             pnl_alumnos.Visible = false;
             pnl_usuarios.Visible = false;
@@ -84,7 +86,9 @@ namespace wa_intelimundo
             i_editausuario.Attributes["style"] = "color:orangered";
             i_editacentro.Attributes["style"] = "color:dimgray";
             i_editausuariof.Attributes["style"] = "color:dimgray";
-            id_proveedores.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:dimgray";
+            i_proveedores.Attributes["style"] = "color:dimgray";
             i_alumnos.Attributes["style"] = "color:dimgray";
             i_usuarios.Attributes["style"] = "color:dimgray";
             i_empresa.Attributes["style"] = "color:dimgray";
@@ -96,6 +100,8 @@ namespace wa_intelimundo
         {
             pnl_fusuario.Visible = false;
             pnl_centro.Visible = true;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = false;
             pnl_proveedores.Visible = false;
             pnl_alumnos.Visible = false;
             pnl_usuarios.Visible = false;
@@ -104,7 +110,9 @@ namespace wa_intelimundo
             i_editausuario.Attributes["style"] = "color:dimgray";
             i_editacentro.Attributes["style"] = "color:orangered";
             i_editacentrof.Attributes["style"] = "color:dimgray";
-            id_proveedores.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:dimgray";
+            i_proveedores.Attributes["style"] = "color:dimgray";
             i_alumnos.Attributes["style"] = "color:dimgray";
             i_usuarios.Attributes["style"] = "color:dimgray";
             i_empresa.Attributes["style"] = "color:dimgray";
@@ -114,12 +122,81 @@ namespace wa_intelimundo
 
             i_editacentrof.Attributes["style"] = "color:dimgray";
         }
+		protected void lkb_inventario_Click(object sender, EventArgs e)
+		{
+			int_accion_inventario = 0;
+
+			pnl_fusuario.Visible = false;
+			pnl_centro.Visible = false;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = false;
+			pnl_proveedores.Visible = false;
+			pnl_inventarios.Visible = true;
+			pnl_alumnos.Visible = false;
+			pnl_usuarios.Visible = false;
+			pnl_empresa.Visible = false;
+
+			i_editausuario.Attributes["style"] = "color:dimgray";
+			i_editacentro.Attributes["style"] = "color:dimgray";
+			i_editacentrof.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:orangered";
+			i_alumnos.Attributes["style"] = "color:dimgray";
+			i_usuarios.Attributes["style"] = "color:dimgray";
+			i_empresa.Attributes["style"] = "color:dimgray";
+			i_salir.Attributes["style"] = "color:dimgray";
+
+			limpiart_txt_inventario();
+
+			i_agrega_inventario.Attributes["style"] = "color:dimgray";
+			i_edita_inventario.Attributes["style"] = "color:dimgray";
+			i_baja_inventario.Attributes["style"] = "color:dimgray";
+		}
+		protected void lkb_sucursales_Click(object sender, EventArgs e)
+        {
+            int_accion_proveedor = 0;
+
+            pnl_fusuario.Visible = false;
+            pnl_centro.Visible = false;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = true;
+            pnl_proveedores.Visible = false;
+            pnl_alumnos.Visible = false;
+            pnl_usuarios.Visible = false;
+            pnl_empresa.Visible = false;
+
+            i_editausuario.Attributes["style"] = "color:dimgray";
+            i_editacentro.Attributes["style"] = "color:dimgray";
+            i_editacentrof.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:orangered";
+            i_proveedores.Attributes["style"] = "color:dimgray";
+            i_alumnos.Attributes["style"] = "color:dimgray";
+            i_usuarios.Attributes["style"] = "color:dimgray";
+            i_empresa.Attributes["style"] = "color:dimgray";
+            i_salir.Attributes["style"] = "color:dimgray";
+
+            limpia_txt_sucursal();
+
+			txt_buscar_sucursal.Text = "";
+			txt_buscar_sucursal.Visible = false;
+			btn_buscar_sucursal.Visible = false;
+			gv_sucursal.Visible = false;
+			gv_administrador.Visible = false;
+
+			i_agrega_sucursal.Attributes["style"] = "color:dimgray";
+            i_edita_sucursal.Attributes["style"] = "color:dimgray";
+            i_baja_sucursal.Attributes["style"] = "color:dimgray";
+        }
         protected void lkb_proveedores_Click(object sender, EventArgs e)
         {
             int_accion_proveedor = 0;
 
             pnl_fusuario.Visible = false;
             pnl_centro.Visible = false;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = false;
             pnl_proveedores.Visible = true;
             pnl_alumnos.Visible = false;
             pnl_usuarios.Visible = false;
@@ -128,7 +205,9 @@ namespace wa_intelimundo
             i_editausuario.Attributes["style"] = "color:dimgray";
             i_editacentro.Attributes["style"] = "color:dimgray";
             i_editacentrof.Attributes["style"] = "color:dimgray";
-            id_proveedores.Attributes["style"] = "color:orangered";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:dimgray";
+            i_proveedores.Attributes["style"] = "color:orangered";
             i_alumnos.Attributes["style"] = "color:dimgray";
             i_usuarios.Attributes["style"] = "color:dimgray";
             i_empresa.Attributes["style"] = "color:dimgray";
@@ -144,6 +223,8 @@ namespace wa_intelimundo
         {
             pnl_fusuario.Visible = false;
             pnl_centro.Visible = false;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = false;
             pnl_proveedores.Visible = false;
             pnl_alumnos.Visible = true;
             pnl_usuarios.Visible = false;
@@ -152,7 +233,9 @@ namespace wa_intelimundo
             i_editausuario.Attributes["style"] = "color:dimgray";
             i_editacentro.Attributes["style"] = "color:dimgray";
             i_editacentrof.Attributes["style"] = "color:dimgray";
-            id_proveedores.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:dimgray";
+            i_proveedores.Attributes["style"] = "color:dimgray";
             i_alumnos.Attributes["style"] = "color:orangered";
             i_usuarios.Attributes["style"] = "color:dimgray";
             i_empresa.Attributes["style"] = "color:dimgray";
@@ -168,6 +251,8 @@ namespace wa_intelimundo
         {
             pnl_fusuario.Visible = false;
             pnl_centro.Visible = false;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = false;
             pnl_proveedores.Visible = false;
             pnl_alumnos.Visible = false;
             pnl_usuarios.Visible = true;
@@ -176,7 +261,9 @@ namespace wa_intelimundo
             i_editausuario.Attributes["style"] = "color:dimgray";
             i_editacentro.Attributes["style"] = "color:dimgray";
             i_editacentrof.Attributes["style"] = "color:dimgray";
-            id_proveedores.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:dimgray";
+            i_proveedores.Attributes["style"] = "color:dimgray";
             i_alumnos.Attributes["style"] = "color:dimgray";
             i_usuarios.Attributes["style"] = "color:orangered";
             i_empresa.Attributes["style"] = "color:dimgray";
@@ -200,6 +287,8 @@ namespace wa_intelimundo
         {
             pnl_fusuario.Visible = false;
             pnl_centro.Visible = false;
+			pnl_inventarios.Visible = false;
+			pnl_sucursales.Visible = false;
             pnl_proveedores.Visible = false;
             pnl_alumnos.Visible = false;
             pnl_usuarios.Visible = false;
@@ -207,7 +296,9 @@ namespace wa_intelimundo
 
             i_editausuario.Attributes["style"] = "color:dimgray";
             i_editacentro.Attributes["style"] = "color:dimgray";
-            id_proveedores.Attributes["style"] = "color:dimgray";
+			i_inventarios.Attributes["style"] = "color:dimgray";
+			i_sucursales.Attributes["style"] = "color:dimgray";
+            i_proveedores.Attributes["style"] = "color:dimgray";
             i_alumnos.Attributes["style"] = "color:dimgray";
             i_usuarios.Attributes["style"] = "color:dimgray";
             i_empresa.Attributes["style"] = "color:orangered";
@@ -695,6 +786,1139 @@ namespace wa_intelimundo
             ddl_colonia_centro.BackColor = Color.White;
             txt_municipio_centro.BackColor = Color.White;
             txt_estado_centro.BackColor = Color.White;
+
+        }
+		#endregion
+
+
+		#region inventario
+
+		protected void lkbtn_nuevo_inventario_Click(object sender, EventArgs e)
+		{
+			int_accion_inventario = 1;
+			i_agrega_inventario.Attributes["style"] = "color:orangered";
+			i_edita_inventario.Attributes["style"] = "color:dimgray";
+			i_baja_inventario.Attributes["style"] = "color:dimgray";
+			limpiart_txt_inventario();
+
+			txt_buscar_inventario.Visible = false;
+			btn_buscar_inventario.Visible = false;
+			gv_inventario.Visible = false;
+		}
+		protected void lkbtn_edita_inventario_Click(object sender, EventArgs e)
+		{
+			int_accion_inventario = 2;
+			i_agrega_inventario.Attributes["style"] = "color:dimgray";
+			i_edita_inventario.Attributes["style"] = "color:orangered";
+			i_baja_inventario.Attributes["style"] = "color:dimgray";
+			limpiart_txt_inventario();
+
+			txt_buscar_inventario.Visible = true;
+			btn_buscar_inventario.Visible = true;
+
+			using (db_imEntities data_user = new db_imEntities())
+			{
+				var inf_user = (from u in data_user.inf_inventario
+								where u.id_centro == guid_centro
+								select new
+								{
+									u.id_codigo_inventario,
+									u.categoria,
+									u.desc_inventario,
+									u.cantidad,
+									u.costo,
+									total = u.cantidad * u.costo,
+									u.fecha_registro
+
+								}).ToList();
+
+				gv_inventario.DataSource = inf_user;
+				gv_inventario.DataBind();
+				gv_inventario.Visible = true;
+			}
+		}
+		protected void lkbtn_baja_inventario_Click(object sender, EventArgs e)
+
+		{
+			int_accion_inventario = 3;
+			i_agrega_inventario.Attributes["style"] = "color:dimgray";
+			i_edita_inventario.Attributes["style"] = "color:dimgray";
+			i_baja_inventario.Attributes["style"] = "color:orangered";
+			limpiart_txt_inventario();
+
+			txt_buscar_inventario.Visible = true;
+			btn_buscar_inventario.Visible = true;
+
+			using (db_imEntities data_user = new db_imEntities())
+			{
+				var inf_user = (from u in data_user.inf_inventario
+								where u.id_centro == guid_centro
+								select new
+								{
+									u.id_codigo_inventario,
+									u.categoria,
+									u.desc_inventario,
+									u.cantidad,
+									u.costo,
+									total = u.cantidad * u.costo,
+									u.fecha_registro
+
+								}).ToList();
+
+				gv_inventario.DataSource = inf_user;
+				gv_inventario.DataBind();
+				gv_inventario.Visible = true;
+			}
+		}
+		protected void btn_margen_inventario_Click(object sender, EventArgs e)
+		{
+
+		}
+		protected void btn_buscar_inventario_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(txt_buscar_inventario.Text))
+			{
+
+				txt_buscar_inventario.BackColor = Color.IndianRed;
+			}
+			else
+			{
+				txt_buscar_inventario.BackColor = Color.Transparent;
+
+				string str_userb = txt_buscar_inventario.Text;
+
+				using (db_imEntities data_user = new db_imEntities())
+				{
+					var inf_user = (from i_u in data_user.inf_inventario
+									where i_u.desc_inventario.Contains(str_userb)
+									where i_u.id_centro == guid_idcentro
+									select new
+									{
+										i_u.id_codigo_inventario,
+										i_u.categoria,
+										i_u.desc_inventario,
+										i_u.cantidad,
+										i_u.costo,
+										total = i_u.cantidad * i_u.costo,
+										i_u.fecha_registro
+
+									}).ToList();
+
+					gv_inventario.DataSource = inf_user;
+					gv_inventario.DataBind();
+					gv_inventario.Visible = true;
+				}
+			}
+		}
+
+		protected void gv_inventario_PageIndexChanging(object sender, GridViewPageEventArgs e)
+		{
+
+		}
+
+		protected void chk_inventario_CheckedChanged(object sender, EventArgs e)
+		{
+			foreach (GridViewRow row in gv_inventario.Rows)
+			{
+				if (row.RowType == DataControlRowType.DataRow)
+				{
+					CheckBox chkRow = (row.Cells[0].FindControl("chk_inventario") as CheckBox);
+					if (chkRow.Checked)
+					{
+						string str_code = row.Cells[1].Text;
+
+						using (db_imEntities data_user = new db_imEntities())
+						{
+							var inf_user = (from u in data_user.inf_inventario
+											where u.id_centro == guid_centro
+											where u.id_codigo_inventario == str_code
+											select new
+											{
+												u.categoria,
+												u.desc_inventario,
+												u.caracteristica,
+												u.cantidad,
+												u.costo
+
+											}).FirstOrDefault();
+
+							txt_categoria_inventario.Text = inf_user.categoria;
+							txt_desc_inventario.Text = inf_user.desc_inventario;
+							txt_caracteristica_inventario.Text = inf_user.caracteristica;
+							txt_cantidad_inventario.Text = inf_user.cantidad.ToString();
+							txt_costo_inventario.Text = string.Format("{0:n2}", (Math.Truncate(Convert.ToDouble(inf_user.costo) * 100) / 100));
+						}
+					}
+				}
+			}
+		}
+
+		protected void btn_guardar_inventario_Click(object sender, EventArgs e)
+		{
+			if (int_accion_inventario == 0)
+			{
+				lblModalTitle.Text = "Intelimundo";
+				lblModalBody.Text = "Favor de seleccionar una acción";
+				ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+				upModal.Update();
+			}
+			else
+			{
+				if (string.IsNullOrEmpty(txt_categoria_inventario.Text))
+				{
+					txt_categoria_inventario.BackColor = Color.IndianRed;
+				}
+				else
+				{
+					txt_categoria_inventario.BackColor = Color.Transparent;
+					if (string.IsNullOrEmpty(txt_desc_inventario.Text))
+					{
+						txt_desc_inventario.BackColor = Color.IndianRed;
+					}
+					else
+					{
+						txt_desc_inventario.BackColor = Color.Transparent;
+						if (string.IsNullOrEmpty(txt_caracteristica_inventario.Text))
+						{
+							txt_caracteristica_inventario.BackColor = Color.IndianRed;
+						}
+						else
+						{
+							txt_caracteristica_inventario.BackColor = Color.Transparent;
+							if (string.IsNullOrEmpty(txt_cantidad_inventario.Text))
+							{
+								txt_cantidad_inventario.BackColor = Color.IndianRed;
+							}
+							else
+							{
+								txt_cantidad_inventario.BackColor = Color.Transparent;
+								if (string.IsNullOrEmpty(txt_costo_inventario.Text))
+								{
+									txt_costo_inventario.BackColor = Color.IndianRed;
+								}
+								else
+								{
+									txt_costo_inventario.BackColor = Color.Transparent;
+									guardar_inventario();
+
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		private void guardar_inventario()
+		{
+			Guid guid_ngasto = Guid.NewGuid();
+			string str_codigogasto = DateTime.Now.Ticks.ToString();
+			string str_categoriagasto = txt_categoria_inventario.Text;
+			string str_descgasto = txt_desc_inventario.Text;
+			string str_caracteristicagasto = txt_caracteristica_inventario.Text;
+			int int_cantidadgasto = int.Parse(txt_cantidad_inventario.Text);
+			decimal dml_costogasto = decimal.Parse(txt_costo_inventario.Text);
+
+			if (int_accion_inventario == 1)
+			{
+				using (var insert_address = new db_imEntities())
+				{
+					var items_address = new inf_inventario
+					{
+						id_inventario = guid_ngasto,
+						id_codigo_inventario = str_codigogasto,
+						categoria = str_categoriagasto,
+						desc_inventario = str_descgasto,
+						caracteristica = str_caracteristicagasto,
+						cantidad = int_cantidadgasto,
+						costo = dml_costogasto,
+						fecha_registro = DateTime.Now,
+						id_centro = guid_idcentro
+
+					};
+
+					insert_address.inf_inventario.Add(items_address);
+					insert_address.SaveChanges();
+				}
+
+				limpiart_txt_inventario();
+
+				lblModalTitle.Text = "Intelimundo";
+				lblModalBody.Text = "Producto agregado con exito";
+				ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+				upModal.Update();
+
+
+			}
+			else if (int_accion_inventario == 2)
+			{
+				foreach (GridViewRow row in gv_inventario.Rows)
+				{
+					if (row.RowType == DataControlRowType.DataRow)
+					{
+						CheckBox chkRow = (row.Cells[0].FindControl("chk_inventario") as CheckBox);
+						if (chkRow.Checked)
+						{
+							string str_code = row.Cells[1].Text;
+
+							using (var data_user = new db_imEntities())
+							{
+								var items_user = (from c in data_user.inf_inventario
+												  where c.id_codigo_inventario == str_code
+												  select c).FirstOrDefault();
+
+								items_user.categoria = str_categoriagasto;
+								items_user.desc_inventario = str_descgasto;
+								items_user.caracteristica = str_caracteristicagasto;
+								items_user.cantidad = int_cantidadgasto;
+								items_user.costo = dml_costogasto;
+								data_user.SaveChanges();
+							}
+
+							using (db_imEntities data_user = new db_imEntities())
+							{
+								var inf_user = (from u in data_user.inf_inventario
+												where u.id_centro == guid_idcentro
+												select new
+												{
+													u.id_codigo_inventario,
+													u.categoria,
+													u.desc_inventario,
+													u.cantidad,
+													u.costo,
+													total = u.cantidad * u.costo,
+													u.fecha_registro
+
+												}).ToList();
+
+								gv_inventario.DataSource = inf_user;
+								gv_inventario.DataBind();
+								gv_inventario.Visible = true;
+							}
+
+							limpiart_txt_inventario();
+
+							lblModalTitle.Text = "Intelimundo";
+							lblModalBody.Text = "Gasto actualizado con exito";
+							ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+							upModal.Update();
+						}
+					}
+				}
+
+			}
+		}
+
+		private void limpiart_txt_inventario()
+		{
+
+			txt_categoria_inventario.Text = "";
+			txt_caracteristica_inventario.Text = "";
+			txt_mcantidad_inventario.Text = "";
+			txt_desc_inventario.Text = "";
+			txt_cantidad_inventario.Text = "";
+			txt_margen_inventario.Text = "";
+			txt_costo_inventario.Text = "";
+		}
+
+		#endregion
+
+		#region sucursal
+
+		protected void lkbtn_nuevo_sucursal_Click(object sender, EventArgs e)
+        {
+            int_accion_sucursal = 1;
+            i_agrega_sucursal.Attributes["style"] = "color:orangered";
+            i_edita_sucursal.Attributes["style"] = "color:dimgray";
+            i_baja_sucursal.Attributes["style"] = "color:dimgray";
+            limpia_txt_sucursal();
+            txt_buscar_sucursal.Visible = false;
+            btn_buscar_sucursal.Visible = false;
+            gv_sucursal.Visible = false;
+
+            using (db_imEntities data_user = new db_imEntities())
+            {
+                var inf_user = (from i_u in data_user.inf_usuarios
+                                join i_e in data_user.fact_estatus on i_u.id_estatus equals i_e.id_estatus
+                                where i_u.id_tipo_usuario == 3
+                                where i_u.id_usuario != guid_fuser
+                                where i_u.id_estatus == 1
+
+                                select new
+                                {
+                                    i_u.codigo_usuario,
+                                    i_e.desc_estatus,
+                                    i_u.fecha_nacimiento,
+                                    i_u.nombres,
+                                    i_u.a_paterno,
+                                    i_u.a_materno,
+                                    i_u.fecha_registro
+
+                                }).ToList();
+
+                if (inf_user.Count == 0)
+                {
+
+                    txt_buscar_sucursal.Visible = false;
+                    btn_buscar_sucursal.Visible = false;
+                    gv_sucursal.Visible = false;
+
+                    limpia_txt_sucursal();
+
+                    lblModalTitle.Text = "Intelimundo";
+                    lblModalBody.Text = "Sin datos de administradores, favor de agregarlos";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                    upModal.Update();
+                }
+                else
+                {
+                    gv_administrador.DataSource = inf_user;
+                    gv_administrador.DataBind();
+                    gv_administrador.Visible = true;
+                }
+            }
+
+        }
+
+        protected void lkbtn_edita_sucursal_Click(object sender, EventArgs e)
+        {
+            int_accion_sucursal = 2;
+            i_edita_sucursal.Attributes["style"] = "color:orangered";
+            i_agrega_sucursal.Attributes["style"] = "color:dimgray";
+     
+            i_baja_sucursal.Attributes["style"] = "color:dimgray";
+            limpia_txt_sucursal();
+
+            txt_buscar_sucursal.Visible = true;
+            btn_buscar_sucursal.Visible = true;
+
+
+
+            using (db_imEntities data_user = new db_imEntities())
+            {
+                var inf_user = (from i_s in data_user.inf_centro
+                                join i_l in data_user.fact_licencias on i_s.id_licencia equals i_l.id_licencia
+                                join i_sd in data_user.inf_centro_dep on i_s.id_centro equals i_sd.id_centro
+                                join i_u in data_user.inf_usuarios on i_sd.id_usuario equals i_u.id_usuario
+                                where i_s.id_centro != guid_centro
+                                where i_s.id_estatus == 1
+                                select new
+                                {
+                                    i_s.id_codigo_centro,
+                                    i_l.desc_licencia,
+                                    i_s.nombre,
+                                    i_u.codigo_usuario,
+                                    admin = i_u.nombres + " " + i_u.a_paterno + " " + i_u.a_materno,
+                                    i_s.fecha_registro
+
+                                }).ToList();
+
+
+
+                gv_sucursal.DataSource = inf_user;
+                gv_sucursal.DataBind();
+                gv_sucursal.Visible = true;
+            }
+
+            using (db_imEntities data_user = new db_imEntities())
+            {
+                var inf_user = (from i_u in data_user.inf_usuarios
+                                join i_e in data_user.fact_estatus on i_u.id_estatus equals i_e.id_estatus
+                                where i_u.id_tipo_usuario == 3
+                                where i_u.id_usuario != guid_fuser
+                                where i_u.id_estatus == 1
+
+                                select new
+                                {
+                                    i_u.codigo_usuario,
+                                    i_e.desc_estatus,
+                                    i_u.fecha_nacimiento,
+                                    i_u.nombres,
+                                    i_u.a_paterno,
+                                    i_u.a_materno,
+                                    i_u.fecha_registro
+
+                                }).ToList();
+
+                gv_administrador.DataSource = inf_user;
+                gv_administrador.DataBind();
+                gv_administrador.Visible = true;
+            }
+        }
+
+        protected void lkbtn_baja_sucursal_Click(object sender, EventArgs e)
+        {
+            int_accion_sucursal = 3;
+            i_baja_sucursal.Attributes["style"] = "color:orangered";
+            i_agrega_sucursal.Attributes["style"] = "color:dimgray";
+            i_edita_sucursal.Attributes["style"] = "color:dimgray";
+
+            limpia_txt_sucursal();
+
+            txt_buscar_sucursal.Visible = true;
+            btn_buscar_sucursal.Visible = true;
+
+
+            using (db_imEntities data_user = new db_imEntities())
+            {
+                var inf_user = (from i_s in data_user.inf_centro
+                                join i_l in data_user.fact_licencias on i_s.id_licencia equals i_l.id_licencia
+                                join i_sd in data_user.inf_centro_dep on i_s.id_centro equals i_sd.id_centro
+                                join i_u in data_user.inf_usuarios on i_sd.id_usuario equals i_u.id_usuario
+                                where i_s.id_centro != guid_centro
+                                where i_s.id_estatus == 1
+                                select new
+                                {
+                                    i_s.id_codigo_centro,
+                                    i_l.desc_licencia,
+                                    i_s.nombre,
+                                    i_u.codigo_usuario,
+                                    admin = i_u.nombres + " " + i_u.a_paterno + " " + i_u.a_materno,
+                                    i_s.fecha_registro
+
+                                }).ToList();
+
+
+
+                gv_sucursal.DataSource = inf_user;
+                gv_sucursal.DataBind();
+                gv_sucursal.Visible = true;
+            }
+
+            using (db_imEntities data_user = new db_imEntities())
+            {
+                var inf_user = (from i_u in data_user.inf_usuarios
+                                join i_e in data_user.fact_estatus on i_u.id_estatus equals i_e.id_estatus
+                                where i_u.id_tipo_usuario == 3
+                                where i_u.id_usuario != guid_fuser
+                                where i_u.id_estatus == 1
+
+                                select new
+                                {
+                                    i_u.codigo_usuario,
+                                    i_e.desc_estatus,
+                                    i_u.fecha_nacimiento,
+                                    i_u.nombres,
+                                    i_u.a_paterno,
+                                    i_u.a_materno,
+                                    i_u.fecha_registro
+
+                                }).ToList();
+
+                gv_administrador.DataSource = inf_user;
+                gv_administrador.DataBind();
+                gv_administrador.Visible = true;
+            }
+        }
+
+
+        protected void btn_buscar_sucursal_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_buscar_sucursal.Text))
+            {
+
+                txt_buscar_sucursal.BackColor = Color.IndianRed;
+            }
+            else
+            {
+                txt_buscar_sucursal.BackColor = Color.Transparent;
+
+                string str_userb = txt_buscar_usuario.Text;
+
+
+                using (db_imEntities data_user = new db_imEntities())
+                {
+                    var inf_user = (from i_u in data_user.inf_fiscal
+                                    join i_e in data_user.fact_tipo_rfc on i_u.id_tipo_rfc equals i_e.id_tipo_rfc
+                                    where i_u.razon_social.Contains(str_userb)
+                                    where i_u.id_estatus == 1
+
+                                    select new
+                                    {
+                                        i_u.rfc,
+                                        i_e.desc_tipo_rfc,
+                                        i_u.razon_social,
+                                        i_u.fecha_registro
+
+                                    }).ToList();
+
+                    gv_sucursal.DataSource = inf_user;
+                    gv_sucursal.DataBind();
+                    gv_sucursal.Visible = true;
+                }
+
+            }
+
+        }
+        protected void gv_sucursal_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+        protected void chk_sucursal_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in gv_sucursal.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    CheckBox chkRow = (row.Cells[0].FindControl("chk_sucursal") as CheckBox);
+                    if (chkRow.Checked)
+                    {
+                        row.BackColor = Color.YellowGreen;
+                        string codeuser = row.Cells[1].Text;
+
+                        using (db_imEntities data_user = new db_imEntities())
+                        {
+                            var items_user = (from c in data_user.inf_centro
+                                              where c.id_codigo_centro == codeuser
+                                              select c).FirstOrDefault();
+
+                            guid_idcentro = items_user.id_centro;
+                        }
+
+                        using (db_imEntities data_user = new db_imEntities())
+                        {
+                            var inf_user = (from i_u in data_user.inf_centro
+                                            where i_u.id_centro == guid_idcentro
+                                            select new
+                                            {
+                                                i_u.id_licencia,
+                                                i_u.nombre,
+                                                i_u.telefono,
+                                                i_u.email,
+                                                i_u.calle,
+                                                i_u.cp,
+                                                i_u.id_asenta_cpcons,
+                                            }).FirstOrDefault();
+
+                            ddl_licencias.SelectedValue = inf_user.id_licencia.ToString();
+                            txt_nombre_sucursal.Text = inf_user.nombre;
+                            txt_telefono_sucursal.Text = inf_user.telefono;
+                            txt_email_sucursal.Text = inf_user.email;
+                            txt_callenum_sucursal.Text = inf_user.calle;
+
+                            int int_fcolonia = int.Parse(inf_user.id_asenta_cpcons.ToString());
+                            string str_fcp = txt_cp_sucursal.Text = inf_user.cp;
+
+                            using (db_imEntities db_sepomex = new db_imEntities())
+                            {
+                                var tbl_sepomex = (from c in db_sepomex.inf_sepomex
+                                                   where c.id_asenta_cpcons == int_fcolonia
+                                                   where c.d_codigo == str_fcp
+                                                   select c).ToList();
+
+                                ddl_colonia_sucursal.DataSource = tbl_sepomex;
+                                ddl_colonia_sucursal.DataTextField = "d_asenta";
+                                ddl_colonia_sucursal.DataValueField = "id_asenta_cpcons";
+                                ddl_colonia_sucursal.DataBind();
+
+                                txt_municipio_sucursal.Text = tbl_sepomex[0].D_mnpio;
+                                txt_estado_sucursal.Text = tbl_sepomex[0].d_estado;
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        row.BackColor = Color.White;
+
+                    }
+                }
+            }
+        }
+        protected void chk_administrador_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in gv_administrador.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    CheckBox chkRow = (row.Cells[0].FindControl("chk_administrador") as CheckBox);
+                    if (chkRow.Checked)
+                    {
+                        row.BackColor = Color.YellowGreen;
+
+                    }
+                    else
+                    {
+                        row.BackColor = Color.White;
+
+                    }
+                }
+            }
+        }
+        protected void btn_cp_sucursal_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_cp_sucursal.Text))
+            {
+
+                txt_cp_sucursal.BackColor = Color.IndianRed;
+            }
+            else
+            {
+                txt_cp_sucursal.BackColor = Color.Transparent;
+
+                string str_codigo = txt_cp_sucursal.Text;
+
+                using (db_imEntities db_sepomex = new db_imEntities())
+                {
+                    var tbl_sepomex = (from c in db_sepomex.inf_sepomex
+                                       where c.d_codigo == str_codigo
+                                       select c).ToList();
+
+                    ddl_colonia_sucursal.DataSource = tbl_sepomex;
+                    ddl_colonia_sucursal.DataTextField = "d_asenta";
+                    ddl_colonia_sucursal.DataValueField = "id_asenta_cpcons";
+                    ddl_colonia_sucursal.DataBind();
+
+                    if (tbl_sepomex.Count == 1)
+                    {
+
+
+                        txt_municipio_sucursal.Text = tbl_sepomex[0].D_mnpio;
+                        txt_estado_sucursal.Text = tbl_sepomex[0].d_estado;
+                    }
+                    if (tbl_sepomex.Count > 1)
+                    {
+
+                        ddl_colonia_sucursal.Items.Insert(0, new ListItem("*Colonia", "0"));
+
+                        txt_municipio_sucursal.Text = tbl_sepomex[0].D_mnpio;
+                        txt_estado_sucursal.Text = tbl_sepomex[0].d_estado;
+                    }
+                    else if (tbl_sepomex.Count == 0)
+                    {
+
+                        lblModalTitle.Text = "Intelimundo";
+                        lblModalBody.Text = "Error de Código Postal, favor de reintentar";
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                        upModal.Update();
+
+                    }
+                }
+            }
+        }
+        protected void btn_guardar_sucursal_Click(object sender, EventArgs e)
+        {
+            if (int_accion_sucursal == 0)
+            {
+                lblModalTitle.Text = "Intelimundo";
+                lblModalBody.Text = "Favor de seleccionar una acción";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                upModal.Update();
+            }
+            else
+            {
+                if (ddl_licencias.SelectedValue == "0")
+                {
+                    ddl_licencias.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    ddl_licencias.BackColor = Color.White;
+                    if (string.IsNullOrEmpty(txt_nombre_sucursal.Text))
+                    {
+
+                        txt_nombre_sucursal.BackColor = Color.IndianRed;
+                    }
+                    else
+                    {
+                        txt_nombre_sucursal.BackColor = Color.Transparent;
+                        if (string.IsNullOrEmpty(txt_telefono_sucursal.Text))
+                        {
+
+                            txt_telefono_sucursal.BackColor = Color.IndianRed;
+                        }
+                        else
+                        {
+                            txt_telefono_sucursal.BackColor = Color.Transparent;
+                            if (string.IsNullOrEmpty(txt_email_sucursal.Text))
+                            {
+
+                                txt_email_sucursal.BackColor = Color.IndianRed;
+                            }
+                            else
+                            {
+                                txt_email_sucursal.BackColor = Color.Transparent;
+                                if (string.IsNullOrEmpty(txt_callenum_sucursal.Text))
+                                {
+
+                                    txt_callenum_sucursal.BackColor = Color.IndianRed;
+                                }
+                                else
+                                {
+                                    txt_callenum_sucursal.BackColor = Color.Transparent;
+                                    if (string.IsNullOrEmpty(txt_cp_sucursal.Text))
+                                    {
+
+                                        txt_cp_sucursal.BackColor = Color.IndianRed;
+                                    }
+                                    else
+                                    {
+                                        txt_cp_sucursal.BackColor = Color.Transparent;
+                                        if (ddl_colonia_sucursal.SelectedValue == "0")
+                                        {
+                                            ddl_colonia_sucursal.BackColor = Color.IndianRed;
+                                        }
+                                        else
+                                        {
+                                            ddl_colonia_sucursal.BackColor = Color.White;
+
+                                            foreach (GridViewRow row in gv_administrador.Rows)
+                                            {
+                                                if (row.RowType == DataControlRowType.DataRow)
+                                                {
+                                                    CheckBox chkRow = (row.Cells[1].FindControl("chk_administrador") as CheckBox);
+                                                    if (chkRow.Checked)
+                                                    {
+                                                        guardar_sucursal();
+                                                    }
+                                                    else
+                                                    {
+                                                        lblModalTitle.Text = "Intelimundo";
+                                                        lblModalBody.Text = "Favor de seleccionar un Administrador";
+                                                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                                                        upModal.Update();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void guardar_sucursal()
+        {
+            Guid guid_nns = Guid.NewGuid();
+            int int_licencia = int.Parse(ddl_licencias.SelectedValue);
+            string str_nsucursal = txt_nombre_sucursal.Text.ToUpper();
+            string str_telefono = txt_telefono_sucursal.Text;
+            string str_email = txt_email_sucursal.Text;
+            string str_callenum = txt_callenum_sucursal.Text.ToUpper();
+            string str_cp = txt_cp_sucursal.Text;
+            int int_idcolonia = int.Parse(ddl_colonia_sucursal.SelectedValue);
+
+            if (int_accion_sucursal == 1)
+            {
+                foreach (GridViewRow row in gv_administrador.Rows)
+                {
+                    if (row.RowType == DataControlRowType.DataRow)
+                    {
+                        CheckBox chkRow = (row.Cells[1].FindControl("chk_administrador") as CheckBox);
+                        if (chkRow.Checked)
+                        {
+                            string codeuser = row.Cells[1].Text;
+
+                            using (db_imEntities data_user = new db_imEntities())
+                            {
+                                var items_user = (from c in data_user.inf_usuarios
+                                                  where c.codigo_usuario == codeuser
+                                                  select c).FirstOrDefault();
+
+                                guid_idadmin = items_user.id_usuario;
+                            }
+
+                            using (db_imEntities edm_centro = new db_imEntities())
+                            {
+                                var i_centro = (from c in edm_centro.inf_centro
+                                                where c.id_tipo_centro == 2
+                                                select c).ToList();
+
+                                if (i_centro.Count == 0)
+                                {
+
+                                    using (var m_usuario = new db_imEntities())
+                                    {
+                                        var i_usuario = new inf_centro
+                                        {
+                                            id_tipo_centro = 2,
+                                            id_centro = guid_nns,
+                                            id_estatus = 1,
+                                            id_licencia = int_licencia,
+                                            id_codigo_centro = "intm_suc" + string.Format("{0:000}", 1),
+                                            nombre = str_nsucursal,
+                                            telefono = str_telefono,
+                                            email = str_email,
+                                            calle = str_callenum,
+                                            cp = str_cp,
+                                            id_asenta_cpcons = int_idcolonia,
+                                            fecha_registro = DateTime.Now,
+
+                                        };
+                                        m_usuario.inf_centro.Add(i_usuario);
+                                        m_usuario.SaveChanges();
+                                    }
+
+                                    using (var m_usuario = new db_imEntities())
+                                    {
+                                        var i_usuario = new inf_centro_dep
+                                        {
+                                            id_usuario = guid_idadmin,
+                                            id_centro = guid_nns,
+                                        };
+                                        m_usuario.inf_centro_dep.Add(i_usuario);
+                                        m_usuario.SaveChanges();
+                                    }
+                                }
+                                else
+                                {
+                                    using (var m_usuario = new db_imEntities())
+                                    {
+                                        var i_usuario = new inf_centro
+                                        {
+                                            id_tipo_centro = 2,
+                                            id_centro = guid_nns,
+                                            id_estatus = 1,
+                                            id_licencia = int_licencia,
+                                            id_codigo_centro = "intm_suc" + string.Format("{0:000}", i_centro.Count + 1),
+                                            nombre = str_nsucursal,
+                                            telefono = str_telefono,
+                                            email = str_email,
+                                            calle = str_callenum,
+                                            cp = str_cp,
+                                            id_asenta_cpcons = int_idcolonia,
+                                            fecha_registro = DateTime.Now,
+
+                                        };
+                                        m_usuario.inf_centro.Add(i_usuario);
+                                        m_usuario.SaveChanges();
+                                    }
+
+                                    using (var m_usuario = new db_imEntities())
+                                    {
+                                        var i_usuario = new inf_centro_dep
+                                        {
+                                            id_usuario = guid_idadmin,
+                                            id_centro = guid_nns,
+                                        };
+                                        m_usuario.inf_centro_dep.Add(i_usuario);
+                                        m_usuario.SaveChanges();
+                                    }
+                                }
+                            }
+
+
+                            limpia_txt_sucursal();
+
+                            lblModalTitle.Text = "Intelimundo";
+                            lblModalBody.Text = "Datos de sucursal agregados con éxito";
+                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                            upModal.Update();
+                        }
+                    }
+                }
+            }
+            else if (int_accion_sucursal == 2)
+            {
+                foreach (GridViewRow row in gv_sucursal.Rows)
+                {
+                    if (row.RowType == DataControlRowType.DataRow)
+                    {
+                        CheckBox chkRow = (row.Cells[1].FindControl("chk_sucursal") as CheckBox);
+                        if (chkRow.Checked)
+                        {
+                            string codeuser = row.Cells[1].Text;
+
+                            using (db_imEntities data_user = new db_imEntities())
+                            {
+                                var items_user = (from c in data_user.inf_centro
+                                                  where c.id_codigo_centro == codeuser
+                                                  select c).FirstOrDefault();
+
+                                guid_idcentro = items_user.id_centro;
+                            }
+
+                            using (var data_user = new db_imEntities())
+                            {
+                                var items_user = (from c in data_user.inf_centro
+                                                  where c.id_centro == guid_idcentro
+                                                  select c).FirstOrDefault();
+
+
+                                items_user.id_licencia = int_licencia;
+                                items_user.nombre = str_nsucursal;
+                                items_user.telefono = str_telefono;
+                                items_user.email = str_email;
+                                items_user.calle = str_callenum;
+                                items_user.cp = str_cp;
+                                items_user.id_asenta_cpcons = int_idcolonia;
+
+                                data_user.SaveChanges();
+                            }
+
+
+                            foreach (GridViewRow rowf in gv_administrador.Rows)
+                            {
+                                if (rowf.RowType == DataControlRowType.DataRow)
+                                {
+                                    CheckBox chkRowf = (rowf.Cells[1].FindControl("chk_administrador") as CheckBox);
+                                    if (chkRowf.Checked)
+                                    {
+                                        string codeuserf = rowf.Cells[1].Text;
+                                        Guid guid_fadmin;
+                                        using (var data_user = new db_imEntities())
+                                        {
+                                            var items_user = (from c in data_user.inf_usuarios
+                                                              where c.codigo_usuario == codeuserf
+                                                              select c).FirstOrDefault();
+                                            guid_fadmin = items_user.id_usuario;
+
+                                        }
+
+                                        using (var data_user = new db_imEntities())
+                                        {
+                                            var items_user = (from c in data_user.inf_centro_dep
+                                                              where c.id_centro == guid_idcentro
+                                                              where c.id_usuario == guid_fadmin
+                                                              select c).FirstOrDefault();
+
+
+                                            items_user.id_usuario = guid_fadmin;
+
+
+                                            data_user.SaveChanges();
+                                        }
+
+                                        limpia_txt_sucursal();
+
+
+
+                                        gv_sucursal.Visible = false;
+                                        txt_buscar_sucursal.Visible = false;
+                                        btn_buscar_sucursal.Visible = false;
+
+                                        lblModalTitle.Text = "Intelimundo";
+                                        lblModalBody.Text = "Datos de sucursal actualizados con éxito";
+                                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                                        upModal.Update();
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+            else if (int_accion_sucursal == 3)
+            {
+                foreach (GridViewRow row in gv_sucursal.Rows)
+                {
+                    if (row.RowType == DataControlRowType.DataRow)
+                    {
+                        CheckBox chkRow = (row.Cells[1].FindControl("chk_sucursal") as CheckBox);
+                        if (chkRow.Checked)
+                        {
+                            string codeuser = row.Cells[1].Text;
+
+                            using (db_imEntities data_user = new db_imEntities())
+                            {
+                                var items_user = (from c in data_user.inf_centro
+                                                  where c.id_codigo_centro == codeuser
+                                                  select c).FirstOrDefault();
+
+                                guid_idcentro = items_user.id_centro;
+                            }
+
+                            using (var data_user = new db_imEntities())
+                            {
+                                var items_user = (from c in data_user.inf_centro
+                                                  where c.id_centro == guid_idcentro
+                                                  select c).FirstOrDefault();
+
+
+                                items_user.id_estatus = 3;
+             
+
+                                data_user.SaveChanges();
+                            }
+
+
+                            limpia_txt_sucursal();
+
+
+
+                            gv_sucursal.Visible = false;
+                            txt_buscar_sucursal.Visible = false;
+                            btn_buscar_sucursal.Visible = false;
+
+                            lblModalTitle.Text = "Intelimundo";
+                            lblModalBody.Text = "Datos de sucursal dados de baja con éxito";
+                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                            upModal.Update();
+                            //foreach (GridViewRow rowf in gv_administrador.Rows)
+                            //{
+                            //    if (rowf.RowType == DataControlRowType.DataRow)
+                            //    {
+                            //        CheckBox chkRowf = (rowf.Cells[1].FindControl("chk_administrador") as CheckBox);
+                            //        if (chkRowf.Checked)
+                            //        {
+                            //            string codeuserf = rowf.Cells[1].Text;
+                            //            Guid guid_fadmin;
+                            //            using (var data_user = new db_imEntities())
+                            //            {
+                            //                var items_user = (from c in data_user.inf_usuarios
+                            //                                  where c.codigo_usuario == codeuserf
+                            //                                  select c).FirstOrDefault();
+                            //                guid_fadmin = items_user.id_usuario;
+
+                            //            }
+
+                            //            using (var data_user = new db_imEntities())
+                            //            {
+                            //                var items_user = (from c in data_user.inf_centro_dep
+                            //                                  where c.id_centro == guid_idcentro
+                            //                                  where c.id_usuario == guid_fadmin
+                            //                                  select c).FirstOrDefault();
+
+
+                            //                items_user.id_usuario = guid_fadmin;
+
+
+                            //                data_user.SaveChanges();
+                            //            }
+
+                            //        }
+                            //    }
+                            //}
+
+                        }
+                    }
+                }
+            }
+        }
+        private void limpia_txt_sucursal()
+        {
+
+            using (db_imEntities m_tiporfc = new db_imEntities())
+            {
+                var i_tiporfc = (from f_tr in m_tiporfc.fact_licencias
+                                 select f_tr).ToList();
+
+                ddl_licencias.DataSource = i_tiporfc;
+                ddl_licencias.DataTextField = "desc_licencia";
+                ddl_licencias.DataValueField = "id_licencia";
+                ddl_licencias.DataBind();
+            }
+
+
+            ddl_licencias.Items.Insert(0, new ListItem("*Licencia", "0"));
+
+
+
+            ddl_licencias.SelectedValue = "0";
+            txt_nombre_sucursal.Text = "";
+            txt_telefono_sucursal.Text = "";
+            txt_email_sucursal.Text = "";
+            txt_callenum_sucursal.Text = "";
+            txt_cp_sucursal.Text = "";
+            ddl_colonia_sucursal.Items.Clear();
+            ddl_colonia_sucursal.Items.Insert(0, new ListItem("*Colonia", "0"));
+            ddl_colonia_sucursal.SelectedValue = "0";
+            txt_municipio_sucursal.Text = "";
+            txt_estado_sucursal.Text = "";
 
         }
         #endregion
@@ -1570,7 +2794,7 @@ namespace wa_intelimundo
                 string str_apaterno = RemoveSpecialCharacters(RemoveAccentsWithRegEx(txt_apaterno_alumno.Text.ToLower()));
                 string str_amaterno = RemoveSpecialCharacters(RemoveAccentsWithRegEx(txt_amaterno_alumno.Text.ToLower()));
 
-                string codigo_usuario = str_nombres + "_" + LeftRightMid.Left(str_apaterno, 2) + LeftRightMid.Left(str_amaterno, 2);
+                string codigo_usuario = str_nombres + "_" + left_right_mid.left(str_apaterno, 2) + left_right_mid.left(str_amaterno, 2);
                 txt_usuario_alumno.Text = codigo_usuario;
             }
             catch
@@ -2436,7 +3660,7 @@ namespace wa_intelimundo
                 string str_apaterno = RemoveSpecialCharacters(RemoveAccentsWithRegEx(txt_apaterno_usuario.Text.ToLower()));
                 string str_amaterno = RemoveSpecialCharacters(RemoveAccentsWithRegEx(txt_amaterno_usuario.Text.ToLower()));
 
-                string codigo_usuario = str_nombres + "_" + LeftRightMid.Left(str_apaterno, 2) + LeftRightMid.Left(str_amaterno, 2);
+                string codigo_usuario = str_nombres + "_" + left_right_mid.left(str_apaterno, 2) + left_right_mid.left(str_amaterno, 2);
                 txt_usuario_usuario.Text = codigo_usuario;
             }
             catch
@@ -2447,7 +3671,10 @@ namespace wa_intelimundo
                 upModal.Update();
             }
         }
-        protected void chk_usuario_CheckedChanged(object sender, EventArgs e)
+
+
+
+		protected void chk_usuario_CheckedChanged(object sender, EventArgs e)
         {
             Guid id_fuser;
             foreach (GridViewRow row in gv_usuarios.Rows)
@@ -2505,6 +3732,9 @@ namespace wa_intelimundo
                 }
             }
         }
+
+       
+
         protected void lkbtn_nuevo_usuario_Click(object sender, EventArgs e)
         {
             int_accion_usuario = 1;
@@ -2544,6 +3774,9 @@ namespace wa_intelimundo
             }
 
         }
+
+
+
         protected void lkbtn_baja_usuario_Click(object sender, EventArgs e)
         {
             int_accion_usuario = 3;
@@ -2568,7 +3801,7 @@ namespace wa_intelimundo
             }
         }
 
-       
+
         private void grid_usuarios(int idtipousuario)
         {
             using (db_imEntities data_user = new db_imEntities())

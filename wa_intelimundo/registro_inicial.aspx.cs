@@ -471,7 +471,7 @@ namespace wa_intelimundo
                 string str_apaterno = RemoveSpecialCharacters(RemoveAccentsWithRegEx(txt_apaterno.Text.ToLower()));
                 string str_amaterno = RemoveSpecialCharacters(RemoveAccentsWithRegEx(txt_amaterno.Text.ToLower()));
 
-                string codigo_usuario = str_nombres + "_" + LeftRightMid.Left(str_apaterno, 2) + LeftRightMid.Left(str_amaterno, 2);
+                string codigo_usuario = str_nombres + "_" + left_right_mid.left(str_apaterno, 2) + left_right_mid.left(str_amaterno, 2);
                 txt_usuario_usuario.Text = codigo_usuario;
             }
             catch

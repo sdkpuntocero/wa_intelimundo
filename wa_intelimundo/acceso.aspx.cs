@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace wa_intelimundo
 {
-    public partial class accceso : System.Web.UI.Page
+    public partial class acceso : System.Web.UI.Page
     {
         static Guid guid_fuser, guid_centro;
 
@@ -176,7 +176,7 @@ namespace wa_intelimundo
                                         {
                                             var i_centrodep = (from i_c in edm_centrodep.inf_centro
                                                                join i_l in edm_centrodep.inf_centro_dep on i_c.id_centro equals i_l.id_centro
-                                                               where i_l.id_usuario == i_fcentrodep[0].id_usuario
+                                                               where i_c.id_tipo_centro == 2
                                                                select i_c).ToList();
 
                                             ddl_centro.DataSource = i_centrodep;

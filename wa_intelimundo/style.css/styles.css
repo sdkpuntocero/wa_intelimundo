@@ -20,10 +20,10 @@
 }
 
 body {
-    /*font-family: 'Muli', sans-serif;*/
-    font-family: 'Saira', sans-serif;
-    color: dimgray;
-    background: lightslategray;
+	/*font-family: 'Muli', sans-serif;*/
+	font-family: 'Saira', sans-serif;
+	color: dimgray;
+	background: dimgray;
 }
 
 i {

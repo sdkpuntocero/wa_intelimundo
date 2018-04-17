@@ -98,7 +98,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="accceso.aspx" />
+    <Content Include="acceso.aspx" />
     <Content Include="Content\web-fonts-with-css\less\fa-brands.less" />
     <Content Include="Content\web-fonts-with-css\less\fa-regular.less" />
     <Content Include="Content\web-fonts-with-css\less\fa-solid.less" />
@@ -591,15 +591,17 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="style.css\styles.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="accceso.aspx.cs">
-      <DependentUpon>accceso.aspx</DependentUpon>
+    <Compile Include="acceso.aspx.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="accceso.aspx.designer.cs">
-      <DependentUpon>accceso.aspx</DependentUpon>
+    <Compile Include="acceso.aspx.designer.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
     </Compile>
     <Compile Include="edm_im.Context.cs">
       <AutoGen>True</AutoGen>
@@ -719,7 +721,7 @@
     <Compile Include="intelimundo.Master.designer.cs">
       <DependentUpon>intelimundo.Master</DependentUpon>
     </Compile>
-    <Compile Include="LeftRightMid.cs" />
+    <Compile Include="left_right_mid.cs" />
     <Compile Include="mdl_encrypta.cs" />
     <Compile Include="mdl_user.cs" />
     <Compile Include="panel.aspx.cs">

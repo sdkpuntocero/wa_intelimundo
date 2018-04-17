@@ -5,25 +5,25 @@ using System.Web;
 
 namespace wa_intelimundo
 {
-    public class LeftRightMid
+    public class left_right_mid
     {
-        public static string Left(string param, int length)
+        public static string left(string param, int length)
         {
             string result = param.Substring(0, length);
             return result;
         }
-        public static string Right(string param, int length)
+        public static string right(string param, int length)
         {
             int value = param.Length - length;
             string result = param.Substring(value, length);
             return result;
         }
-        public static string Mid(string param, int startIndex, int length)
+        public static string mid(string param, int startIndex, int length)
         {
             string result = param.Substring(startIndex, length);
             return result;
         }
-        public static string Mid(string param, int startIndex)
+        public static string mid(string param, int startIndex)
         {
             string result = param.Substring(startIndex);
             return result;
