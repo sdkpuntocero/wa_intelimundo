@@ -14,7 +14,31 @@ namespace wa_intelimundo
     
     public partial class fact_estatus
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_estatus()
+        {
+            this.inf_alumnos = new HashSet<inf_alumnos>();
+            this.inf_centro = new HashSet<inf_centro>();
+            this.inf_contacto_proveedor = new HashSet<inf_contacto_proveedor>();
+            this.inf_empresa = new HashSet<inf_empresa>();
+            this.inf_proveedor = new HashSet<inf_proveedor>();
+            this.inf_usuarios = new HashSet<inf_usuarios>();
+        }
+    
         public int id_estatus { get; set; }
         public string desc_estatus { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_alumnos> inf_alumnos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_centro> inf_centro { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_contacto_proveedor> inf_contacto_proveedor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_empresa> inf_empresa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_proveedor> inf_proveedor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usuarios> inf_usuarios { get; set; }
     }
 }

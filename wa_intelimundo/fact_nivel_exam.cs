@@ -14,7 +14,16 @@ namespace wa_intelimundo
     
     public partial class fact_nivel_exam
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_nivel_exam()
+        {
+            this.inf_examenes = new HashSet<inf_examenes>();
+        }
+    
         public int id_nivel_exam { get; set; }
         public string desc_nivel_exam { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_examenes> inf_examenes { get; set; }
     }
 }

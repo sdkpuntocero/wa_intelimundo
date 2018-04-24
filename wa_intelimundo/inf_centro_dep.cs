@@ -14,8 +14,10 @@ namespace wa_intelimundo
     
     public partial class inf_centro_dep
     {
-        public int id_sucursal_dep { get; set; }
+        public int id_centro_dep { get; set; }
         public Nullable<System.Guid> id_usuario { get; set; }
         public Nullable<System.Guid> id_centro { get; set; }
+    
+        public virtual inf_centro inf_centro { get; set; }
     }
 }

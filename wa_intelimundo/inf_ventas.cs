@@ -14,6 +14,12 @@ namespace wa_intelimundo
     
     public partial class inf_ventas
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public inf_ventas()
+        {
+            this.inf_ventas_dep = new HashSet<inf_ventas_dep>();
+        }
+    
         public System.Guid id_ventas { get; set; }
         public Nullable<int> id_estatus { get; set; }
         public string codigo_venta { get; set; }
@@ -22,5 +28,9 @@ namespace wa_intelimundo
         public System.Guid id_usuario { get; set; }
         public System.Guid id_alumno { get; set; }
         public System.Guid id_centro { get; set; }
+    
+        public virtual inf_centro inf_centro { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_ventas_dep> inf_ventas_dep { get; set; }
     }
 }

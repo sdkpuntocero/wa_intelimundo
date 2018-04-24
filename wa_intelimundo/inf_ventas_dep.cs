@@ -19,5 +19,7 @@ namespace wa_intelimundo
         public Nullable<int> cantidad { get; set; }
         public Nullable<decimal> costo { get; set; }
         public Nullable<System.Guid> id_ventas { get; set; }
+    
+        public virtual inf_ventas inf_ventas { get; set; }
     }
 }

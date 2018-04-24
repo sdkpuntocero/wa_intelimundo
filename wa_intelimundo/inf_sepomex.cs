@@ -14,6 +14,14 @@ namespace wa_intelimundo
     
     public partial class inf_sepomex
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public inf_sepomex()
+        {
+            this.inf_centro = new HashSet<inf_centro>();
+            this.inf_empresa = new HashSet<inf_empresa>();
+            this.inf_proveedor = new HashSet<inf_proveedor>();
+        }
+    
         public int id_codigo { get; set; }
         public string d_codigo { get; set; }
         public string d_asenta { get; set; }
@@ -30,5 +38,12 @@ namespace wa_intelimundo
         public Nullable<int> id_asenta_cpcons { get; set; }
         public string d_zona { get; set; }
         public string c_cve_ciudad { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_centro> inf_centro { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_empresa> inf_empresa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_proveedor> inf_proveedor { get; set; }
     }
 }

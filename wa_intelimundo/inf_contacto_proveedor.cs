@@ -12,21 +12,19 @@ namespace wa_intelimundo
     using System;
     using System.Collections.Generic;
     
-    public partial class inf_fiscal
+    public partial class inf_contacto_proveedor
     {
-        public System.Guid id_fiscal { get; set; }
-        public string id_codigo_fiscal { get; set; }
-        public Nullable<int> id_estatus { get; set; }
-        public Nullable<int> id_tipo_fiscal { get; set; }
-        public Nullable<int> id_tipo_rfc { get; set; }
-        public string rfc { get; set; }
-        public string razon_social { get; set; }
+        public System.Guid id_contacto_proveedor { get; set; }
+        public string nombres { get; set; }
+        public string a_paterno { get; set; }
+        public string a_materno { get; set; }
         public string telefono { get; set; }
         public string email { get; set; }
-        public string cp { get; set; }
-        public string calle { get; set; }
-        public Nullable<int> id_asenta_cpcons { get; set; }
+        public Nullable<int> id_estatus { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
-        public System.Guid id_centro { get; set; }
+        public System.Guid id_proveedor { get; set; }
+    
+        public virtual fact_estatus fact_estatus { get; set; }
+        public virtual inf_proveedor inf_proveedor { get; set; }
     }
 }

@@ -14,7 +14,19 @@ namespace wa_intelimundo
     
     public partial class fact_tipo_usuario
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_tipo_usuario()
+        {
+            this.inf_alumnos = new HashSet<inf_alumnos>();
+            this.inf_usuarios = new HashSet<inf_usuarios>();
+        }
+    
         public int id_tipo_usuario { get; set; }
         public string desc_tipo_usuario { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_alumnos> inf_alumnos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usuarios> inf_usuarios { get; set; }
     }
 }

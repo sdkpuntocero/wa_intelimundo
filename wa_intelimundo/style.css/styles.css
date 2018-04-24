@@ -7,199 +7,187 @@
 @import url('https://fonts.googleapis.com/css?family=Saira');
 
 
-.panel-heading {
-    background: url("") no-repeat !important;
-    background-position: left;
-    background-size: unset;
-    
-}
-.panel-footer {
-    background: url("") no-repeat !important;
-    background-position: left;
-    background-size: unset;
-}
-
 body {
 	/*font-family: 'Muli', sans-serif;*/
 	font-family: 'Saira', sans-serif;
 	color: dimgray;
-	background: dimgray;
+	background: lightslategray;
 }
 
 i {
-    color: dimgray;
+	color: dimgray;
 }
 
-    i:hover {
-        color: orangered;
-    }
+	i:hover {
+		color: orangered;
+	}
 
 
 
 footer {
-    font-family: 'Saira', sans-serif;
-    color: white;
+	font-family: 'Saira', sans-serif;
+	color: white;
 }
 
-    footer i {
-        color: white;
-    }
+	footer i {
+		color: white;
+	}
 
 
 .alt_div {
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-top-color: #225d4f;
-    border-right-color: #225d4f;
-    border-bottom-color: #225d4f;
-    border-left-color: #225d4f;
-    border-top-width: thin;
-    border-right-width: thin;
-    border-bottom-width: thin;
-    border-left-width: thin;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #225d4f;
+	border-right-color: #225d4f;
+	border-bottom-color: #225d4f;
+	border-left-color: #225d4f;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
 }
 
 .buttonClass {
-    color: dimgray;
+	color: dimgray;
 }
 
-    .buttonClass:hover {
-        color: orangered;
-    }
+	.buttonClass:hover {
+		color: orangered;
+	}
 
 
 @media (min-width: 768px) {
-    .sidebar-nav .navbar .navbar-collapse {
-        padding: 0;
-        max-height: none;
-    }
+	.sidebar-nav .navbar .navbar-collapse {
+		padding: 0;
+		max-height: none;
+	}
 
-    .sidebar-nav .navbar ul {
-        float: none;
-        display: block;
-    }
+	.sidebar-nav .navbar ul {
+		float: none;
+		display: block;
+	}
 
-    .sidebar-nav .navbar li {
-        float: none;
-        display: block;
-        color: gray
-    }
+	.sidebar-nav .navbar li {
+		float: none;
+		display: block;
+		color: gray
+	}
 
-        .sidebar-nav .navbar li a {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            color: gray
-        }
+		.sidebar-nav .navbar li a {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			color: gray
+		}
 }
 
 
 
 .nb-login {
-    max-width: 300px;
-    margin: 30px auto;
-    background: rgba(255,255,255,0.2);
-    padding: 20px 25px;
-    border-radius: 2px;
-    box-shadow: 0px 0px 10px rgba(255,255,255,0.05);
+	max-width: 300px;
+	margin: 30px auto;
+	background: rgba(255,255,255,0.2);
+	padding: 20px 25px;
+	border-radius: 2px;
+	box-shadow: 0px 0px 10px rgba(255,255,255,0.05);
 }
 
-    .nb-login h3 {
-        font-size: 13px;
-        line-height: 13px;
-        margin: 15px 0px 25px 0px;
-        text-transform: uppercase;
-        color: #fff;
-    }
+	.nb-login h3 {
+		font-size: 13px;
+		line-height: 13px;
+		margin: 15px 0px 25px 0px;
+		text-transform: uppercase;
+		color: #fff;
+	}
 
-    .nb-login form {
-        margin-bottom: 15px;
-        color: #fff;
-    }
+	.nb-login form {
+		margin-bottom: 15px;
+		color: #fff;
+	}
 
-        .nb-login form input,
-        .nb-login form textarea {
-            box-shadow: none !important;
-            padding: 6px 5px;
-            color: #fff;
-            border: 0px;
-            border-bottom: 1px solid rgba(255,255,255,0.5);
-            background: transparent;
-            border-radius: 0px;
-        }
+		.nb-login form input,
+		.nb-login form textarea {
+			box-shadow: none !important;
+			padding: 6px 5px;
+			color: #fff;
+			border: 0px;
+			border-bottom: 1px solid rgba(255,255,255,0.5);
+			background: transparent;
+			border-radius: 0px;
+		}
 
-            .nb-login form input:focus {
-                background: rgba(255,255,255,0.05);
-            }
+			.nb-login form input:focus {
+				background: rgba(255,255,255,0.05);
+			}
 
-        .nb-login form ::-webkit-input-placeholder {
-            color: rgba(255,255,255,0.5);
-        }
+		.nb-login form ::-webkit-input-placeholder {
+			color: rgba(255,255,255,0.5);
+		}
 
-        .nb-login form ::-moz-placeholder {
-            color: rgba(255,255,255,0.5);
-        }
+		.nb-login form ::-moz-placeholder {
+			color: rgba(255,255,255,0.5);
+		}
 
-        .nb-login form :-ms-input-placeholder {
-            color: rgba(255,255,255,0.5);
-        }
+		.nb-login form :-ms-input-placeholder {
+			color: rgba(255,255,255,0.5);
+		}
 
-        .nb-login form .btn {
-            border: 0px;
-            border-radius: 25px;
-            padding: 10px 20px;
-            border: 1px solid rgba(255,255,255,0.5);
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: 600;
-            background: transparent;
-            margin-top: 15px;
-            -webkit-transition: all 0.5s ease;
-            -moz-transition: all 0.5s ease;
-            -o-transition: all 0.5s ease;
-            -ms-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-        }
+		.nb-login form .btn {
+			border: 0px;
+			border-radius: 25px;
+			padding: 10px 20px;
+			border: 1px solid rgba(255,255,255,0.5);
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 600;
+			background: transparent;
+			margin-top: 15px;
+			-webkit-transition: all 0.5s ease;
+			-moz-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			-ms-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+		}
 
-            .nb-login form .btn:hover {
-                background: #fff;
-                color: #666;
-            }
+			.nb-login form .btn:hover {
+				background: #fff;
+				color: #666;
+			}
 
-    .nb-login .social a {
-        display: block;
-        margin-bottom: 15px;
-        color: #fff;
-        padding: 8px 20px;
-        border-radius: 25px;
-        text-align: center;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 600;
-        text-decoration: none;
-    }
+	.nb-login .social a {
+		display: block;
+		margin-bottom: 15px;
+		color: #fff;
+		padding: 8px 20px;
+		border-radius: 25px;
+		text-align: center;
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: 600;
+		text-decoration: none;
+	}
 
-        .nb-login .social a:hover {
-            opacity: 0.9;
-        }
+		.nb-login .social a:hover {
+			opacity: 0.9;
+		}
 
-        .nb-login .social a.facebook {
-            background: #3280e7;
-        }
+		.nb-login .social a.facebook {
+			background: #3280e7;
+		}
 
-        .nb-login .social a.twitter {
-            background: #32c8de;
-        }
+		.nb-login .social a.twitter {
+			background: #32c8de;
+		}
 
-        .nb-login .social a.google-plus {
-            background: #f96f4a;
-        }
+		.nb-login .social a.google-plus {
+			background: #f96f4a;
+		}
 
-    .nb-login .center {
-        text-align: center;
-    }
+	.nb-login .center {
+		text-align: center;
+	}
 
-    .nb-login .or {
-        color: #FFF;
-    }
+	.nb-login .or {
+		color: #FFF;
+	}

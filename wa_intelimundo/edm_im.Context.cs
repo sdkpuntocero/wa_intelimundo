@@ -33,21 +33,20 @@ namespace wa_intelimundo
         public virtual DbSet<fact_nivel_escolar> fact_nivel_escolar { get; set; }
         public virtual DbSet<fact_nivel_exam> fact_nivel_exam { get; set; }
         public virtual DbSet<fact_tipo_centro> fact_tipo_centro { get; set; }
-        public virtual DbSet<fact_tipo_fiscal> fact_tipo_fiscal { get; set; }
         public virtual DbSet<fact_tipo_rfc> fact_tipo_rfc { get; set; }
         public virtual DbSet<fact_tipo_usuario> fact_tipo_usuario { get; set; }
         public virtual DbSet<inf_alumnos> inf_alumnos { get; set; }
         public virtual DbSet<inf_centro> inf_centro { get; set; }
         public virtual DbSet<inf_centro_dep> inf_centro_dep { get; set; }
-        public virtual DbSet<inf_contacto_fiscal> inf_contacto_fiscal { get; set; }
+        public virtual DbSet<inf_contacto_proveedor> inf_contacto_proveedor { get; set; }
         public virtual DbSet<inf_empresa> inf_empresa { get; set; }
         public virtual DbSet<inf_examenes> inf_examenes { get; set; }
         public virtual DbSet<inf_examenes_dep> inf_examenes_dep { get; set; }
-        public virtual DbSet<inf_fiscal> inf_fiscal { get; set; }
         public virtual DbSet<inf_gastos> inf_gastos { get; set; }
         public virtual DbSet<inf_inventario> inf_inventario { get; set; }
         public virtual DbSet<inf_preguntas_exam> inf_preguntas_exam { get; set; }
         public virtual DbSet<inf_preguntas_test> inf_preguntas_test { get; set; }
+        public virtual DbSet<inf_proveedor> inf_proveedor { get; set; }
         public virtual DbSet<inf_respuestas_exam> inf_respuestas_exam { get; set; }
         public virtual DbSet<inf_respuestas_test> inf_respuestas_test { get; set; }
         public virtual DbSet<inf_sepomex> inf_sepomex { get; set; }

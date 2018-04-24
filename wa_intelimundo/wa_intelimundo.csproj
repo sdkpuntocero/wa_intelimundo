@@ -143,6 +143,7 @@
     <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.woff" />
     <Content Include="Content\web-fonts-with-css\webfonts\fa-solid-900.woff2" />
+    <Content Include="panel_director.aspx" />
     <Content Include="panel_facilitador.aspx" />
     <None Include="packages.config" />
     <Content Include="Content\web-fonts-with-css\css\fa-brands.css" />
@@ -593,6 +594,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="style.css\form-helpers\css\bootstrap-formhelpers.css" />
+    <Content Include="style.css\form-helpers\css\bootstrap-formhelpers.min.css" />
+    <Content Include="style.css\form-helpers\img\bootstrap-formhelpers-countries.flags-LICENSE.txt" />
+    <Content Include="style.css\form-helpers\img\bootstrap-formhelpers-countries.flags.png" />
+    <Content Include="style.css\form-helpers\img\bootstrap-formhelpers-currencies.flags.png" />
+    <Content Include="style.css\form-helpers\img\bootstrap-formhelpers-googlefonts.png" />
+    <Content Include="style.css\form-helpers\js\bootstrap-formhelpers.js" />
+    <Content Include="style.css\form-helpers\js\bootstrap-formhelpers.min.js" />
     <Content Include="style.css\styles.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -645,9 +654,6 @@
     <Compile Include="fact_tipo_centro.cs">
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
-    <Compile Include="fact_tipo_fiscal.cs">
-      <DependentUpon>edm_im.tt</DependentUpon>
-    </Compile>
     <Compile Include="fact_tipo_rfc.cs">
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
@@ -657,6 +663,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="guid_usuario.cs" />
     <Compile Include="inf_alumnos.cs">
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
@@ -666,7 +673,7 @@
     <Compile Include="inf_centro_dep.cs">
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
-    <Compile Include="inf_contacto_fiscal.cs">
+    <Compile Include="inf_contacto_proveedor.cs">
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_empresa.cs">
@@ -676,9 +683,6 @@
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_examenes_dep.cs">
-      <DependentUpon>edm_im.tt</DependentUpon>
-    </Compile>
-    <Compile Include="inf_fiscal.cs">
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_gastos.cs">
@@ -691,6 +695,9 @@
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_preguntas_test.cs">
+      <DependentUpon>edm_im.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_proveedor.cs">
       <DependentUpon>edm_im.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_respuestas_exam.cs">
@@ -725,8 +732,7 @@
       <DependentUpon>intelimundo.Master</DependentUpon>
     </Compile>
     <Compile Include="left_right_mid.cs" />
-    <Compile Include="mdl_encrypta.cs" />
-    <Compile Include="mdl_user.cs" />
+    <Compile Include="encriptacion.cs" />
     <Compile Include="panel.aspx.cs">
       <DependentUpon>panel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -747,6 +753,13 @@
     </Compile>
     <Compile Include="panel_conta.aspx.designer.cs">
       <DependentUpon>panel_conta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel_director.aspx.cs">
+      <DependentUpon>panel_director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel_director.aspx.designer.cs">
+      <DependentUpon>panel_director.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registro_inicial.aspx.cs">

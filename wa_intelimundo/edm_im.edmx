@@ -64,13 +64,6 @@
           <Property Name="id_tipo_centro" Type="int" Nullable="false" />
           <Property Name="desc_tipo_centro" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="fact_tipo_fiscal">
-          <Key>
-            <PropertyRef Name="id_tipo_fiscal" />
-          </Key>
-          <Property Name="id_tipo_fiscal" Type="int" Nullable="false" />
-          <Property Name="desc_tipo_fiscal" Type="varchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="fact_tipo_rfc">
           <Key>
             <PropertyRef Name="id_tipo_rfc" />
@@ -100,11 +93,6 @@
           <Property Name="codigo_alumno" Type="varchar" MaxLength="50" />
           <Property Name="clave" Type="varchar" MaxLength="50" />
           <Property Name="fecha_nacimiento" Type="date" />
-          <Property Name="telefono" Type="varchar" MaxLength="50" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="cp" Type="varchar" MaxLength="5" />
-          <Property Name="calle" Type="varchar" MaxLength="50" />
-          <Property Name="id_asenta_cpcons" Type="int" />
           <Property Name="fecha_registro" Type="date" />
           <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
@@ -120,26 +108,25 @@
           <Property Name="nombre" Type="varchar" MaxLength="50" />
           <Property Name="telefono" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="cp" Type="varchar" MaxLength="5" />
-          <Property Name="calle" Type="varchar" MaxLength="50" />
-          <Property Name="id_asenta_cpcons" Type="int" />
-          <Property Name="fecha_corte" Type="date" />
+          <Property Name="callenum" Type="varchar" MaxLength="50" />
+          <Property Name="id_codigo" Type="int" />
+          <Property Name="id_empresa" Type="uniqueidentifier" />
           <Property Name="fecha_registro" Type="date" />
           <Property Name="dia_corte" Type="int" />
         </EntityType>
         <EntityType Name="inf_centro_dep">
           <Key>
-            <PropertyRef Name="id_sucursal_dep" />
+            <PropertyRef Name="id_centro_dep" />
           </Key>
-          <Property Name="id_sucursal_dep" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_centro_dep" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_usuario" Type="uniqueidentifier" />
           <Property Name="id_centro" Type="uniqueidentifier" />
         </EntityType>
-        <EntityType Name="inf_contacto_fiscal">
+        <EntityType Name="inf_contacto_proveedor">
           <Key>
-            <PropertyRef Name="id_contacto_fiscal" />
+            <PropertyRef Name="id_contacto_proveedor" />
           </Key>
-          <Property Name="id_contacto_fiscal" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_contacto_proveedor" Type="uniqueidentifier" Nullable="false" />
           <Property Name="nombres" Type="varchar" MaxLength="50" />
           <Property Name="a_paterno" Type="varchar" MaxLength="50" />
           <Property Name="a_materno" Type="varchar" MaxLength="50" />
@@ -147,7 +134,7 @@
           <Property Name="email" Type="varchar" MaxLength="50" />
           <Property Name="id_estatus" Type="int" />
           <Property Name="fecha_registro" Type="date" />
-          <Property Name="id_fiscal" Type="uniqueidentifier" />
+          <Property Name="id_proveedor" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="inf_empresa">
           <Key>
@@ -160,9 +147,8 @@
           <Property Name="razon_social" Type="varchar" MaxLength="50" />
           <Property Name="telefono" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="cp" Type="varchar" MaxLength="5" />
-          <Property Name="calle" Type="varchar" MaxLength="50" />
-          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="callenum" Type="varchar" MaxLength="50" />
+          <Property Name="id_codigo" Type="int" />
           <Property Name="fecha_registro" Type="date" />
         </EntityType>
         <EntityType Name="inf_examenes">
@@ -186,25 +172,6 @@
           <Property Name="id_pregunta_exam" Type="int" Nullable="false" />
           <Property Name="id_respuestas_exam" Type="int" Nullable="false" />
           <Property Name="id_examenes" Type="uniqueidentifier" Nullable="false" />
-        </EntityType>
-        <EntityType Name="inf_fiscal">
-          <Key>
-            <PropertyRef Name="id_fiscal" />
-          </Key>
-          <Property Name="id_fiscal" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="id_codigo_fiscal" Type="varchar" MaxLength="50" />
-          <Property Name="id_estatus" Type="int" />
-          <Property Name="id_tipo_fiscal" Type="int" />
-          <Property Name="id_tipo_rfc" Type="int" />
-          <Property Name="rfc" Type="varchar" MaxLength="50" />
-          <Property Name="razon_social" Type="varchar" MaxLength="50" />
-          <Property Name="telefono" Type="varchar" MaxLength="50" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="cp" Type="varchar" MaxLength="5" />
-          <Property Name="calle" Type="varchar" MaxLength="50" />
-          <Property Name="id_asenta_cpcons" Type="int" />
-          <Property Name="fecha_registro" Type="date" />
-          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="inf_gastos">
           <Key>
@@ -250,6 +217,22 @@
           </Key>
           <Property Name="id_pregunta" Type="int" Nullable="false" />
           <Property Name="desc_pregunta" Type="varchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="inf_proveedor">
+          <Key>
+            <PropertyRef Name="id_proveedor" />
+          </Key>
+          <Property Name="id_proveedor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="id_tipo_rfc" Type="int" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="razon_social" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="callenum" Type="varchar" MaxLength="50" />
+          <Property Name="id_codigo" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="id_centro" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="inf_respuestas_exam">
           <Key>
@@ -352,38 +335,581 @@
           <Property Name="costo" Type="money" />
           <Property Name="id_ventas" Type="uniqueidentifier" />
         </EntityType>
+        <Association Name="FK_fact_grado_escolar_fact_nivel_escolar">
+          <End Role="fact_nivel_escolar" Type="Self.fact_nivel_escolar" Multiplicity="1" />
+          <End Role="fact_grado_escolar" Type="Self.fact_grado_escolar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_nivel_escolar">
+              <PropertyRef Name="id_nivel_escolar" />
+            </Principal>
+            <Dependent Role="fact_grado_escolar">
+              <PropertyRef Name="id_nivel_escolar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_alumnos_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_alumnos" Type="Self.inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_alumnos_fact_genero">
+          <End Role="fact_genero" Type="Self.fact_genero" Multiplicity="0..1" />
+          <End Role="inf_alumnos" Type="Self.inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_genero">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_alumnos_fact_tipo_usuario">
+          <End Role="fact_tipo_usuario" Type="Self.fact_tipo_usuario" Multiplicity="0..1" />
+          <End Role="inf_alumnos" Type="Self.inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usuario">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_alumnos_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_alumnos" Type="Self.inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_dep_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="0..1" />
+          <End Role="inf_centro_dep" Type="Self.inf_centro_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_centro_dep">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_licencias">
+          <End Role="fact_licencias" Type="Self.fact_licencias" Multiplicity="1" />
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_licencias">
+              <PropertyRef Name="id_licencia" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_licencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_tipo_centro">
+          <End Role="fact_tipo_centro" Type="Self.fact_tipo_centro" Multiplicity="0..1" />
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_centro">
+              <PropertyRef Name="id_tipo_centro" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_tipo_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_inf_empresa">
+          <End Role="inf_empresa" Type="Self.inf_empresa" Multiplicity="0..1" />
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_empresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_inf_sepomex">
+          <End Role="inf_sepomex" Type="Self.inf_sepomex" Multiplicity="0..1" />
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_sepomex">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_proveedor_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_contacto_proveedor" Type="Self.inf_contacto_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_contacto_proveedor">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_proveedor_inf_proveedor">
+          <End Role="inf_proveedor" Type="Self.inf_proveedor" Multiplicity="1" />
+          <End Role="inf_contacto_proveedor" Type="Self.inf_contacto_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="inf_contacto_proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_empresa_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_empresa" Type="Self.inf_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_empresa">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_empresa_fact_tipo_rfc">
+          <End Role="fact_tipo_rfc" Type="Self.fact_tipo_rfc" Multiplicity="0..1" />
+          <End Role="inf_empresa" Type="Self.inf_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Principal>
+            <Dependent Role="inf_empresa">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_empresa_inf_sepomex">
+          <End Role="inf_sepomex" Type="Self.inf_sepomex" Multiplicity="0..1" />
+          <End Role="inf_empresa" Type="Self.inf_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_sepomex">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="inf_empresa">
+              <PropertyRef Name="id_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_examenes_dep_inf_examenes">
+          <End Role="inf_examenes" Type="Self.inf_examenes" Multiplicity="1" />
+          <End Role="inf_examenes_dep" Type="Self.inf_examenes_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_examenes">
+              <PropertyRef Name="id_examenes" />
+            </Principal>
+            <Dependent Role="inf_examenes_dep">
+              <PropertyRef Name="id_examenes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_examenes_fact_nivel_exam">
+          <End Role="fact_nivel_exam" Type="Self.fact_nivel_exam" Multiplicity="1" />
+          <End Role="inf_examenes" Type="Self.inf_examenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_nivel_exam">
+              <PropertyRef Name="id_nivel_exam" />
+            </Principal>
+            <Dependent Role="inf_examenes">
+              <PropertyRef Name="id_nivel_exam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_examenes_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_examenes" Type="Self.inf_examenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_examenes">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_gastos_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_gastos" Type="Self.inf_gastos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_gastos">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inventario_fact_grado_escolar">
+          <End Role="fact_grado_escolar" Type="Self.fact_grado_escolar" Multiplicity="0..1" />
+          <End Role="inf_inventario" Type="Self.inf_inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_grado_escolar">
+              <PropertyRef Name="id_grado_escolar" />
+            </Principal>
+            <Dependent Role="inf_inventario">
+              <PropertyRef Name="id_grado_escolar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inventario_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_inventario" Type="Self.inf_inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_inventario">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_proveedor" Type="Self.inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_fact_tipo_rfc">
+          <End Role="fact_tipo_rfc" Type="Self.fact_tipo_rfc" Multiplicity="0..1" />
+          <End Role="inf_proveedor" Type="Self.inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_proveedor" Type="Self.inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_inf_sepomex">
+          <End Role="inf_sepomex" Type="Self.inf_sepomex" Multiplicity="0..1" />
+          <End Role="inf_proveedor" Type="Self.inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_sepomex">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_respuestas_exam_inf_preguntas_exam">
+          <End Role="inf_preguntas_exam" Type="Self.inf_preguntas_exam" Multiplicity="1" />
+          <End Role="inf_respuestas_exam" Type="Self.inf_respuestas_exam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_preguntas_exam">
+              <PropertyRef Name="id_pregunta_exam" />
+            </Principal>
+            <Dependent Role="inf_respuestas_exam">
+              <PropertyRef Name="id_pregunta_exam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_respuestas_test_inf_preguntas_test">
+          <End Role="inf_preguntas_test" Type="Self.inf_preguntas_test" Multiplicity="1" />
+          <End Role="inf_respuestas_test" Type="Self.inf_respuestas_test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_preguntas_test">
+              <PropertyRef Name="id_pregunta" />
+            </Principal>
+            <Dependent Role="inf_respuestas_test">
+              <PropertyRef Name="id_pregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_estatus">
+          <End Role="fact_estatus" Type="Self.fact_estatus" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_genero">
+          <End Role="fact_genero" Type="Self.fact_genero" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_genero">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_tipo_usuario">
+          <End Role="fact_tipo_usuario" Type="Self.fact_tipo_usuario" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usuario">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="0..1" />
+          <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_ventas_dep_inf_ventas">
+          <End Role="inf_ventas" Type="Self.inf_ventas" Multiplicity="0..1" />
+          <End Role="inf_ventas_dep" Type="Self.inf_ventas_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_ventas">
+              <PropertyRef Name="id_ventas" />
+            </Principal>
+            <Dependent Role="inf_ventas_dep">
+              <PropertyRef Name="id_ventas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_ventas_inf_centro">
+          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
+          <End Role="inf_ventas" Type="Self.inf_ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_ventas">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="db_imModelStoreContainer">
-          <EntitySet Name="fact_estatus" EntityType="Self.fact_estatus" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_genero" EntityType="Self.fact_genero" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_grado_escolar" EntityType="Self.fact_grado_escolar" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_licencias" EntityType="Self.fact_licencias" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_materia_exam" EntityType="Self.fact_materia_exam" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_nivel_escolar" EntityType="Self.fact_nivel_escolar" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_nivel_exam" EntityType="Self.fact_nivel_exam" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_tipo_centro" EntityType="Self.fact_tipo_centro" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_tipo_fiscal" EntityType="Self.fact_tipo_fiscal" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_tipo_rfc" EntityType="Self.fact_tipo_rfc" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="fact_tipo_usuario" EntityType="Self.fact_tipo_usuario" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_alumnos" EntityType="Self.inf_alumnos" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_centro" EntityType="Self.inf_centro" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_centro_dep" EntityType="Self.inf_centro_dep" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_contacto_fiscal" EntityType="Self.inf_contacto_fiscal" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_empresa" EntityType="Self.inf_empresa" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_examenes" EntityType="Self.inf_examenes" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_examenes_dep" EntityType="Self.inf_examenes_dep" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_fiscal" EntityType="Self.inf_fiscal" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_gastos" EntityType="Self.inf_gastos" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_inventario" EntityType="Self.inf_inventario" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_preguntas_exam" EntityType="Self.inf_preguntas_exam" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_preguntas_test" EntityType="Self.inf_preguntas_test" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_respuestas_exam" EntityType="Self.inf_respuestas_exam" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_respuestas_test" EntityType="Self.inf_respuestas_test" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_sepomex" EntityType="Self.inf_sepomex" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_test_unam" EntityType="Self.inf_test_unam" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_test_unam_dep" EntityType="Self.inf_test_unam_dep" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_usuarios" EntityType="Self.inf_usuarios" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_ventas" EntityType="Self.inf_ventas" Schema="u_im" store:Type="Tables" />
-          <EntitySet Name="inf_ventas_dep" EntityType="Self.inf_ventas_dep" Schema="u_im" store:Type="Tables" />
+          <EntitySet Name="fact_estatus" EntityType="Self.fact_estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_genero" EntityType="Self.fact_genero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_grado_escolar" EntityType="Self.fact_grado_escolar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_licencias" EntityType="Self.fact_licencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_materia_exam" EntityType="Self.fact_materia_exam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_nivel_escolar" EntityType="Self.fact_nivel_escolar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_nivel_exam" EntityType="Self.fact_nivel_exam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_centro" EntityType="Self.fact_tipo_centro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_rfc" EntityType="Self.fact_tipo_rfc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_usuario" EntityType="Self.fact_tipo_usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_alumnos" EntityType="Self.inf_alumnos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_centro" EntityType="Self.inf_centro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_centro_dep" EntityType="Self.inf_centro_dep" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_contacto_proveedor" EntityType="Self.inf_contacto_proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_empresa" EntityType="Self.inf_empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_examenes" EntityType="Self.inf_examenes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_examenes_dep" EntityType="Self.inf_examenes_dep" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_gastos" EntityType="Self.inf_gastos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_inventario" EntityType="Self.inf_inventario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_preguntas_exam" EntityType="Self.inf_preguntas_exam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_preguntas_test" EntityType="Self.inf_preguntas_test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_proveedor" EntityType="Self.inf_proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_respuestas_exam" EntityType="Self.inf_respuestas_exam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_respuestas_test" EntityType="Self.inf_respuestas_test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_sepomex" EntityType="Self.inf_sepomex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_test_unam" EntityType="Self.inf_test_unam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_test_unam_dep" EntityType="Self.inf_test_unam_dep" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_usuarios" EntityType="Self.inf_usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_ventas" EntityType="Self.inf_ventas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_ventas_dep" EntityType="Self.inf_ventas_dep" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_fact_grado_escolar_fact_nivel_escolar" Association="Self.FK_fact_grado_escolar_fact_nivel_escolar">
+            <End Role="fact_nivel_escolar" EntitySet="fact_nivel_escolar" />
+            <End Role="fact_grado_escolar" EntitySet="fact_grado_escolar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_alumnos_fact_estatus" Association="Self.FK_inf_alumnos_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_alumnos_fact_genero" Association="Self.FK_inf_alumnos_fact_genero">
+            <End Role="fact_genero" EntitySet="fact_genero" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_alumnos_fact_tipo_usuario" Association="Self.FK_inf_alumnos_fact_tipo_usuario">
+            <End Role="fact_tipo_usuario" EntitySet="fact_tipo_usuario" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_alumnos_inf_centro" Association="Self.FK_inf_alumnos_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_dep_inf_centro" Association="Self.FK_inf_centro_dep_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_centro_dep" EntitySet="inf_centro_dep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_estatus" Association="Self.FK_inf_centro_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_licencias" Association="Self.FK_inf_centro_fact_licencias">
+            <End Role="fact_licencias" EntitySet="fact_licencias" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_tipo_centro" Association="Self.FK_inf_centro_fact_tipo_centro">
+            <End Role="fact_tipo_centro" EntitySet="fact_tipo_centro" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_inf_empresa" Association="Self.FK_inf_centro_inf_empresa">
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_inf_sepomex" Association="Self.FK_inf_centro_inf_sepomex">
+            <End Role="inf_sepomex" EntitySet="inf_sepomex" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_proveedor_fact_estatus" Association="Self.FK_inf_contacto_proveedor_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_contacto_proveedor" EntitySet="inf_contacto_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_proveedor_inf_proveedor" Association="Self.FK_inf_contacto_proveedor_inf_proveedor">
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+            <End Role="inf_contacto_proveedor" EntitySet="inf_contacto_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_empresa_fact_estatus" Association="Self.FK_inf_empresa_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_empresa_fact_tipo_rfc" Association="Self.FK_inf_empresa_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_empresa_inf_sepomex" Association="Self.FK_inf_empresa_inf_sepomex">
+            <End Role="inf_sepomex" EntitySet="inf_sepomex" />
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_examenes_dep_inf_examenes" Association="Self.FK_inf_examenes_dep_inf_examenes">
+            <End Role="inf_examenes" EntitySet="inf_examenes" />
+            <End Role="inf_examenes_dep" EntitySet="inf_examenes_dep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_examenes_fact_nivel_exam" Association="Self.FK_inf_examenes_fact_nivel_exam">
+            <End Role="fact_nivel_exam" EntitySet="fact_nivel_exam" />
+            <End Role="inf_examenes" EntitySet="inf_examenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_examenes_inf_centro" Association="Self.FK_inf_examenes_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_examenes" EntitySet="inf_examenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_gastos_inf_centro" Association="Self.FK_inf_gastos_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_gastos" EntitySet="inf_gastos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inventario_fact_grado_escolar" Association="Self.FK_inf_inventario_fact_grado_escolar">
+            <End Role="fact_grado_escolar" EntitySet="fact_grado_escolar" />
+            <End Role="inf_inventario" EntitySet="inf_inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inventario_inf_centro" Association="Self.FK_inf_inventario_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_inventario" EntitySet="inf_inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_fact_estatus" Association="Self.FK_inf_proveedor_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_fact_tipo_rfc" Association="Self.FK_inf_proveedor_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_inf_centro" Association="Self.FK_inf_proveedor_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_inf_sepomex" Association="Self.FK_inf_proveedor_inf_sepomex">
+            <End Role="inf_sepomex" EntitySet="inf_sepomex" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_respuestas_exam_inf_preguntas_exam" Association="Self.FK_inf_respuestas_exam_inf_preguntas_exam">
+            <End Role="inf_preguntas_exam" EntitySet="inf_preguntas_exam" />
+            <End Role="inf_respuestas_exam" EntitySet="inf_respuestas_exam" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_respuestas_test_inf_preguntas_test" Association="Self.FK_inf_respuestas_test_inf_preguntas_test">
+            <End Role="inf_preguntas_test" EntitySet="inf_preguntas_test" />
+            <End Role="inf_respuestas_test" EntitySet="inf_respuestas_test" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_estatus" Association="Self.FK_inf_usuarios_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_genero" Association="Self.FK_inf_usuarios_fact_genero">
+            <End Role="fact_genero" EntitySet="fact_genero" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_tipo_usuario" Association="Self.FK_inf_usuarios_fact_tipo_usuario">
+            <End Role="fact_tipo_usuario" EntitySet="fact_tipo_usuario" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_inf_centro" Association="Self.FK_inf_usuarios_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_ventas_dep_inf_ventas" Association="Self.FK_inf_ventas_dep_inf_ventas">
+            <End Role="inf_ventas" EntitySet="inf_ventas" />
+            <End Role="inf_ventas_dep" EntitySet="inf_ventas_dep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_ventas_inf_centro" Association="Self.FK_inf_ventas_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_ventas" EntitySet="inf_ventas" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -398,21 +924,20 @@
           <EntitySet Name="fact_nivel_escolar" EntityType="db_imModel.fact_nivel_escolar" />
           <EntitySet Name="fact_nivel_exam" EntityType="db_imModel.fact_nivel_exam" />
           <EntitySet Name="fact_tipo_centro" EntityType="db_imModel.fact_tipo_centro" />
-          <EntitySet Name="fact_tipo_fiscal" EntityType="db_imModel.fact_tipo_fiscal" />
           <EntitySet Name="fact_tipo_rfc" EntityType="db_imModel.fact_tipo_rfc" />
           <EntitySet Name="fact_tipo_usuario" EntityType="db_imModel.fact_tipo_usuario" />
           <EntitySet Name="inf_alumnos" EntityType="db_imModel.inf_alumnos" />
           <EntitySet Name="inf_centro" EntityType="db_imModel.inf_centro" />
           <EntitySet Name="inf_centro_dep" EntityType="db_imModel.inf_centro_dep" />
-          <EntitySet Name="inf_contacto_fiscal" EntityType="db_imModel.inf_contacto_fiscal" />
+          <EntitySet Name="inf_contacto_proveedor" EntityType="db_imModel.inf_contacto_proveedor" />
           <EntitySet Name="inf_empresa" EntityType="db_imModel.inf_empresa" />
           <EntitySet Name="inf_examenes" EntityType="db_imModel.inf_examenes" />
           <EntitySet Name="inf_examenes_dep" EntityType="db_imModel.inf_examenes_dep" />
-          <EntitySet Name="inf_fiscal" EntityType="db_imModel.inf_fiscal" />
           <EntitySet Name="inf_gastos" EntityType="db_imModel.inf_gastos" />
           <EntitySet Name="inf_inventario" EntityType="db_imModel.inf_inventario" />
           <EntitySet Name="inf_preguntas_exam" EntityType="db_imModel.inf_preguntas_exam" />
           <EntitySet Name="inf_preguntas_test" EntityType="db_imModel.inf_preguntas_test" />
+          <EntitySet Name="inf_proveedor" EntityType="db_imModel.inf_proveedor" />
           <EntitySet Name="inf_respuestas_exam" EntityType="db_imModel.inf_respuestas_exam" />
           <EntitySet Name="inf_respuestas_test" EntityType="db_imModel.inf_respuestas_test" />
           <EntitySet Name="inf_sepomex" EntityType="db_imModel.inf_sepomex" />
@@ -421,6 +946,142 @@
           <EntitySet Name="inf_usuarios" EntityType="db_imModel.inf_usuarios" />
           <EntitySet Name="inf_ventas" EntityType="db_imModel.inf_ventas" />
           <EntitySet Name="inf_ventas_dep" EntityType="db_imModel.inf_ventas_dep" />
+          <AssociationSet Name="FK_inf_alumnos_fact_estatus" Association="db_imModel.FK_inf_alumnos_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_estatus" Association="db_imModel.FK_inf_centro_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_proveedor_fact_estatus" Association="db_imModel.FK_inf_contacto_proveedor_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_contacto_proveedor" EntitySet="inf_contacto_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_empresa_fact_estatus" Association="db_imModel.FK_inf_empresa_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_fact_estatus" Association="db_imModel.FK_inf_proveedor_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_estatus" Association="db_imModel.FK_inf_usuarios_fact_estatus">
+            <End Role="fact_estatus" EntitySet="fact_estatus" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_alumnos_fact_genero" Association="db_imModel.FK_inf_alumnos_fact_genero">
+            <End Role="fact_genero" EntitySet="fact_genero" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_genero" Association="db_imModel.FK_inf_usuarios_fact_genero">
+            <End Role="fact_genero" EntitySet="fact_genero" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fact_grado_escolar_fact_nivel_escolar" Association="db_imModel.FK_fact_grado_escolar_fact_nivel_escolar">
+            <End Role="fact_nivel_escolar" EntitySet="fact_nivel_escolar" />
+            <End Role="fact_grado_escolar" EntitySet="fact_grado_escolar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inventario_fact_grado_escolar" Association="db_imModel.FK_inf_inventario_fact_grado_escolar">
+            <End Role="fact_grado_escolar" EntitySet="fact_grado_escolar" />
+            <End Role="inf_inventario" EntitySet="inf_inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_licencias" Association="db_imModel.FK_inf_centro_fact_licencias">
+            <End Role="fact_licencias" EntitySet="fact_licencias" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_examenes_fact_nivel_exam" Association="db_imModel.FK_inf_examenes_fact_nivel_exam">
+            <End Role="fact_nivel_exam" EntitySet="fact_nivel_exam" />
+            <End Role="inf_examenes" EntitySet="inf_examenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_fact_tipo_centro" Association="db_imModel.FK_inf_centro_fact_tipo_centro">
+            <End Role="fact_tipo_centro" EntitySet="fact_tipo_centro" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_empresa_fact_tipo_rfc" Association="db_imModel.FK_inf_empresa_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_fact_tipo_rfc" Association="db_imModel.FK_inf_proveedor_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_alumnos_fact_tipo_usuario" Association="db_imModel.FK_inf_alumnos_fact_tipo_usuario">
+            <End Role="fact_tipo_usuario" EntitySet="fact_tipo_usuario" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_fact_tipo_usuario" Association="db_imModel.FK_inf_usuarios_fact_tipo_usuario">
+            <End Role="fact_tipo_usuario" EntitySet="fact_tipo_usuario" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_alumnos_inf_centro" Association="db_imModel.FK_inf_alumnos_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_alumnos" EntitySet="inf_alumnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_dep_inf_centro" Association="db_imModel.FK_inf_centro_dep_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_centro_dep" EntitySet="inf_centro_dep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_inf_empresa" Association="db_imModel.FK_inf_centro_inf_empresa">
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_centro_inf_sepomex" Association="db_imModel.FK_inf_centro_inf_sepomex">
+            <End Role="inf_sepomex" EntitySet="inf_sepomex" />
+            <End Role="inf_centro" EntitySet="inf_centro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_examenes_inf_centro" Association="db_imModel.FK_inf_examenes_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_examenes" EntitySet="inf_examenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_gastos_inf_centro" Association="db_imModel.FK_inf_gastos_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_gastos" EntitySet="inf_gastos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inventario_inf_centro" Association="db_imModel.FK_inf_inventario_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_inventario" EntitySet="inf_inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_inf_centro" Association="db_imModel.FK_inf_proveedor_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usuarios_inf_centro" Association="db_imModel.FK_inf_usuarios_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_usuarios" EntitySet="inf_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_ventas_inf_centro" Association="db_imModel.FK_inf_ventas_inf_centro">
+            <End Role="inf_centro" EntitySet="inf_centro" />
+            <End Role="inf_ventas" EntitySet="inf_ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_contacto_proveedor_inf_proveedor" Association="db_imModel.FK_inf_contacto_proveedor_inf_proveedor">
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+            <End Role="inf_contacto_proveedor" EntitySet="inf_contacto_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_empresa_inf_sepomex" Association="db_imModel.FK_inf_empresa_inf_sepomex">
+            <End Role="inf_sepomex" EntitySet="inf_sepomex" />
+            <End Role="inf_empresa" EntitySet="inf_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_examenes_dep_inf_examenes" Association="db_imModel.FK_inf_examenes_dep_inf_examenes">
+            <End Role="inf_examenes" EntitySet="inf_examenes" />
+            <End Role="inf_examenes_dep" EntitySet="inf_examenes_dep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_respuestas_exam_inf_preguntas_exam" Association="db_imModel.FK_inf_respuestas_exam_inf_preguntas_exam">
+            <End Role="inf_preguntas_exam" EntitySet="inf_preguntas_exam" />
+            <End Role="inf_respuestas_exam" EntitySet="inf_respuestas_exam" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_respuestas_test_inf_preguntas_test" Association="db_imModel.FK_inf_respuestas_test_inf_preguntas_test">
+            <End Role="inf_preguntas_test" EntitySet="inf_preguntas_test" />
+            <End Role="inf_respuestas_test" EntitySet="inf_respuestas_test" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_proveedor_inf_sepomex" Association="db_imModel.FK_inf_proveedor_inf_sepomex">
+            <End Role="inf_sepomex" EntitySet="inf_sepomex" />
+            <End Role="inf_proveedor" EntitySet="inf_proveedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_ventas_dep_inf_ventas" Association="db_imModel.FK_inf_ventas_dep_inf_ventas">
+            <End Role="inf_ventas" EntitySet="inf_ventas" />
+            <End Role="inf_ventas_dep" EntitySet="inf_ventas_dep" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="fact_estatus">
           <Key>
@@ -428,6 +1089,12 @@
           </Key>
           <Property Name="id_estatus" Type="Int32" Nullable="false" />
           <Property Name="desc_estatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_alumnos" Relationship="db_imModel.FK_inf_alumnos_fact_estatus" FromRole="fact_estatus" ToRole="inf_alumnos" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_centro_fact_estatus" FromRole="fact_estatus" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_contacto_proveedor" Relationship="db_imModel.FK_inf_contacto_proveedor_fact_estatus" FromRole="fact_estatus" ToRole="inf_contacto_proveedor" />
+          <NavigationProperty Name="inf_empresa" Relationship="db_imModel.FK_inf_empresa_fact_estatus" FromRole="fact_estatus" ToRole="inf_empresa" />
+          <NavigationProperty Name="inf_proveedor" Relationship="db_imModel.FK_inf_proveedor_fact_estatus" FromRole="fact_estatus" ToRole="inf_proveedor" />
+          <NavigationProperty Name="inf_usuarios" Relationship="db_imModel.FK_inf_usuarios_fact_estatus" FromRole="fact_estatus" ToRole="inf_usuarios" />
         </EntityType>
         <EntityType Name="fact_genero">
           <Key>
@@ -435,6 +1102,8 @@
           </Key>
           <Property Name="id_genero" Type="Int32" Nullable="false" />
           <Property Name="desc_genero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_alumnos" Relationship="db_imModel.FK_inf_alumnos_fact_genero" FromRole="fact_genero" ToRole="inf_alumnos" />
+          <NavigationProperty Name="inf_usuarios" Relationship="db_imModel.FK_inf_usuarios_fact_genero" FromRole="fact_genero" ToRole="inf_usuarios" />
         </EntityType>
         <EntityType Name="fact_grado_escolar">
           <Key>
@@ -443,6 +1112,8 @@
           <Property Name="id_grado_escolar" Type="Int32" Nullable="false" />
           <Property Name="desc_grado_escolar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_nivel_escolar" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="fact_nivel_escolar" Relationship="db_imModel.FK_fact_grado_escolar_fact_nivel_escolar" FromRole="fact_grado_escolar" ToRole="fact_nivel_escolar" />
+          <NavigationProperty Name="inf_inventario" Relationship="db_imModel.FK_inf_inventario_fact_grado_escolar" FromRole="fact_grado_escolar" ToRole="inf_inventario" />
         </EntityType>
         <EntityType Name="fact_licencias">
           <Key>
@@ -451,6 +1122,7 @@
           <Property Name="id_licencia" Type="Int32" Nullable="false" />
           <Property Name="desc_licencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="caracteristica_licecia" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_centro_fact_licencias" FromRole="fact_licencias" ToRole="inf_centro" />
         </EntityType>
         <EntityType Name="fact_materia_exam">
           <Key>
@@ -466,6 +1138,7 @@
           </Key>
           <Property Name="id_nivel_escolar" Type="Int32" Nullable="false" />
           <Property Name="desc_nivel_escolar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="fact_grado_escolar" Relationship="db_imModel.FK_fact_grado_escolar_fact_nivel_escolar" FromRole="fact_nivel_escolar" ToRole="fact_grado_escolar" />
         </EntityType>
         <EntityType Name="fact_nivel_exam">
           <Key>
@@ -473,6 +1146,7 @@
           </Key>
           <Property Name="id_nivel_exam" Type="Int32" Nullable="false" />
           <Property Name="desc_nivel_exam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_examenes" Relationship="db_imModel.FK_inf_examenes_fact_nivel_exam" FromRole="fact_nivel_exam" ToRole="inf_examenes" />
         </EntityType>
         <EntityType Name="fact_tipo_centro">
           <Key>
@@ -480,13 +1154,7 @@
           </Key>
           <Property Name="id_tipo_centro" Type="Int32" Nullable="false" />
           <Property Name="desc_tipo_centro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="fact_tipo_fiscal">
-          <Key>
-            <PropertyRef Name="id_tipo_fiscal" />
-          </Key>
-          <Property Name="id_tipo_fiscal" Type="Int32" Nullable="false" />
-          <Property Name="desc_tipo_fiscal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_centro_fact_tipo_centro" FromRole="fact_tipo_centro" ToRole="inf_centro" />
         </EntityType>
         <EntityType Name="fact_tipo_rfc">
           <Key>
@@ -494,6 +1162,8 @@
           </Key>
           <Property Name="id_tipo_rfc" Type="Int32" Nullable="false" />
           <Property Name="desc_tipo_rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_empresa" Relationship="db_imModel.FK_inf_empresa_fact_tipo_rfc" FromRole="fact_tipo_rfc" ToRole="inf_empresa" />
+          <NavigationProperty Name="inf_proveedor" Relationship="db_imModel.FK_inf_proveedor_fact_tipo_rfc" FromRole="fact_tipo_rfc" ToRole="inf_proveedor" />
         </EntityType>
         <EntityType Name="fact_tipo_usuario">
           <Key>
@@ -501,6 +1171,8 @@
           </Key>
           <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
           <Property Name="desc_tipo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_alumnos" Relationship="db_imModel.FK_inf_alumnos_fact_tipo_usuario" FromRole="fact_tipo_usuario" ToRole="inf_alumnos" />
+          <NavigationProperty Name="inf_usuarios" Relationship="db_imModel.FK_inf_usuarios_fact_tipo_usuario" FromRole="fact_tipo_usuario" ToRole="inf_usuarios" />
         </EntityType>
         <EntityType Name="inf_alumnos">
           <Key>
@@ -517,13 +1189,12 @@
           <Property Name="codigo_alumno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
-          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="id_asenta_cpcons" Type="Int32" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
           <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_estatus" Relationship="db_imModel.FK_inf_alumnos_fact_estatus" FromRole="inf_alumnos" ToRole="fact_estatus" />
+          <NavigationProperty Name="fact_genero" Relationship="db_imModel.FK_inf_alumnos_fact_genero" FromRole="inf_alumnos" ToRole="fact_genero" />
+          <NavigationProperty Name="fact_tipo_usuario" Relationship="db_imModel.FK_inf_alumnos_fact_tipo_usuario" FromRole="inf_alumnos" ToRole="fact_tipo_usuario" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_alumnos_inf_centro" FromRole="inf_alumnos" ToRole="inf_centro" />
         </EntityType>
         <EntityType Name="inf_centro">
           <Key>
@@ -537,26 +1208,39 @@
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="id_asenta_cpcons" Type="Int32" />
-          <Property Name="fecha_corte" Type="DateTime" Precision="0" />
+          <Property Name="callenum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_codigo" Type="Int32" />
+          <Property Name="id_empresa" Type="Guid" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
           <Property Name="dia_corte" Type="Int32" />
+          <NavigationProperty Name="fact_estatus" Relationship="db_imModel.FK_inf_centro_fact_estatus" FromRole="inf_centro" ToRole="fact_estatus" />
+          <NavigationProperty Name="fact_licencias" Relationship="db_imModel.FK_inf_centro_fact_licencias" FromRole="inf_centro" ToRole="fact_licencias" />
+          <NavigationProperty Name="fact_tipo_centro" Relationship="db_imModel.FK_inf_centro_fact_tipo_centro" FromRole="inf_centro" ToRole="fact_tipo_centro" />
+          <NavigationProperty Name="inf_alumnos" Relationship="db_imModel.FK_inf_alumnos_inf_centro" FromRole="inf_centro" ToRole="inf_alumnos" />
+          <NavigationProperty Name="inf_centro_dep" Relationship="db_imModel.FK_inf_centro_dep_inf_centro" FromRole="inf_centro" ToRole="inf_centro_dep" />
+          <NavigationProperty Name="inf_empresa" Relationship="db_imModel.FK_inf_centro_inf_empresa" FromRole="inf_centro" ToRole="inf_empresa" />
+          <NavigationProperty Name="inf_sepomex" Relationship="db_imModel.FK_inf_centro_inf_sepomex" FromRole="inf_centro" ToRole="inf_sepomex" />
+          <NavigationProperty Name="inf_examenes" Relationship="db_imModel.FK_inf_examenes_inf_centro" FromRole="inf_centro" ToRole="inf_examenes" />
+          <NavigationProperty Name="inf_gastos" Relationship="db_imModel.FK_inf_gastos_inf_centro" FromRole="inf_centro" ToRole="inf_gastos" />
+          <NavigationProperty Name="inf_inventario" Relationship="db_imModel.FK_inf_inventario_inf_centro" FromRole="inf_centro" ToRole="inf_inventario" />
+          <NavigationProperty Name="inf_proveedor" Relationship="db_imModel.FK_inf_proveedor_inf_centro" FromRole="inf_centro" ToRole="inf_proveedor" />
+          <NavigationProperty Name="inf_usuarios" Relationship="db_imModel.FK_inf_usuarios_inf_centro" FromRole="inf_centro" ToRole="inf_usuarios" />
+          <NavigationProperty Name="inf_ventas" Relationship="db_imModel.FK_inf_ventas_inf_centro" FromRole="inf_centro" ToRole="inf_ventas" />
         </EntityType>
         <EntityType Name="inf_centro_dep">
           <Key>
-            <PropertyRef Name="id_sucursal_dep" />
+            <PropertyRef Name="id_centro_dep" />
           </Key>
-          <Property Name="id_sucursal_dep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_centro_dep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_usuario" Type="Guid" />
           <Property Name="id_centro" Type="Guid" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_centro_dep_inf_centro" FromRole="inf_centro_dep" ToRole="inf_centro" />
         </EntityType>
-        <EntityType Name="inf_contacto_fiscal">
+        <EntityType Name="inf_contacto_proveedor">
           <Key>
-            <PropertyRef Name="id_contacto_fiscal" />
+            <PropertyRef Name="id_contacto_proveedor" />
           </Key>
-          <Property Name="id_contacto_fiscal" Type="Guid" Nullable="false" />
+          <Property Name="id_contacto_proveedor" Type="Guid" Nullable="false" />
           <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="a_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="a_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -564,7 +1248,9 @@
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_estatus" Type="Int32" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
-          <Property Name="id_fiscal" Type="Guid" />
+          <Property Name="id_proveedor" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_estatus" Relationship="db_imModel.FK_inf_contacto_proveedor_fact_estatus" FromRole="inf_contacto_proveedor" ToRole="fact_estatus" />
+          <NavigationProperty Name="inf_proveedor" Relationship="db_imModel.FK_inf_contacto_proveedor_inf_proveedor" FromRole="inf_contacto_proveedor" ToRole="inf_proveedor" />
         </EntityType>
         <EntityType Name="inf_empresa">
           <Key>
@@ -577,10 +1263,13 @@
           <Property Name="razon_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="callenum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_codigo" Type="Int32" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="fact_estatus" Relationship="db_imModel.FK_inf_empresa_fact_estatus" FromRole="inf_empresa" ToRole="fact_estatus" />
+          <NavigationProperty Name="fact_tipo_rfc" Relationship="db_imModel.FK_inf_empresa_fact_tipo_rfc" FromRole="inf_empresa" ToRole="fact_tipo_rfc" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_centro_inf_empresa" FromRole="inf_empresa" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_sepomex" Relationship="db_imModel.FK_inf_empresa_inf_sepomex" FromRole="inf_empresa" ToRole="inf_sepomex" />
         </EntityType>
         <EntityType Name="inf_examenes">
           <Key>
@@ -594,6 +1283,9 @@
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
           <Property Name="id_usuario" Type="Guid" />
           <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_nivel_exam" Relationship="db_imModel.FK_inf_examenes_fact_nivel_exam" FromRole="inf_examenes" ToRole="fact_nivel_exam" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_examenes_inf_centro" FromRole="inf_examenes" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_examenes_dep" Relationship="db_imModel.FK_inf_examenes_dep_inf_examenes" FromRole="inf_examenes" ToRole="inf_examenes_dep" />
         </EntityType>
         <EntityType Name="inf_examenes_dep">
           <Key>
@@ -603,25 +1295,7 @@
           <Property Name="id_pregunta_exam" Type="Int32" Nullable="false" />
           <Property Name="id_respuestas_exam" Type="Int32" Nullable="false" />
           <Property Name="id_examenes" Type="Guid" Nullable="false" />
-        </EntityType>
-        <EntityType Name="inf_fiscal">
-          <Key>
-            <PropertyRef Name="id_fiscal" />
-          </Key>
-          <Property Name="id_fiscal" Type="Guid" Nullable="false" />
-          <Property Name="id_codigo_fiscal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="id_estatus" Type="Int32" />
-          <Property Name="id_tipo_fiscal" Type="Int32" />
-          <Property Name="id_tipo_rfc" Type="Int32" />
-          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="razon_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="id_asenta_cpcons" Type="Int32" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
-          <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="inf_examenes" Relationship="db_imModel.FK_inf_examenes_dep_inf_examenes" FromRole="inf_examenes_dep" ToRole="inf_examenes" />
         </EntityType>
         <EntityType Name="inf_gastos">
           <Key>
@@ -635,6 +1309,7 @@
           <Property Name="costo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
           <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_gastos_inf_centro" FromRole="inf_gastos" ToRole="inf_centro" />
         </EntityType>
         <EntityType Name="inf_inventario">
           <Key>
@@ -652,6 +1327,8 @@
           <Property Name="margen" Type="Int32" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
           <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_grado_escolar" Relationship="db_imModel.FK_inf_inventario_fact_grado_escolar" FromRole="inf_inventario" ToRole="fact_grado_escolar" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_inventario_inf_centro" FromRole="inf_inventario" ToRole="inf_centro" />
         </EntityType>
         <EntityType Name="inf_preguntas_exam">
           <Key>
@@ -660,6 +1337,7 @@
           <Property Name="id_pregunta_exam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="desc_pregunta_exam" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="id_materia_exam" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="inf_respuestas_exam" Relationship="db_imModel.FK_inf_respuestas_exam_inf_preguntas_exam" FromRole="inf_preguntas_exam" ToRole="inf_respuestas_exam" />
         </EntityType>
         <EntityType Name="inf_preguntas_test">
           <Key>
@@ -667,6 +1345,28 @@
           </Key>
           <Property Name="id_pregunta" Type="Int32" Nullable="false" />
           <Property Name="desc_pregunta" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_respuestas_test" Relationship="db_imModel.FK_inf_respuestas_test_inf_preguntas_test" FromRole="inf_preguntas_test" ToRole="inf_respuestas_test" />
+        </EntityType>
+        <EntityType Name="inf_proveedor">
+          <Key>
+            <PropertyRef Name="id_proveedor" />
+          </Key>
+          <Property Name="id_proveedor" Type="Guid" Nullable="false" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="id_tipo_rfc" Type="Int32" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="razon_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="callenum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_codigo" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_estatus" Relationship="db_imModel.FK_inf_proveedor_fact_estatus" FromRole="inf_proveedor" ToRole="fact_estatus" />
+          <NavigationProperty Name="fact_tipo_rfc" Relationship="db_imModel.FK_inf_proveedor_fact_tipo_rfc" FromRole="inf_proveedor" ToRole="fact_tipo_rfc" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_proveedor_inf_centro" FromRole="inf_proveedor" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_contacto_proveedor" Relationship="db_imModel.FK_inf_contacto_proveedor_inf_proveedor" FromRole="inf_proveedor" ToRole="inf_contacto_proveedor" />
+          <NavigationProperty Name="inf_sepomex" Relationship="db_imModel.FK_inf_proveedor_inf_sepomex" FromRole="inf_proveedor" ToRole="inf_sepomex" />
         </EntityType>
         <EntityType Name="inf_respuestas_exam">
           <Key>
@@ -676,6 +1376,7 @@
           <Property Name="desc_respuestas_exam" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="valor_respuesta_exam" Type="Boolean" />
           <Property Name="id_pregunta_exam" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="inf_preguntas_exam" Relationship="db_imModel.FK_inf_respuestas_exam_inf_preguntas_exam" FromRole="inf_respuestas_exam" ToRole="inf_preguntas_exam" />
         </EntityType>
         <EntityType Name="inf_respuestas_test">
           <Key>
@@ -685,6 +1386,7 @@
           <Property Name="desc_respuestas_test" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="valor_respuesta_test" Type="Boolean" />
           <Property Name="id_pregunta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="inf_preguntas_test" Relationship="db_imModel.FK_inf_respuestas_test_inf_preguntas_test" FromRole="inf_respuestas_test" ToRole="inf_preguntas_test" />
         </EntityType>
         <EntityType Name="inf_sepomex">
           <Key>
@@ -706,6 +1408,9 @@
           <Property Name="id_asenta_cpcons" Type="Int32" />
           <Property Name="d_zona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="c_cve_ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_centro_inf_sepomex" FromRole="inf_sepomex" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_empresa" Relationship="db_imModel.FK_inf_empresa_inf_sepomex" FromRole="inf_sepomex" ToRole="inf_empresa" />
+          <NavigationProperty Name="inf_proveedor" Relationship="db_imModel.FK_inf_proveedor_inf_sepomex" FromRole="inf_sepomex" ToRole="inf_proveedor" />
         </EntityType>
         <EntityType Name="inf_test_unam">
           <Key>
@@ -745,6 +1450,10 @@
           <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
           <Property Name="id_centro" Type="Guid" />
+          <NavigationProperty Name="fact_estatus" Relationship="db_imModel.FK_inf_usuarios_fact_estatus" FromRole="inf_usuarios" ToRole="fact_estatus" />
+          <NavigationProperty Name="fact_genero" Relationship="db_imModel.FK_inf_usuarios_fact_genero" FromRole="inf_usuarios" ToRole="fact_genero" />
+          <NavigationProperty Name="fact_tipo_usuario" Relationship="db_imModel.FK_inf_usuarios_fact_tipo_usuario" FromRole="inf_usuarios" ToRole="fact_tipo_usuario" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_usuarios_inf_centro" FromRole="inf_usuarios" ToRole="inf_centro" />
         </EntityType>
         <EntityType Name="inf_ventas">
           <Key>
@@ -758,6 +1467,8 @@
           <Property Name="id_usuario" Type="Guid" Nullable="false" />
           <Property Name="id_alumno" Type="Guid" Nullable="false" />
           <Property Name="id_centro" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_ventas_inf_centro" FromRole="inf_ventas" ToRole="inf_centro" />
+          <NavigationProperty Name="inf_ventas_dep" Relationship="db_imModel.FK_inf_ventas_dep_inf_ventas" FromRole="inf_ventas" ToRole="inf_ventas_dep" />
         </EntityType>
         <EntityType Name="inf_ventas_dep">
           <Key>
@@ -768,7 +1479,416 @@
           <Property Name="cantidad" Type="Int32" />
           <Property Name="costo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="id_ventas" Type="Guid" />
+          <NavigationProperty Name="inf_ventas" Relationship="db_imModel.FK_inf_ventas_dep_inf_ventas" FromRole="inf_ventas_dep" ToRole="inf_ventas" />
         </EntityType>
+        <Association Name="FK_inf_alumnos_fact_estatus">
+          <End Type="db_imModel.fact_estatus" Role="fact_estatus" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_alumnos" Role="inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_estatus">
+          <End Type="db_imModel.fact_estatus" Role="fact_estatus" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_proveedor_fact_estatus">
+          <End Type="db_imModel.fact_estatus" Role="fact_estatus" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_contacto_proveedor" Role="inf_contacto_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_contacto_proveedor">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_empresa_fact_estatus">
+          <End Type="db_imModel.fact_estatus" Role="fact_estatus" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_empresa" Role="inf_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_empresa">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_fact_estatus">
+          <End Type="db_imModel.fact_estatus" Role="fact_estatus" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_proveedor" Role="inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_estatus">
+          <End Type="db_imModel.fact_estatus" Role="fact_estatus" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_usuarios" Role="inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_estatus">
+              <PropertyRef Name="id_estatus" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_alumnos_fact_genero">
+          <End Type="db_imModel.fact_genero" Role="fact_genero" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_alumnos" Role="inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_genero">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_genero">
+          <End Type="db_imModel.fact_genero" Role="fact_genero" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_usuarios" Role="inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_genero">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fact_grado_escolar_fact_nivel_escolar">
+          <End Type="db_imModel.fact_nivel_escolar" Role="fact_nivel_escolar" Multiplicity="1" />
+          <End Type="db_imModel.fact_grado_escolar" Role="fact_grado_escolar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_nivel_escolar">
+              <PropertyRef Name="id_nivel_escolar" />
+            </Principal>
+            <Dependent Role="fact_grado_escolar">
+              <PropertyRef Name="id_nivel_escolar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inventario_fact_grado_escolar">
+          <End Type="db_imModel.fact_grado_escolar" Role="fact_grado_escolar" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_inventario" Role="inf_inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_grado_escolar">
+              <PropertyRef Name="id_grado_escolar" />
+            </Principal>
+            <Dependent Role="inf_inventario">
+              <PropertyRef Name="id_grado_escolar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_licencias">
+          <End Type="db_imModel.fact_licencias" Role="fact_licencias" Multiplicity="1" />
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_licencias">
+              <PropertyRef Name="id_licencia" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_licencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_examenes_fact_nivel_exam">
+          <End Type="db_imModel.fact_nivel_exam" Role="fact_nivel_exam" Multiplicity="1" />
+          <End Type="db_imModel.inf_examenes" Role="inf_examenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_nivel_exam">
+              <PropertyRef Name="id_nivel_exam" />
+            </Principal>
+            <Dependent Role="inf_examenes">
+              <PropertyRef Name="id_nivel_exam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_fact_tipo_centro">
+          <End Type="db_imModel.fact_tipo_centro" Role="fact_tipo_centro" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_centro">
+              <PropertyRef Name="id_tipo_centro" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_tipo_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_empresa_fact_tipo_rfc">
+          <End Type="db_imModel.fact_tipo_rfc" Role="fact_tipo_rfc" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_empresa" Role="inf_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Principal>
+            <Dependent Role="inf_empresa">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_fact_tipo_rfc">
+          <End Type="db_imModel.fact_tipo_rfc" Role="fact_tipo_rfc" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_proveedor" Role="inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_tipo_rfc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_alumnos_fact_tipo_usuario">
+          <End Type="db_imModel.fact_tipo_usuario" Role="fact_tipo_usuario" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_alumnos" Role="inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usuario">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_fact_tipo_usuario">
+          <End Type="db_imModel.fact_tipo_usuario" Role="fact_tipo_usuario" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_usuarios" Role="inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usuario">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_alumnos_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
+          <End Type="db_imModel.inf_alumnos" Role="inf_alumnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_alumnos">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_dep_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_centro_dep" Role="inf_centro_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_centro_dep">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_inf_empresa">
+          <End Type="db_imModel.inf_empresa" Role="inf_empresa" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_empresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_centro_inf_sepomex">
+          <End Type="db_imModel.inf_sepomex" Role="inf_sepomex" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_sepomex">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="inf_centro">
+              <PropertyRef Name="id_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_examenes_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
+          <End Type="db_imModel.inf_examenes" Role="inf_examenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_examenes">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_gastos_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
+          <End Type="db_imModel.inf_gastos" Role="inf_gastos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_gastos">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inventario_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
+          <End Type="db_imModel.inf_inventario" Role="inf_inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_inventario">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
+          <End Type="db_imModel.inf_proveedor" Role="inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usuarios_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_usuarios" Role="inf_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_usuarios">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_ventas_inf_centro">
+          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
+          <End Type="db_imModel.inf_ventas" Role="inf_ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_centro">
+              <PropertyRef Name="id_centro" />
+            </Principal>
+            <Dependent Role="inf_ventas">
+              <PropertyRef Name="id_centro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_contacto_proveedor_inf_proveedor">
+          <End Type="db_imModel.inf_proveedor" Role="inf_proveedor" Multiplicity="1" />
+          <End Type="db_imModel.inf_contacto_proveedor" Role="inf_contacto_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="inf_contacto_proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_empresa_inf_sepomex">
+          <End Type="db_imModel.inf_sepomex" Role="inf_sepomex" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_empresa" Role="inf_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_sepomex">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="inf_empresa">
+              <PropertyRef Name="id_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_examenes_dep_inf_examenes">
+          <End Type="db_imModel.inf_examenes" Role="inf_examenes" Multiplicity="1" />
+          <End Type="db_imModel.inf_examenes_dep" Role="inf_examenes_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_examenes">
+              <PropertyRef Name="id_examenes" />
+            </Principal>
+            <Dependent Role="inf_examenes_dep">
+              <PropertyRef Name="id_examenes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_respuestas_exam_inf_preguntas_exam">
+          <End Type="db_imModel.inf_preguntas_exam" Role="inf_preguntas_exam" Multiplicity="1" />
+          <End Type="db_imModel.inf_respuestas_exam" Role="inf_respuestas_exam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_preguntas_exam">
+              <PropertyRef Name="id_pregunta_exam" />
+            </Principal>
+            <Dependent Role="inf_respuestas_exam">
+              <PropertyRef Name="id_pregunta_exam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_respuestas_test_inf_preguntas_test">
+          <End Type="db_imModel.inf_preguntas_test" Role="inf_preguntas_test" Multiplicity="1" />
+          <End Type="db_imModel.inf_respuestas_test" Role="inf_respuestas_test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_preguntas_test">
+              <PropertyRef Name="id_pregunta" />
+            </Principal>
+            <Dependent Role="inf_respuestas_test">
+              <PropertyRef Name="id_pregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_proveedor_inf_sepomex">
+          <End Type="db_imModel.inf_sepomex" Role="inf_sepomex" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_proveedor" Role="inf_proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_sepomex">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="inf_proveedor">
+              <PropertyRef Name="id_codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_ventas_dep_inf_ventas">
+          <End Type="db_imModel.inf_ventas" Role="inf_ventas" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_ventas_dep" Role="inf_ventas_dep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_ventas">
+              <PropertyRef Name="id_ventas" />
+            </Principal>
+            <Dependent Role="inf_ventas_dep">
+              <PropertyRef Name="id_ventas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -842,14 +1962,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="fact_tipo_fiscal">
-            <EntityTypeMapping TypeName="db_imModel.fact_tipo_fiscal">
-              <MappingFragment StoreEntitySet="fact_tipo_fiscal">
-                <ScalarProperty Name="desc_tipo_fiscal" ColumnName="desc_tipo_fiscal" />
-                <ScalarProperty Name="id_tipo_fiscal" ColumnName="id_tipo_fiscal" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="fact_tipo_rfc">
             <EntityTypeMapping TypeName="db_imModel.fact_tipo_rfc">
               <MappingFragment StoreEntitySet="fact_tipo_rfc">
@@ -871,11 +1983,6 @@
               <MappingFragment StoreEntitySet="inf_alumnos">
                 <ScalarProperty Name="id_centro" ColumnName="id_centro" />
                 <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
-                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
-                <ScalarProperty Name="calle" ColumnName="calle" />
-                <ScalarProperty Name="cp" ColumnName="cp" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
                 <ScalarProperty Name="clave" ColumnName="clave" />
                 <ScalarProperty Name="codigo_alumno" ColumnName="codigo_alumno" />
@@ -895,10 +2002,9 @@
               <MappingFragment StoreEntitySet="inf_centro">
                 <ScalarProperty Name="dia_corte" ColumnName="dia_corte" />
                 <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
-                <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
-                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
-                <ScalarProperty Name="calle" ColumnName="calle" />
-                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+                <ScalarProperty Name="id_codigo" ColumnName="id_codigo" />
+                <ScalarProperty Name="callenum" ColumnName="callenum" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -915,14 +2021,14 @@
               <MappingFragment StoreEntitySet="inf_centro_dep">
                 <ScalarProperty Name="id_centro" ColumnName="id_centro" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="id_sucursal_dep" ColumnName="id_sucursal_dep" />
+                <ScalarProperty Name="id_centro_dep" ColumnName="id_centro_dep" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="inf_contacto_fiscal">
-            <EntityTypeMapping TypeName="db_imModel.inf_contacto_fiscal">
-              <MappingFragment StoreEntitySet="inf_contacto_fiscal">
-                <ScalarProperty Name="id_fiscal" ColumnName="id_fiscal" />
+          <EntitySetMapping Name="inf_contacto_proveedor">
+            <EntityTypeMapping TypeName="db_imModel.inf_contacto_proveedor">
+              <MappingFragment StoreEntitySet="inf_contacto_proveedor">
+                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
                 <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
                 <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
                 <ScalarProperty Name="email" ColumnName="email" />
@@ -930,7 +2036,7 @@
                 <ScalarProperty Name="a_materno" ColumnName="a_materno" />
                 <ScalarProperty Name="a_paterno" ColumnName="a_paterno" />
                 <ScalarProperty Name="nombres" ColumnName="nombres" />
-                <ScalarProperty Name="id_contacto_fiscal" ColumnName="id_contacto_fiscal" />
+                <ScalarProperty Name="id_contacto_proveedor" ColumnName="id_contacto_proveedor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -938,9 +2044,8 @@
             <EntityTypeMapping TypeName="db_imModel.inf_empresa">
               <MappingFragment StoreEntitySet="inf_empresa">
                 <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
-                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
-                <ScalarProperty Name="calle" ColumnName="calle" />
-                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="id_codigo" ColumnName="id_codigo" />
+                <ScalarProperty Name="callenum" ColumnName="callenum" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="razon_social" ColumnName="razon_social" />
@@ -972,26 +2077,6 @@
                 <ScalarProperty Name="id_respuestas_exam" ColumnName="id_respuestas_exam" />
                 <ScalarProperty Name="id_pregunta_exam" ColumnName="id_pregunta_exam" />
                 <ScalarProperty Name="id_examenes_desp" ColumnName="id_examenes_desp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="inf_fiscal">
-            <EntityTypeMapping TypeName="db_imModel.inf_fiscal">
-              <MappingFragment StoreEntitySet="inf_fiscal">
-                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
-                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
-                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
-                <ScalarProperty Name="calle" ColumnName="calle" />
-                <ScalarProperty Name="cp" ColumnName="cp" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="razon_social" ColumnName="razon_social" />
-                <ScalarProperty Name="rfc" ColumnName="rfc" />
-                <ScalarProperty Name="id_tipo_rfc" ColumnName="id_tipo_rfc" />
-                <ScalarProperty Name="id_tipo_fiscal" ColumnName="id_tipo_fiscal" />
-                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
-                <ScalarProperty Name="id_codigo_fiscal" ColumnName="id_codigo_fiscal" />
-                <ScalarProperty Name="id_fiscal" ColumnName="id_fiscal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1041,6 +2126,23 @@
               <MappingFragment StoreEntitySet="inf_preguntas_test">
                 <ScalarProperty Name="desc_pregunta" ColumnName="desc_pregunta" />
                 <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_proveedor">
+            <EntityTypeMapping TypeName="db_imModel.inf_proveedor">
+              <MappingFragment StoreEntitySet="inf_proveedor">
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_codigo" ColumnName="id_codigo" />
+                <ScalarProperty Name="callenum" ColumnName="callenum" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="id_tipo_rfc" ColumnName="id_tipo_rfc" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

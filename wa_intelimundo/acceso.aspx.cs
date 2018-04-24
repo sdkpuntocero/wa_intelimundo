@@ -97,7 +97,7 @@ namespace wa_intelimundo
                         int int_idtypeuser, int_iduserstatus;
 
                         str_codigousuario = txt_usuario.Text;
-                        str_clave = mdl_encrypta.Encrypt(txt_clave.Text);
+                        str_clave = encriptacion.Encrypt(txt_clave.Text);
 
                         using (db_imEntities edm_usuarios = new db_imEntities())
                         {
@@ -149,9 +149,9 @@ namespace wa_intelimundo
 
                                                 if (str_valida_clave == str_clave && int_iduserstatus == 1)
                                                 {
-                                                    Session["ss_id_user"] = mdl_user.code_user(str_codigousuario);
+                                                    Session["ss_id_user"] = guid_usuario.code_user(str_codigousuario);
                                                     Session["ss_id_center"] = guid_centro;
-                                                    Response.Redirect("panel.aspx");
+                                                    Response.Redirect("panel_director.aspx");
                                                 }
                                                 else
                                                 {

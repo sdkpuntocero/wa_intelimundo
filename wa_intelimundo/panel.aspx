@@ -879,7 +879,6 @@
 					</div>
 				</div>
 			</div>
-
 		</ContentTemplate>
 	</asp:UpdatePanel>
 	<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel"
