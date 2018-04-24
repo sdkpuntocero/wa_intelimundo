@@ -31,15 +31,6 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control div_pnl.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_pnl;
-        
-        /// <summary>
         /// Control lbl_bienvenida.
         /// </summary>
         /// <remarks>

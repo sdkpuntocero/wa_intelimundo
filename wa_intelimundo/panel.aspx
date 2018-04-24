@@ -9,7 +9,7 @@
             <br />
             <div class="container">
                 <div class="form-group">
-                    <div class="panel panel-default" id="div_pnl" runat="server">
+                    <di|v class="panel panel-default" id="div_pnl" runat="server">
                         <div class="panel-heading">
                             <p class="text-right">
                                 <asp:Label ID="lbl_bienvenida" runat="server" Text="Bienvenid@: "></asp:Label>
@@ -640,7 +640,7 @@
                         </div>
                         <div class="panel-footer">
                         </div>
-                    </div>
+                    </di|v>
                 </div>
             </div>
 
