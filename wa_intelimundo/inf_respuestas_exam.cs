@@ -18,5 +18,7 @@ namespace wa_intelimundo
         public string desc_respuestas_exam { get; set; }
         public Nullable<bool> valor_respuesta_exam { get; set; }
         public int id_pregunta_exam { get; set; }
+    
+        public virtual inf_preguntas_exam inf_preguntas_exam { get; set; }
     }
 }

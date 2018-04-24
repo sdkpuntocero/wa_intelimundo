@@ -14,6 +14,12 @@ namespace wa_intelimundo
     
     public partial class inf_empresa
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public inf_empresa()
+        {
+            this.inf_centro = new HashSet<inf_centro>();
+        }
+    
         public System.Guid id_empresa { get; set; }
         public Nullable<int> id_estatus { get; set; }
         public Nullable<int> id_tipo_rfc { get; set; }
@@ -21,9 +27,14 @@ namespace wa_intelimundo
         public string razon_social { get; set; }
         public string telefono { get; set; }
         public string email { get; set; }
-        public string cp { get; set; }
-        public string calle { get; set; }
-        public Nullable<int> id_asenta_cpcons { get; set; }
+        public string callenum { get; set; }
+        public Nullable<int> id_codigo { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
+    
+        public virtual fact_estatus fact_estatus { get; set; }
+        public virtual fact_tipo_rfc fact_tipo_rfc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_centro> inf_centro { get; set; }
+        public virtual inf_sepomex inf_sepomex { get; set; }
     }
 }

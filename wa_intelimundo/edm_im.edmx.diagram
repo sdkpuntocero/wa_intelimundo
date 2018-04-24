@@ -4,38 +4,71 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="10b9ca3043b046a6ba1bf7a5e67bccdf" Name="Diagram1">
-        <EntityTypeShape EntityType="db_imModel.fact_estatus" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_genero" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_grado_escolar" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_licencias" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_materia_exam" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_nivel_escolar" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_nivel_exam" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_tipo_centro" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_tipo_fiscal" Width="1.5" PointX="2.75" PointY="6.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_tipo_rfc" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_tipo_usuario" Width="1.5" PointX="4.75" PointY="6.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_alumnos" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_centro" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_centro_dep" Width="1.5" PointX="8.75" PointY="5.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_contacto_fiscal" Width="1.5" PointX="8.75" PointY="8.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_empresa" Width="1.5" PointX="0.75" PointY="9.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_examenes" Width="1.5" PointX="2.75" PointY="9.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_examenes_dep" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_fiscal" Width="1.5" PointX="10.75" PointY="3.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_gastos" Width="1.5" PointX="10.75" PointY="8.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_inventario" Width="1.5" PointX="12.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_preguntas_exam" Width="1.5" PointX="4.75" PointY="12.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_preguntas_test" Width="1.5" PointX="12.75" PointY="5.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_respuestas_exam" Width="1.5" PointX="6.75" PointY="12.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_respuestas_test" Width="1.5" PointX="12.75" PointY="8.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_sepomex" Width="1.5" PointX="8.75" PointY="12.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_test_unam" Width="1.5" PointX="10.75" PointY="12.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_test_unam_dep" Width="1.5" PointX="12.75" PointY="11.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_usuarios" Width="1.5" PointX="0.75" PointY="13.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_ventas" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_ventas_dep" Width="1.5" PointX="14.75" PointY="4.75" />
+      <Diagram DiagramId="10b9ca3043b046a6ba1bf7a5e67bccdf" Name="Diagram1" ZoomLevel="67" ShowGrid="true">
+        <EntityTypeShape EntityType="db_imModel.fact_estatus" Width="1.75" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_genero" Width="1.75" PointX="5.75" PointY="15" />
+        <EntityTypeShape EntityType="db_imModel.fact_grado_escolar" Width="1.75" PointX="5.75" PointY="25" />
+        <EntityTypeShape EntityType="db_imModel.fact_licencias" Width="1.75" PointX="3.25" PointY="15" />
+        <EntityTypeShape EntityType="db_imModel.fact_materia_exam" Width="1.75" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_imModel.fact_nivel_escolar" Width="1.75" PointX="3.25" PointY="25.25" />
+        <EntityTypeShape EntityType="db_imModel.fact_nivel_exam" Width="1.75" PointX="8.75" PointY="11.25" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_centro" Width="1.75" PointX="3.25" PointY="12.5" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_rfc" Width="1.75" PointX="0.75" PointY="23.875" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_usuario" Width="1.75" PointX="5.75" PointY="12.375" />
+        <EntityTypeShape EntityType="db_imModel.inf_alumnos" Width="1.75" PointX="8.25" PointY="18.875" />
+        <EntityTypeShape EntityType="db_imModel.inf_centro" Width="1.75" PointX="5.75" PointY="18" />
+        <EntityTypeShape EntityType="db_imModel.inf_centro_dep" Width="1.75" PointX="8.25" PointY="42" />
+        <EntityTypeShape EntityType="db_imModel.inf_contacto_proveedor" Width="1.75" PointX="13.75" PointY="18.5" />
+        <EntityTypeShape EntityType="db_imModel.inf_empresa" Width="1.75" PointX="3.25" PointY="19.125" />
+        <EntityTypeShape EntityType="db_imModel.inf_examenes" Width="1.75" PointX="11.25" PointY="14.5" />
+        <EntityTypeShape EntityType="db_imModel.inf_examenes_dep" Width="1.75" PointX="13.75" PointY="15" />
+        <EntityTypeShape EntityType="db_imModel.inf_gastos" Width="1.75" PointX="8.25" PointY="30.875" />
+        <EntityTypeShape EntityType="db_imModel.inf_inventario" Width="1.75" PointX="8.25" PointY="24.125" />
+        <EntityTypeShape EntityType="db_imModel.inf_preguntas_exam" Width="1.75" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="db_imModel.inf_preguntas_test" Width="1.75" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="db_imModel.inf_proveedor" Width="1.75" PointX="8.25" PointY="14" />
+        <EntityTypeShape EntityType="db_imModel.inf_respuestas_exam" Width="1.75" PointX="3.25" PointY="3.875" />
+        <EntityTypeShape EntityType="db_imModel.inf_respuestas_test" Width="1.75" PointX="3.25" PointY="0.875" />
+        <EntityTypeShape EntityType="db_imModel.inf_sepomex" Width="1.75" PointX="0.75" PointY="13.375" />
+        <EntityTypeShape EntityType="db_imModel.inf_test_unam" Width="1.75" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_test_unam_dep" Width="1.75" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_imModel.inf_usuarios" Width="1.75" PointX="11.25" PointY="18.875" />
+        <EntityTypeShape EntityType="db_imModel.inf_ventas" Width="1.75" PointX="8.25" PointY="38.25" />
+        <EntityTypeShape EntityType="db_imModel.inf_ventas_dep" Width="1.75" PointX="10.75" PointY="38.625" />
+        <AssociationConnector Association="db_imModel.FK_inf_alumnos_fact_estatus" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_fact_estatus" />
+        <AssociationConnector Association="db_imModel.FK_inf_contacto_proveedor_fact_estatus" />
+        <AssociationConnector Association="db_imModel.FK_inf_empresa_fact_estatus" />
+        <AssociationConnector Association="db_imModel.FK_inf_proveedor_fact_estatus" />
+        <AssociationConnector Association="db_imModel.FK_inf_usuarios_fact_estatus" />
+        <AssociationConnector Association="db_imModel.FK_inf_alumnos_fact_genero" />
+        <AssociationConnector Association="db_imModel.FK_inf_usuarios_fact_genero" />
+        <AssociationConnector Association="db_imModel.FK_fact_grado_escolar_fact_nivel_escolar" />
+        <AssociationConnector Association="db_imModel.FK_inf_inventario_fact_grado_escolar" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_fact_licencias" />
+        <AssociationConnector Association="db_imModel.FK_inf_examenes_fact_nivel_exam" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_fact_tipo_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_empresa_fact_tipo_rfc" />
+        <AssociationConnector Association="db_imModel.FK_inf_proveedor_fact_tipo_rfc" />
+        <AssociationConnector Association="db_imModel.FK_inf_alumnos_fact_tipo_usuario" />
+        <AssociationConnector Association="db_imModel.FK_inf_usuarios_fact_tipo_usuario" />
+        <AssociationConnector Association="db_imModel.FK_inf_alumnos_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_dep_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_inf_empresa" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_inf_sepomex" />
+        <AssociationConnector Association="db_imModel.FK_inf_examenes_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_gastos_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_inventario_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_proveedor_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_usuarios_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_ventas_inf_centro" />
+        <AssociationConnector Association="db_imModel.FK_inf_contacto_proveedor_inf_proveedor" />
+        <AssociationConnector Association="db_imModel.FK_inf_empresa_inf_sepomex" />
+        <AssociationConnector Association="db_imModel.FK_inf_examenes_dep_inf_examenes" />
+        <AssociationConnector Association="db_imModel.FK_inf_respuestas_exam_inf_preguntas_exam" />
+        <AssociationConnector Association="db_imModel.FK_inf_respuestas_test_inf_preguntas_test" />
+        <AssociationConnector Association="db_imModel.FK_inf_proveedor_inf_sepomex" />
+        <AssociationConnector Association="db_imModel.FK_inf_ventas_dep_inf_ventas" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

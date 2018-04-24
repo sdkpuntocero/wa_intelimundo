@@ -18,5 +18,7 @@ namespace wa_intelimundo
         public int id_pregunta_exam { get; set; }
         public int id_respuestas_exam { get; set; }
         public System.Guid id_examenes { get; set; }
+    
+        public virtual inf_examenes inf_examenes { get; set; }
     }
 }

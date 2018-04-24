@@ -14,7 +14,16 @@ namespace wa_intelimundo
     
     public partial class inf_preguntas_test
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public inf_preguntas_test()
+        {
+            this.inf_respuestas_test = new HashSet<inf_respuestas_test>();
+        }
+    
         public int id_pregunta { get; set; }
         public string desc_pregunta { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_respuestas_test> inf_respuestas_test { get; set; }
     }
 }

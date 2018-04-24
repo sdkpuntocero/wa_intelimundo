@@ -14,7 +14,19 @@ namespace wa_intelimundo
     
     public partial class fact_tipo_rfc
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_tipo_rfc()
+        {
+            this.inf_empresa = new HashSet<inf_empresa>();
+            this.inf_proveedor = new HashSet<inf_proveedor>();
+        }
+    
         public int id_tipo_rfc { get; set; }
         public string desc_tipo_rfc { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_empresa> inf_empresa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_proveedor> inf_proveedor { get; set; }
     }
 }

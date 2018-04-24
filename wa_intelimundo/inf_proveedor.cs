@@ -12,26 +12,31 @@ namespace wa_intelimundo
     using System;
     using System.Collections.Generic;
     
-    public partial class inf_examenes
+    public partial class inf_proveedor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public inf_examenes()
+        public inf_proveedor()
         {
-            this.inf_examenes_dep = new HashSet<inf_examenes_dep>();
+            this.inf_contacto_proveedor = new HashSet<inf_contacto_proveedor>();
         }
     
-        public System.Guid id_examenes { get; set; }
-        public int id_nivel_exam { get; set; }
-        public int id_materia_exam { get; set; }
-        public Nullable<System.DateTime> hora_inicio { get; set; }
-        public Nullable<System.DateTime> hora_fin { get; set; }
+        public System.Guid id_proveedor { get; set; }
+        public Nullable<int> id_estatus { get; set; }
+        public Nullable<int> id_tipo_rfc { get; set; }
+        public string rfc { get; set; }
+        public string razon_social { get; set; }
+        public string telefono { get; set; }
+        public string email { get; set; }
+        public string callenum { get; set; }
+        public Nullable<int> id_codigo { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
-        public Nullable<System.Guid> id_usuario { get; set; }
         public System.Guid id_centro { get; set; }
     
-        public virtual fact_nivel_exam fact_nivel_exam { get; set; }
+        public virtual fact_estatus fact_estatus { get; set; }
+        public virtual fact_tipo_rfc fact_tipo_rfc { get; set; }
         public virtual inf_centro inf_centro { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_examenes_dep> inf_examenes_dep { get; set; }
+        public virtual ICollection<inf_contacto_proveedor> inf_contacto_proveedor { get; set; }
+        public virtual inf_sepomex inf_sepomex { get; set; }
     }
 }
