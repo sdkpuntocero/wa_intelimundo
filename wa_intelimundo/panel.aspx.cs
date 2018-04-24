@@ -28,7 +28,7 @@ namespace wa_intelimundo
                 {
 
                 }
-            }
+            } 
             catch
             {
                 Response.Redirect("ctrl_acceso.aspx");
@@ -789,7 +789,6 @@ namespace wa_intelimundo
 
         }
 		#endregion
-
 
 		#region inventario
 

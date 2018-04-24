@@ -49,7 +49,7 @@
 													</li>
 													<li>
 														<div id="div_ventas" runat="server">
-															<asp:LinkButton CssClass="buttonClass" ID="lkb_ventas" runat="server">
+															<asp:LinkButton CssClass="buttonClass" ID="lkb_ventas" runat="server"z>
 																<i class="fas  fa-shopping-basket"></i>
 																<asp:Label CssClass="buttonClass" ID="lbl_ventas" runat="server" Text="Ventas"> </asp:Label>
 															</asp:LinkButton>

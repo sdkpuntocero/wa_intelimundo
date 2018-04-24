@@ -594,6 +594,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="style.css\styles.css" />
+    <Content Include="Vendedor.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -762,6 +763,13 @@
     </Compile>
     <Compile Include="panel_facilitador.aspx.designer.cs">
       <DependentUpon>panel_facilitador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor.aspx.cs">
+      <DependentUpon>Vendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor.aspx.designer.cs">
+      <DependentUpon>Vendedor.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
