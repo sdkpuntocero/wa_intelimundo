@@ -14,7 +14,16 @@ namespace wa_intelimundo
     
     public partial class fact_tipo_centro
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_tipo_centro()
+        {
+            this.inf_centro = new HashSet<inf_centro>();
+        }
+    
         public int id_tipo_centro { get; set; }
         public string desc_tipo_centro { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_centro> inf_centro { get; set; }
     }
 }

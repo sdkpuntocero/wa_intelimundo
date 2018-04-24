@@ -22,5 +22,7 @@ namespace wa_intelimundo
         public Nullable<decimal> costo { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public System.Guid id_centro { get; set; }
+    
+        public virtual inf_centro inf_centro { get; set; }
     }
 }

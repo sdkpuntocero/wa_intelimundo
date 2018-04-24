@@ -14,7 +14,16 @@ namespace wa_intelimundo
     
     public partial class fact_nivel_escolar
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_nivel_escolar()
+        {
+            this.fact_grado_escolar = new HashSet<fact_grado_escolar>();
+        }
+    
         public int id_nivel_escolar { get; set; }
         public string desc_nivel_escolar { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<fact_grado_escolar> fact_grado_escolar { get; set; }
     }
 }

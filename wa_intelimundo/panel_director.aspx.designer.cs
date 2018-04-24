@@ -10,7 +10,7 @@
 namespace wa_intelimundo {
     
     
-    public partial class panel {
+    public partial class panel_director {
         
         /// <summary>
         /// Control ScriptManager1.
@@ -29,6 +29,15 @@ namespace wa_intelimundo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Control div_pnl.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_pnl;
         
         /// <summary>
         /// Control lbl_bienvenida.
@@ -589,13 +598,13 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.WebControls.TextBox txt_cumple_fusuario;
         
         /// <summary>
-        /// Control ce_cumple_dfusuario.
+        /// Control ce_cumple.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender ce_cumple_dfusuario;
+        protected global::AjaxControlToolkit.CalendarExtender ce_cumple;
         
         /// <summary>
         /// Control txt_usuario_fusuario.
@@ -643,13 +652,13 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_centro;
         
         /// <summary>
-        /// Control lkb_editar_centro.
+        /// Control LinkButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_editar_centro;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
         /// Control i_editacentrof.
@@ -776,411 +785,6 @@ namespace wa_intelimundo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_guarda_centro;
-        
-        /// <summary>
-        /// Control up_usuarios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_usuarios;
-        
-        /// <summary>
-        /// Control pnl_usuarios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_usuarios;
-        
-        /// <summary>
-        /// Control lkbtn_nuevo_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_nuevo_usuario;
-        
-        /// <summary>
-        /// Control i_agrega_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_agrega_usuario;
-        
-        /// <summary>
-        /// Control lkbtn_edita_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_edita_usuario;
-        
-        /// <summary>
-        /// Control i_edita_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_edita_usuario;
-        
-        /// <summary>
-        /// Control lkbtn_baja_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_baja_usuario;
-        
-        /// <summary>
-        /// Control i_baja_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_baja_usuario;
-        
-        /// <summary>
-        /// Control txt_buscar_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_buscar_usuario;
-        
-        /// <summary>
-        /// Control btn_busca_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_busca_usuario;
-        
-        /// <summary>
-        /// Control gv_usuarios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_usuarios;
-        
-        /// <summary>
-        /// Control chkb_administrador.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkb_administrador;
-        
-        /// <summary>
-        /// Control chkb_gerente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkb_gerente;
-        
-        /// <summary>
-        /// Control chkb_facilitador.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkb_facilitador;
-        
-        /// <summary>
-        /// Control chkb_ejecutivo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkb_ejecutivo;
-        
-        /// <summary>
-        /// Control chkb_contador.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkb_contador;
-        
-        /// <summary>
-        /// Control chkb_vendedor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkb_vendedor;
-        
-        /// <summary>
-        /// Control ddl_genero_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_genero_usuario;
-        
-        /// <summary>
-        /// Control txt_nombres_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nombres_usuario;
-        
-        /// <summary>
-        /// Control txt_apaterno_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_apaterno_usuario;
-        
-        /// <summary>
-        /// Control txt_amaterno_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_amaterno_usuario;
-        
-        /// <summary>
-        /// Control txt_cumple_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cumple_usuario;
-        
-        /// <summary>
-        /// Control ce_cumple.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender ce_cumple;
-        
-        /// <summary>
-        /// Control txt_usuario_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_usuario_usuario;
-        
-        /// <summary>
-        /// Control btn_genera_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_genera_usuario;
-        
-        /// <summary>
-        /// Control txt_clave_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_clave_usuario;
-        
-        /// <summary>
-        /// Control btn_guardar_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardar_usuario;
-        
-        /// <summary>
-        /// Control up_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_empresa;
-        
-        /// <summary>
-        /// Control pnl_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_empresa;
-        
-        /// <summary>
-        /// Control lkb_editar_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkb_editar_empresa;
-        
-        /// <summary>
-        /// Control i_editaempresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_editaempresa;
-        
-        /// <summary>
-        /// Control ddl_tipo_rfc_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_tipo_rfc_empresa;
-        
-        /// <summary>
-        /// Control txt_rfc_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_rfc_empresa;
-        
-        /// <summary>
-        /// Control txt_rs_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_rs_empresa;
-        
-        /// <summary>
-        /// Control txt_telefono_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_telefono_empresa;
-        
-        /// <summary>
-        /// Control mee_telefono_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender mee_telefono_empresa;
-        
-        /// <summary>
-        /// Control txt_email_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_email_empresa;
-        
-        /// <summary>
-        /// Control txt_callenum_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_callenum_empresa;
-        
-        /// <summary>
-        /// Control txt_cp_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cp_empresa;
-        
-        /// <summary>
-        /// Control mee_cp_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender mee_cp_empresa;
-        
-        /// <summary>
-        /// Control btn_cp_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cp_empresa;
-        
-        /// <summary>
-        /// Control ddl_colonia_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_colonia_empresa;
-        
-        /// <summary>
-        /// Control txt_municipio_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_municipio_empresa;
-        
-        /// <summary>
-        /// Control txt_estado_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_estado_empresa;
-        
-        /// <summary>
-        /// Control btn_guarda_empresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guarda_empresa;
         
         /// <summary>
         /// Control up_proveedores.
@@ -1516,24 +1120,6 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_edita_alumno;
         
         /// <summary>
-        /// Control lkbtn_baja_alumno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_baja_alumno;
-        
-        /// <summary>
-        /// Control i_baja_alumno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_baja_alumno;
-        
-        /// <summary>
         /// Control txt_buscar_alumno.
         /// </summary>
         /// <remarks>
@@ -1543,13 +1129,13 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.WebControls.TextBox txt_buscar_alumno;
         
         /// <summary>
-        /// Control btn_buscar_alumno.
+        /// Control btn_busca_alumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_buscar_alumno;
+        protected global::System.Web.UI.WebControls.Button btn_busca_alumno;
         
         /// <summary>
         /// Control gv_alumnos.
@@ -1568,24 +1154,6 @@ namespace wa_intelimundo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_genero_alumno;
-        
-        /// <summary>
-        /// Control txt_cumple_alumno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cumple_alumno;
-        
-        /// <summary>
-        /// Control ce_cumple_alumno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender ce_cumple_alumno;
         
         /// <summary>
         /// Control txt_nombres_alumno.
@@ -1615,31 +1183,40 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.WebControls.TextBox txt_amaterno_alumno;
         
         /// <summary>
-        /// Control txt_email_alumno.
+        /// Control txt_fecna_alumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_email_alumno;
+        protected global::System.Web.UI.WebControls.TextBox txt_fecna_alumno;
         
         /// <summary>
-        /// Control txt_usuario_alumno.
+        /// Control CalendarExtender2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_usuario_alumno;
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
         
         /// <summary>
-        /// Control btn_usuario_alumno.
+        /// Control txt_alumno_alumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_usuario_alumno;
+        protected global::System.Web.UI.WebControls.TextBox txt_alumno_alumno;
+        
+        /// <summary>
+        /// Control btn_genera_alumno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_genera_alumno;
         
         /// <summary>
         /// Control txt_clave_alumno.
@@ -1651,6 +1228,15 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.WebControls.TextBox txt_clave_alumno;
         
         /// <summary>
+        /// Control chkb_activar_alumno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkb_activar_alumno;
+        
+        /// <summary>
         /// Control btn_guardar_alumno.
         /// </summary>
         /// <remarks>
@@ -1660,517 +1246,409 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.WebControls.Button btn_guardar_alumno;
         
         /// <summary>
-        /// Control up_sucursales.
+        /// Control up_usuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_sucursales;
+        protected global::System.Web.UI.UpdatePanel up_usuarios;
         
         /// <summary>
-        /// Control pnl_sucursales.
+        /// Control pnl_usuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_sucursales;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_usuarios;
         
         /// <summary>
-        /// Control lkbtn_nuevo_sucursal.
+        /// Control lkbtn_nuevo_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_nuevo_sucursal;
+        protected global::System.Web.UI.WebControls.LinkButton lkbtn_nuevo_usuario;
         
         /// <summary>
-        /// Control i_agrega_sucursal.
+        /// Control i_agrega_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_agrega_sucursal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_agrega_usuario;
         
         /// <summary>
-        /// Control lkbtn_edita_sucursal.
+        /// Control lkbtn_edita_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_edita_sucursal;
+        protected global::System.Web.UI.WebControls.LinkButton lkbtn_edita_usuario;
         
         /// <summary>
-        /// Control i_edita_sucursal.
+        /// Control i_edita_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_edita_sucursal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_edita_usuario;
         
         /// <summary>
-        /// Control lkbtn_baja_sucursal.
+        /// Control chkb_administrador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_baja_sucursal;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_administrador;
         
         /// <summary>
-        /// Control i_baja_sucursal.
+        /// Control chkb_gerente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_baja_sucursal;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_gerente;
         
         /// <summary>
-        /// Control txt_buscar_sucursal.
+        /// Control chkb_ejecutivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_buscar_sucursal;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_ejecutivo;
         
         /// <summary>
-        /// Control btn_buscar_sucursal.
+        /// Control chkb_facilitador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_buscar_sucursal;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_facilitador;
         
         /// <summary>
-        /// Control gv_sucursal.
+        /// Control chkb_vendedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_sucursal;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_vendedor;
         
         /// <summary>
-        /// Control ddl_licencias.
+        /// Control chkb_contador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_licencias;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_contador;
         
         /// <summary>
-        /// Control txt_nombre_sucursal.
+        /// Control txt_buscar_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nombre_sucursal;
+        protected global::System.Web.UI.WebControls.TextBox txt_buscar_usuario;
         
         /// <summary>
-        /// Control txt_telefono_sucursal.
+        /// Control btn_busca_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_telefono_sucursal;
+        protected global::System.Web.UI.WebControls.Button btn_busca_usuario;
         
         /// <summary>
-        /// Control mee_telefono_sucursal.
+        /// Control gv_usuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender mee_telefono_sucursal;
+        protected global::System.Web.UI.WebControls.GridView gv_usuarios;
         
         /// <summary>
-        /// Control txt_email_sucursal.
+        /// Control ddl_genero_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_email_sucursal;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_genero_usuario;
         
         /// <summary>
-        /// Control txt_callenum_sucursal.
+        /// Control txt_nombres_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_callenum_sucursal;
+        protected global::System.Web.UI.WebControls.TextBox txt_nombres_usuario;
         
         /// <summary>
-        /// Control txt_cp_sucursal.
+        /// Control txt_apaterno_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cp_sucursal;
+        protected global::System.Web.UI.WebControls.TextBox txt_apaterno_usuario;
         
         /// <summary>
-        /// Control MaskedEditExtender3.
+        /// Control txt_amaterno_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender3;
+        protected global::System.Web.UI.WebControls.TextBox txt_amaterno_usuario;
         
         /// <summary>
-        /// Control btn_cp_sucursal.
+        /// Control txt_fecnac_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cp_sucursal;
+        protected global::System.Web.UI.WebControls.TextBox txt_fecnac_usuario;
         
         /// <summary>
-        /// Control ddl_colonia_sucursal.
+        /// Control CalendarExtender1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_colonia_sucursal;
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
         
         /// <summary>
-        /// Control txt_municipio_sucursal.
+        /// Control txt_usuario_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_municipio_sucursal;
+        protected global::System.Web.UI.WebControls.TextBox txt_usuario_usuario;
         
         /// <summary>
-        /// Control txt_estado_sucursal.
+        /// Control btn_genera_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_estado_sucursal;
+        protected global::System.Web.UI.WebControls.Button btn_genera_usuario;
         
         /// <summary>
-        /// Control gv_administrador.
+        /// Control txt_clave_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_administrador;
+        protected global::System.Web.UI.WebControls.TextBox txt_clave_usuario;
         
         /// <summary>
-        /// Control btn_guardar_sucursal.
+        /// Control ddl_perfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardar_sucursal;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_perfil;
         
         /// <summary>
-        /// Control up_inventarios.
+        /// Control chkb_activar_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_inventarios;
+        protected global::System.Web.UI.WebControls.CheckBox chkb_activar_usuario;
         
         /// <summary>
-        /// Control pnl_inventarios.
+        /// Control btn_guardar_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_inventarios;
+        protected global::System.Web.UI.WebControls.Button btn_guardar_usuario;
         
         /// <summary>
-        /// Control div1.
+        /// Control up_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div1;
+        protected global::System.Web.UI.UpdatePanel up_empresa;
         
         /// <summary>
-        /// Control lkbtn_nuevo_inventario.
+        /// Control pnl_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_nuevo_inventario;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_empresa;
         
         /// <summary>
-        /// Control i_agrega_inventario.
+        /// Control lkb_editar_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_agrega_inventario;
+        protected global::System.Web.UI.WebControls.LinkButton lkb_editar_empresa;
         
         /// <summary>
-        /// Control lkbtn_edita_inventario.
+        /// Control i_editaempresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_edita_inventario;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_editaempresa;
         
         /// <summary>
-        /// Control i_edita_inventario.
+        /// Control ddl_tipo_rfc_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_edita_inventario;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_tipo_rfc_empresa;
         
         /// <summary>
-        /// Control lkbtn_baja_inventario.
+        /// Control txt_rfc_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbtn_baja_inventario;
+        protected global::System.Web.UI.WebControls.TextBox txt_rfc_empresa;
         
         /// <summary>
-        /// Control i_baja_inventario.
+        /// Control txt_rs_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_baja_inventario;
+        protected global::System.Web.UI.WebControls.TextBox txt_rs_empresa;
         
         /// <summary>
-        /// Control txt_buscar_inventario.
+        /// Control txt_telefono_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_buscar_inventario;
+        protected global::System.Web.UI.WebControls.TextBox txt_telefono_empresa;
         
         /// <summary>
-        /// Control btn_buscar_inventario.
+        /// Control mee_telefono_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_buscar_inventario;
+        protected global::AjaxControlToolkit.MaskedEditExtender mee_telefono_empresa;
         
         /// <summary>
-        /// Control gv_inventario.
+        /// Control txt_email_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_inventario;
+        protected global::System.Web.UI.WebControls.TextBox txt_email_empresa;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control txt_callenum_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.TextBox txt_callenum_empresa;
         
         /// <summary>
-        /// Control Button1.
+        /// Control txt_cp_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox txt_cp_empresa;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control mee_cp_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::AjaxControlToolkit.MaskedEditExtender mee_cp_empresa;
         
         /// <summary>
-        /// Control Button2.
+        /// Control btn_cp_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btn_cp_empresa;
         
         /// <summary>
-        /// Control DropDownList3.
+        /// Control ddl_colonia_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_colonia_empresa;
         
         /// <summary>
-        /// Control Button3.
+        /// Control txt_municipio_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.TextBox txt_municipio_empresa;
         
         /// <summary>
-        /// Control txt_categoria_inventario.
+        /// Control txt_estado_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_categoria_inventario;
+        protected global::System.Web.UI.WebControls.TextBox txt_estado_empresa;
         
         /// <summary>
-        /// Control txt_desc_inventario.
+        /// Control btn_guarda_empresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_desc_inventario;
-        
-        /// <summary>
-        /// Control txt_caracteristica_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_caracteristica_inventario;
-        
-        /// <summary>
-        /// Control txt_cantidad_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cantidad_inventario;
-        
-        /// <summary>
-        /// Control txt_mcantidad_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_mcantidad_inventario;
-        
-        /// <summary>
-        /// Control txt_costo_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_costo_inventario;
-        
-        /// <summary>
-        /// Control mee_costo_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender mee_costo_inventario;
-        
-        /// <summary>
-        /// Control txt_margen_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_margen_inventario;
-        
-        /// <summary>
-        /// Control btn_margen_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_margen_inventario;
-        
-        /// <summary>
-        /// Control txt_precio_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_precio_inventario;
-        
-        /// <summary>
-        /// Control btn_guardar_inventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardar_inventario;
-        
-        /// <summary>
-        /// Control UpdatePanel6.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel6;
-        
-        /// <summary>
-        /// Control UpdatePanel7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel7;
-        
-        /// <summary>
-        /// Control UpdatePanel8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel8;
+        protected global::System.Web.UI.WebControls.Button btn_guarda_empresa;
         
         /// <summary>
         /// Control upModal.

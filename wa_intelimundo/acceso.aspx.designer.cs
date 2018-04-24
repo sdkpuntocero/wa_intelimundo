@@ -10,7 +10,7 @@
 namespace wa_intelimundo {
     
     
-    public partial class accceso {
+    public partial class acceso {
         
         /// <summary>
         /// Control ScriptManager1.

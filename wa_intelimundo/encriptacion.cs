@@ -8,7 +8,7 @@ using System.Web;
 
 namespace wa_intelimundo
 {
-    public class mdl_encrypta
+    public class encriptacion
     {
         // This constant string is used as a "salt" value for the PasswordDeriveBytes function calls.
         // This size of the IV (in bytes) must = (keysize / 8).  Default keysize is 256, so the IV must be

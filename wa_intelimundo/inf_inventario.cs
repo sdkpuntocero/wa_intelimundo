@@ -26,5 +26,8 @@ namespace wa_intelimundo
         public Nullable<int> margen { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public System.Guid id_centro { get; set; }
+    
+        public virtual fact_grado_escolar fact_grado_escolar { get; set; }
+        public virtual inf_centro inf_centro { get; set; }
     }
 }

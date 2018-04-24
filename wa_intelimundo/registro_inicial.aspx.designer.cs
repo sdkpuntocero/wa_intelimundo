@@ -184,13 +184,13 @@ namespace wa_intelimundo {
         protected global::System.Web.UI.WebControls.TextBox txt_amaterno;
         
         /// <summary>
-        /// Control txt_cumple.
+        /// Control txt_fecnac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cumple;
+        protected global::System.Web.UI.WebControls.TextBox txt_fecnac;
         
         /// <summary>
         /// Control ce_cumple.

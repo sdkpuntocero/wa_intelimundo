@@ -25,12 +25,12 @@ namespace wa_intelimundo
         public string codigo_alumno { get; set; }
         public string clave { get; set; }
         public Nullable<System.DateTime> fecha_nacimiento { get; set; }
-        public string telefono { get; set; }
-        public string email { get; set; }
-        public string cp { get; set; }
-        public string calle { get; set; }
-        public Nullable<int> id_asenta_cpcons { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public System.Guid id_centro { get; set; }
+    
+        public virtual fact_estatus fact_estatus { get; set; }
+        public virtual fact_genero fact_genero { get; set; }
+        public virtual fact_tipo_usuario fact_tipo_usuario { get; set; }
+        public virtual inf_centro inf_centro { get; set; }
     }
 }

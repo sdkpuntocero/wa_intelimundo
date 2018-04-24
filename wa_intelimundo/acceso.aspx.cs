@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace wa_intelimundo
 {
-    public partial class accceso : System.Web.UI.Page
+    public partial class acceso : System.Web.UI.Page
     {
         static Guid guid_fuser, guid_centro;
 
@@ -97,7 +97,7 @@ namespace wa_intelimundo
                         int int_idtypeuser, int_iduserstatus;
 
                         str_codigousuario = txt_usuario.Text;
-                        str_clave = mdl_encrypta.Encrypt(txt_clave.Text);
+                        str_clave = encriptacion.Encrypt(txt_clave.Text);
 
                         using (db_imEntities edm_usuarios = new db_imEntities())
                         {
@@ -149,9 +149,9 @@ namespace wa_intelimundo
 
                                                 if (str_valida_clave == str_clave && int_iduserstatus == 1)
                                                 {
-                                                    Session["ss_id_user"] = mdl_user.code_user(str_codigousuario);
+                                                    Session["ss_id_user"] = guid_usuario.code_user(str_codigousuario);
                                                     Session["ss_id_center"] = guid_centro;
-                                                    Response.Redirect("panel.aspx");
+                                                    Response.Redirect("panel_director.aspx");
                                                 }
                                                 else
                                                 {
@@ -176,7 +176,7 @@ namespace wa_intelimundo
                                         {
                                             var i_centrodep = (from i_c in edm_centrodep.inf_centro
                                                                join i_l in edm_centrodep.inf_centro_dep on i_c.id_centro equals i_l.id_centro
-                                                               where i_l.id_usuario == i_fcentrodep[0].id_usuario
+                                                               where i_c.id_tipo_centro == 2
                                                                select i_c).ToList();
 
                                             ddl_centro.DataSource = i_centrodep;
