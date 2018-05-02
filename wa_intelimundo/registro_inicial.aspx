@@ -17,28 +17,36 @@
 								</div>
 								<div class="panel-body">
 									<div class="row">
-										<div class="col-md-6 text-center">
-											<h3>Corporativo</h3>
-										</div>
-										<div class="col-md-6 text-center">
-											<h3>Director</h3>
-										</div>
-										<br />
 										<div class="col-md-3">
 											<asp:DropDownList CssClass="form-control" ID="ddl_licencias" runat="server"></asp:DropDownList>
 											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_nombre_sucursal" runat="server" placeholder="*Nombre de la sucursal"></asp:TextBox>
-											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_telefono_sucursal" runat="server" placeholder="*Teléfono"></asp:TextBox>
-											<ajaxToolkit:MaskedEditExtender ID="mee_telefono_sucursal" runat="server" TargetControlID="txt_telefono_sucursal" Mask="(52) 99.99.99.99.99.99 ext 99999" />
-											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_email_sucursal" runat="server" placeholder="*e-mail"></asp:TextBox>
-											<br />
-										</div>
-										<div class="col-md-3">
-											<asp:TextBox CssClass="form-control" ID="txt_callenum_sucursal" runat="server" placeholder="*Calle y número"></asp:TextBox>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_nombre_sucursal" runat="server" placeholder="*Nombre"></asp:TextBox>
+											</div>
 											<br />
 											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_telefono_sucursal" runat="server" placeholder="*Teléfono"></asp:TextBox>
+											</div>
+											<ajaxToolkit:MaskedEditExtender ID="mee_telefono_sucursal" runat="server" TargetControlID="txt_telefono_sucursal" Mask="(52) 99.99.99.99.99.99 ext 99999" />
+											<br />
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_email_sucursal" runat="server" placeholder="*e-mail"></asp:TextBox>
+											</div>
+											<br />
+										</div>
+
+										<div class="col-md-3">
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_callenum_sucursal" runat="server" placeholder="*Calle y número"></asp:TextBox>
+											</div>
+
+											<br />
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
 												<asp:TextBox CssClass="form-control" ID="txt_cp_sucursal" runat="server" placeholder="*Código Postal" MaxLength="5"></asp:TextBox>
 												<ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender2" runat="server" TargetControlID="txt_cp_sucursal" Mask="99999" />
 												<span class="input-group-btn">
@@ -48,37 +56,57 @@
 											<br />
 											<asp:DropDownList CssClass="form-control" ID="ddl_colonia_sucursal" runat="server" ToolTip="*Colonia"></asp:DropDownList>
 											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_municipio_sucursal" runat="server" placeholder="*Municipio" Enabled="false"></asp:TextBox>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_municipio_sucursal" runat="server" placeholder="*Municipio" Enabled="false"></asp:TextBox>
+											</div>
 											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_estado_sucursal" runat="server" placeholder="*Estado" Enabled="false"></asp:TextBox>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_estado_sucursal" runat="server" placeholder="*Estado" Enabled="false"></asp:TextBox>
+											</div>
+											<br />
 										</div>
 										<div class="col-md-3">
 											<asp:DropDownList CssClass="form-control" ID="ddl_genero" runat="server"></asp:DropDownList>
 											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_nombres" runat="server" placeholder="*Nombre(s)"></asp:TextBox>
-											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_apaterno" runat="server" placeholder="*Apellido Paterno"></asp:TextBox>
-											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_amaterno" runat="server" placeholder="*Apellido Materno"></asp:TextBox>
-											<br />
-										</div>
-										<div class="col-md-3">
-											<div class="input-group date" data-provide="datepicker">
-												<asp:TextBox CssClass="form-control" ID="txt_fecnac" runat="server" placeholder="Fecha de Nacimiento"></asp:TextBox>
-												<div class="input-group-addon">
-													<span class="glyphicon glyphicon-calendar"></span>
-												</div>
-												    <ajaxToolkit:CalendarExtender ID="ce_cumple" runat="server" BehaviorID="txt_fecnac" TargetControlID="txt_fecnac" Format="dd/MM/yyyy" />
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_nombres" runat="server" placeholder="*Nombre(s)"></asp:TextBox>
 											</div>
 											<br />
 											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_apaterno" runat="server" placeholder="*Apellido Paterno"></asp:TextBox>
+											</div>
+
+											<br />
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_amaterno" runat="server" placeholder="*Apellido Materno"></asp:TextBox>
+											</div>
+
+											<br />
+										</div>
+										<div class="col-md-3">
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_fecnac" runat="server" placeholder="*Fecha de Nacimiento"></asp:TextBox>
+											</div>
+											<ajaxToolkit:CalendarExtender ID="ce_cumple" runat="server" BehaviorID="txt_fecnac" TargetControlID="txt_fecnac" Format="dd/MM/yyyy" />
+											<br />
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
 												<asp:TextBox CssClass="form-control" ID="txt_usuario_usuario" runat="server" placeholder="*Usuario"></asp:TextBox>
 												<span class="input-group-btn">
 													<asp:Button CssClass="btn" ID="btn_genera_usuario" runat="server" Text="+" OnClick="btn_genera_usuario_Click" />
 												</span>
 											</div>
 											<br />
-											<asp:TextBox CssClass="form-control" ID="txt_clave" runat="server" placeholder="*Contraseña" TextMode="Password"></asp:TextBox>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+												<asp:TextBox CssClass="form-control" ID="txt_clave" runat="server" placeholder="*Contraseña" TextMode="Password"></asp:TextBox>
+											</div>
 											<br />
 										</div>
 										<div class="col-md-12 text-right">
@@ -87,7 +115,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="panel-footer"></div>
+							
 							</div>
 						</div>
 					</div>

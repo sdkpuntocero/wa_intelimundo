@@ -12,14 +12,23 @@
 					<asp:Image CssClass="center-block img-responsive img-thumbnail" ID="Image1" runat="server" ImageUrl="~/img/im.png" Width="128" Height="128" />
 					<br />
 					<h3 class="scenter">Control de Acceso</h3>
-					<div class="form-group">
-						<asp:DropDownList CssClass="form-control" ID="ddl_centro" runat="server" Visible="false"></asp:DropDownList>
+					<div class="form-group" >
+				<%--		<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>--%>
+							<asp:DropDownList CssClass="form-control" ID="ddl_centro" runat="server" Visible="false"></asp:DropDownList>
+					<%--	</div>--%>
 					</div>
 					<div class="form-group">
-						<asp:TextBox CssClass="form-control" ID="txt_usuario" runat="server" TabIndex="1" placeholder="*Capturar Usuario"></asp:TextBox>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
+							<asp:TextBox CssClass="form-control" ID="txt_usuario" runat="server" TabIndex="1" placeholder="*Capturar Usuario"></asp:TextBox>
+						</div>
 					</div>
 					<div class="form-group">
-						<asp:TextBox CssClass="form-control" ID="txt_clave" runat="server" TabIndex="3" placeholder="*Capturar Contraseña" TextMode="Password"></asp:TextBox>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+							<asp:TextBox CssClass="form-control" ID="txt_clave" runat="server" TabIndex="3" placeholder="*Capturar Contraseña" TextMode="Password"></asp:TextBox>
+						</div>
 					</div>
 					<div class="checkbox">
 						<asp:LinkButton CssClass="text-left" ID="lkb_registro" runat="server" Visible="false" Text="Registrar" OnClick="lkb_registro_Click"></asp:LinkButton>

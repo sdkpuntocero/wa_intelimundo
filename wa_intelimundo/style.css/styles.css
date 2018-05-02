@@ -10,16 +10,16 @@
 body {
 	/*font-family: 'Muli', sans-serif;*/
 	font-family: 'Saira', sans-serif;
-	color: dimgray;
-	background: lightslategray;
+	color: #079DBC;
+	background: #002E53;
 }
 
 i {
-	color: dimgray;
+	color: #079DBC;
 }
 
 	i:hover {
-		color: orangered;
+		color: #B9005C;
 	}
 
 
@@ -30,7 +30,7 @@ footer {
 }
 
 	footer i {
-		color: white;
+		color: #079DBC;
 	}
 
 
@@ -50,11 +50,11 @@ footer {
 }
 
 .buttonClass {
-	color: dimgray;
+	color: #079DBC;
 }
 
 	.buttonClass:hover {
-		color: orangered;
+		color: #B9005C;
 	}
 
 
@@ -191,3 +191,22 @@ footer {
 	.nb-login .or {
 		color: #FFF;
 	}
+
+/*.panel-default {
+	background: #079DBC;
+}*/
+
+/*.panel-default > .panel-heading {
+	background: #002E53;
+	color: white;
+	
+}
+
+.panel-footer {
+	background: #002E53;
+}
+
+.navbar {
+	background: #002E53;
+	color: white;
+}*/

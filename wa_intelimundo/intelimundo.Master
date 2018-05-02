@@ -57,6 +57,30 @@
 			}
 		}
 	</script>
+	<script type="text/javascript">  
+		$(document).ready(function () {
+			SearchText();
+		});
+		function SearchText() {
+			$("#txt_buscar_inventarioV").autocomplete({
+				source: function (request, response) {
+					$.ajax({
+						type: "POST",
+						contentType: "application/json; charset=utf-8",
+						url: "panel_director.aspx/GetEmployeeName",
+						data: "{'empName':'" + document.getElementById('txt_buscar_inventarioV').value + "'}",
+						dataType: "json",
+						success: function (data) {
+							response(data.d);
+						},
+						error: function (result) {
+							alert("No Match");
+						}
+					});
+				}
+			});
+		}
+	</script>
 
 	<form id="form1" runat="server">
 		<div>

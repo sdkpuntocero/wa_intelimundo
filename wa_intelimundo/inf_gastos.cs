@@ -15,6 +15,7 @@ namespace wa_intelimundo
     public partial class inf_gastos
     {
         public System.Guid id_gasto { get; set; }
+        public Nullable<int> id_estatus { get; set; }
         public string id_codigo_gasto { get; set; }
         public string categoria { get; set; }
         public string desc_gasto { get; set; }
@@ -22,7 +23,5 @@ namespace wa_intelimundo
         public Nullable<decimal> costo { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public System.Guid id_centro { get; set; }
-    
-        public virtual inf_centro inf_centro { get; set; }
     }
 }

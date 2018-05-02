@@ -20,7 +20,6 @@ namespace wa_intelimundo
             this.inf_alumnos = new HashSet<inf_alumnos>();
             this.inf_centro_dep = new HashSet<inf_centro_dep>();
             this.inf_examenes = new HashSet<inf_examenes>();
-            this.inf_gastos = new HashSet<inf_gastos>();
             this.inf_inventario = new HashSet<inf_inventario>();
             this.inf_proveedor = new HashSet<inf_proveedor>();
             this.inf_usuarios = new HashSet<inf_usuarios>();
@@ -52,8 +51,6 @@ namespace wa_intelimundo
         public virtual inf_sepomex inf_sepomex { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inf_examenes> inf_examenes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_gastos> inf_gastos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inf_inventario> inf_inventario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

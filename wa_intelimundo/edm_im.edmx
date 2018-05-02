@@ -178,6 +178,7 @@
             <PropertyRef Name="id_gasto" />
           </Key>
           <Property Name="id_gasto" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_estatus" Type="int" />
           <Property Name="id_codigo_gasto" Type="varchar" MaxLength="50" />
           <Property Name="categoria" Type="varchar" MaxLength="50" />
           <Property Name="desc_gasto" Type="varchar" MaxLength="50" />
@@ -191,6 +192,7 @@
             <PropertyRef Name="id_inventario" />
           </Key>
           <Property Name="id_inventario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_estatus" Type="int" />
           <Property Name="id_codigo_inventario" Type="varchar" MaxLength="50" />
           <Property Name="id_grado_escolar" Type="int" />
           <Property Name="categoria" Type="varchar" MaxLength="150" />
@@ -563,18 +565,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_inf_gastos_inf_centro">
-          <End Role="inf_centro" Type="Self.inf_centro" Multiplicity="1" />
-          <End Role="inf_gastos" Type="Self.inf_gastos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="inf_centro">
-              <PropertyRef Name="id_centro" />
-            </Principal>
-            <Dependent Role="inf_gastos">
-              <PropertyRef Name="id_centro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_inf_inventario_fact_grado_escolar">
           <End Role="fact_grado_escolar" Type="Self.fact_grado_escolar" Multiplicity="0..1" />
           <End Role="inf_inventario" Type="Self.inf_inventario" Multiplicity="*" />
@@ -850,10 +840,6 @@
             <End Role="inf_centro" EntitySet="inf_centro" />
             <End Role="inf_examenes" EntitySet="inf_examenes" />
           </AssociationSet>
-          <AssociationSet Name="FK_inf_gastos_inf_centro" Association="Self.FK_inf_gastos_inf_centro">
-            <End Role="inf_centro" EntitySet="inf_centro" />
-            <End Role="inf_gastos" EntitySet="inf_gastos" />
-          </AssociationSet>
           <AssociationSet Name="FK_inf_inventario_fact_grado_escolar" Association="Self.FK_inf_inventario_fact_grado_escolar">
             <End Role="fact_grado_escolar" EntitySet="fact_grado_escolar" />
             <End Role="inf_inventario" EntitySet="inf_inventario" />
@@ -1033,10 +1019,6 @@
           <AssociationSet Name="FK_inf_examenes_inf_centro" Association="db_imModel.FK_inf_examenes_inf_centro">
             <End Role="inf_centro" EntitySet="inf_centro" />
             <End Role="inf_examenes" EntitySet="inf_examenes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_inf_gastos_inf_centro" Association="db_imModel.FK_inf_gastos_inf_centro">
-            <End Role="inf_centro" EntitySet="inf_centro" />
-            <End Role="inf_gastos" EntitySet="inf_gastos" />
           </AssociationSet>
           <AssociationSet Name="FK_inf_inventario_inf_centro" Association="db_imModel.FK_inf_inventario_inf_centro">
             <End Role="inf_centro" EntitySet="inf_centro" />
@@ -1221,7 +1203,6 @@
           <NavigationProperty Name="inf_empresa" Relationship="db_imModel.FK_inf_centro_inf_empresa" FromRole="inf_centro" ToRole="inf_empresa" />
           <NavigationProperty Name="inf_sepomex" Relationship="db_imModel.FK_inf_centro_inf_sepomex" FromRole="inf_centro" ToRole="inf_sepomex" />
           <NavigationProperty Name="inf_examenes" Relationship="db_imModel.FK_inf_examenes_inf_centro" FromRole="inf_centro" ToRole="inf_examenes" />
-          <NavigationProperty Name="inf_gastos" Relationship="db_imModel.FK_inf_gastos_inf_centro" FromRole="inf_centro" ToRole="inf_gastos" />
           <NavigationProperty Name="inf_inventario" Relationship="db_imModel.FK_inf_inventario_inf_centro" FromRole="inf_centro" ToRole="inf_inventario" />
           <NavigationProperty Name="inf_proveedor" Relationship="db_imModel.FK_inf_proveedor_inf_centro" FromRole="inf_centro" ToRole="inf_proveedor" />
           <NavigationProperty Name="inf_usuarios" Relationship="db_imModel.FK_inf_usuarios_inf_centro" FromRole="inf_centro" ToRole="inf_usuarios" />
@@ -1302,6 +1283,7 @@
             <PropertyRef Name="id_gasto" />
           </Key>
           <Property Name="id_gasto" Type="Guid" Nullable="false" />
+          <Property Name="id_estatus" Type="Int32" />
           <Property Name="id_codigo_gasto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="desc_gasto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -1309,13 +1291,13 @@
           <Property Name="costo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="fecha_registro" Type="DateTime" Precision="0" />
           <Property Name="id_centro" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="inf_centro" Relationship="db_imModel.FK_inf_gastos_inf_centro" FromRole="inf_gastos" ToRole="inf_centro" />
         </EntityType>
         <EntityType Name="inf_inventario">
           <Key>
             <PropertyRef Name="id_inventario" />
           </Key>
           <Property Name="id_inventario" Type="Guid" Nullable="false" />
+          <Property Name="id_estatus" Type="Int32" />
           <Property Name="id_codigo_inventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_grado_escolar" Type="Int32" />
           <Property Name="categoria" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
@@ -1745,18 +1727,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_inf_gastos_inf_centro">
-          <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
-          <End Type="db_imModel.inf_gastos" Role="inf_gastos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="inf_centro">
-              <PropertyRef Name="id_centro" />
-            </Principal>
-            <Dependent Role="inf_gastos">
-              <PropertyRef Name="id_centro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_inf_inventario_inf_centro">
           <End Type="db_imModel.inf_centro" Role="inf_centro" Multiplicity="1" />
           <End Type="db_imModel.inf_inventario" Role="inf_inventario" Multiplicity="*" />
@@ -2090,6 +2060,7 @@
                 <ScalarProperty Name="desc_gasto" ColumnName="desc_gasto" />
                 <ScalarProperty Name="categoria" ColumnName="categoria" />
                 <ScalarProperty Name="id_codigo_gasto" ColumnName="id_codigo_gasto" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
                 <ScalarProperty Name="id_gasto" ColumnName="id_gasto" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2108,6 +2079,7 @@
                 <ScalarProperty Name="categoria" ColumnName="categoria" />
                 <ScalarProperty Name="id_grado_escolar" ColumnName="id_grado_escolar" />
                 <ScalarProperty Name="id_codigo_inventario" ColumnName="id_codigo_inventario" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
                 <ScalarProperty Name="id_inventario" ColumnName="id_inventario" />
               </MappingFragment>
             </EntityTypeMapping>

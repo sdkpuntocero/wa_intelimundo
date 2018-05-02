@@ -15,6 +15,7 @@ namespace wa_intelimundo
     public partial class inf_inventario
     {
         public System.Guid id_inventario { get; set; }
+        public Nullable<int> id_estatus { get; set; }
         public string id_codigo_inventario { get; set; }
         public Nullable<int> id_grado_escolar { get; set; }
         public string categoria { get; set; }
